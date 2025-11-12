@@ -24,3 +24,43 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Terminal animation for 90s aesthetic */
+@keyframes scan {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes glitch {
+  0%, 100% {
+    text-shadow: 0 0 10px rgba(0, 255, 65, 0.8),
+                 2px 0 0 rgba(0, 255, 65, 0.3),
+                 -2px 0 0 rgba(255, 0, 0, 0.3);
+  }
+  10% {
+    text-shadow: 0 0 10px rgba(0, 255, 65, 0.8),
+                 0 2px 0 rgba(0, 255, 65, 0.3),
+                 0 -2px 0 rgba(255, 0, 0, 0.3);
+  }
+  20% {
+    text-shadow: 0 0 10px rgba(0, 255, 65, 0.8),
+                 2px 2px 0 rgba(0, 255, 65, 0.3),
+                 -2px -2px 0 rgba(255, 0, 0, 0.3);
+  }
+}
+
+/* Terminal morphing/warp effect */
+@keyframes warp {
+  0%, 100% {
+    border-radius: 8px;
+    transform: skewY(0deg);
+  }
+  50% {
+    border-radius: 12px;
+    transform: skewY(0.5deg);
+  }
+}
