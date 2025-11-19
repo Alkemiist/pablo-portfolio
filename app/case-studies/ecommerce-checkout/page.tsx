@@ -1,10 +1,9 @@
 import Link from 'next/link';
 import Navigation from '../../components/Navigation';
-import { ecommerceCheckoutCaseStudy } from '../data/ecommerceCheckout';
-import EcommerceCheckoutDemo from '../components/EcommerceCheckoutDemo';
+import { aiCreativeContentCaseStudy } from '../data/aiCreativeContent';
 
-export default function EcommerceCheckoutCaseStudyPage() {
-  const study = ecommerceCheckoutCaseStudy;
+export default function AICreativeContentCaseStudyPage() {
+  const study = aiCreativeContentCaseStudy;
 
   return (
     <div className="min-h-screen bg-black text-zinc-100">
@@ -68,19 +67,32 @@ export default function EcommerceCheckoutCaseStudyPage() {
             </div>
           </section>
 
-          {/* ===== Case Study: Live Flow Preview ===== */}
+          {/* ===== Case Study: Communication & Evangelism ===== */}
           <section className="space-y-6">
-            <h2 className="text-lg text-green-400 uppercase tracking-[0.3em]">Live Flow Preview</h2>
-            <p className="text-sm text-zinc-300 leading-relaxed">
-              This interactive slice mirrors the hypotheses we validated around trust cues, progressive
-              disclosure, and experiment-ready instrumentation. Adjust options to see how confidence
-              signals update in real time.
-            </p>
-            <EcommerceCheckoutDemo />
-            <p className="text-xs text-zinc-500">
-              Use this component as a storytelling aid—recruiters can explore the exact experience and
-              feel the difference before reading the full narrative.
-            </p>
+            <h2 className="text-lg text-green-400 uppercase tracking-[0.3em]">Communication & Evangelism</h2>
+            <div className="border border-green-400/30 rounded-lg p-6 md:p-8 bg-black/50 space-y-4 text-sm text-zinc-300">
+              <p>
+                I shared this work across multiple touchpoints to build buy-in and help teams get up and running:
+              </p>
+              <ul className="space-y-3 pt-4 border-t border-green-400/20">
+                <li className="flex items-start gap-3">
+                  <span className="text-green-400 mt-1">▹</span>
+                  <span><strong>Design crits</strong> with product and AI teams to refine the approach and gather feedback.</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-green-400 mt-1">▹</span>
+                  <span><strong>Leadership demos</strong> to get buy-in on broader applications of the framework.</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-green-400 mt-1">▹</span>
+                  <span><strong>Customer onboarding sessions</strong> to help teams get up and running quickly.</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-green-400 mt-1">▹</span>
+                  <span><strong>Documentation guide</strong>—"Building for AI Imagination"—which helped onboard new designers and PMs.</span>
+                </li>
+              </ul>
+            </div>
           </section>
 
           {/* ===== Case Study: Objectives & Audience ===== */}
@@ -263,6 +275,121 @@ export default function EcommerceCheckoutCaseStudyPage() {
                   </li>
                 ))}
               </ul>
+            </div>
+          </section>
+
+          {/* ===== Case Study: Reflecting on the Work ===== */}
+          <section className="space-y-6">
+            <h2 className="text-lg text-green-400 uppercase tracking-[0.3em]">Reflecting on the Work</h2>
+            <div className="grid lg:grid-cols-3 gap-6">
+              <div className="border border-green-400/30 rounded-lg p-6 bg-black/50">
+                <h3 className="text-sm uppercase tracking-[0.3em] text-green-400 mb-4">What Worked</h3>
+                <ul className="space-y-3 text-sm text-zinc-300">
+                  <li className="flex items-start gap-2">
+                    <span className="text-green-400 mt-1">▹</span>
+                    <span>The structured framework made people feel guided, not boxed in.</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-green-400 mt-1">▹</span>
+                    <span>Letting users customize after generation gave them control without pressure.</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-green-400 mt-1">▹</span>
+                    <span>Bringing in stakeholders early helped prevent churn later.</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-green-400 mt-1">▹</span>
+                    <span>Having the realm of possibilities shown made users feel "calmer" as they didn't have to come up with control ideas to iterate.</span>
+                  </li>
+                </ul>
+              </div>
+              <div className="border border-green-400/30 rounded-lg p-6 bg-black/50">
+                <h3 className="text-sm uppercase tracking-[0.3em] text-green-400 mb-4">What Didn't</h3>
+                <ul className="space-y-3 text-sm text-zinc-300">
+                  <li className="flex items-start gap-2">
+                    <span className="text-green-400 mt-1">▹</span>
+                    <span>Our first version was too rigid—creativity isn't always linear.</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-green-400 mt-1">▹</span>
+                    <span>Some users just wanted to explore—we added a "quickstart" mode for play.</span>
+                  </li>
+                </ul>
+              </div>
+              <div className="border border-green-400/30 rounded-lg p-6 bg-black/50">
+                <h3 className="text-sm uppercase tracking-[0.3em] text-green-400 mb-4">What I'd Do Differently</h3>
+                <ul className="space-y-3 text-sm text-zinc-300">
+                  <li className="flex items-start gap-2">
+                    <span className="text-green-400 mt-1">▹</span>
+                    <span>Introduce AI-assisted brief writing earlier—it tested well, but came in late.</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-green-400 mt-1">▹</span>
+                    <span>Test more with video creators—not just designers—so we could optimize for real-world pacing and structure.</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-green-400 mt-1">▹</span>
+                    <span>Test faster with marketing specialists at varying levels of creative knowledge.</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          {/* ===== Case Study: Visual Walkthrough Sections ===== */}
+          <section className="space-y-12">
+            <h2 className="text-lg text-green-400 uppercase tracking-[0.3em]">Visual Walkthrough</h2>
+            
+            {/* GIF Section 1 */}
+            <div className="space-y-4">
+              <div className="border border-green-400/30 rounded-lg p-6 md:p-8 bg-black/50">
+                <h3 className="text-sm text-green-400 uppercase tracking-[0.3em] mb-4">Section 1</h3>
+                <div className="aspect-video bg-zinc-900 border border-green-400/20 rounded-lg flex items-center justify-center mb-4">
+                  <p className="text-zinc-500 text-sm">GIF placeholder - Upload your first GIF here</p>
+                </div>
+                <p className="text-sm text-zinc-300 leading-relaxed">
+                  Add your explanatory copy here describing what this GIF demonstrates. This could show the initial brief builder, the step-by-step flow, or any key interaction pattern.
+                </p>
+              </div>
+            </div>
+
+            {/* GIF Section 2 */}
+            <div className="space-y-4">
+              <div className="border border-green-400/30 rounded-lg p-6 md:p-8 bg-black/50">
+                <h3 className="text-sm text-green-400 uppercase tracking-[0.3em] mb-4">Section 2</h3>
+                <div className="aspect-video bg-zinc-900 border border-green-400/20 rounded-lg flex items-center justify-center mb-4">
+                  <p className="text-zinc-500 text-sm">GIF placeholder - Upload your second GIF here</p>
+                </div>
+                <p className="text-sm text-zinc-300 leading-relaxed">
+                  Add your explanatory copy here describing what this GIF demonstrates. This could show the generation canvas, preview system, or adjustment controls.
+                </p>
+              </div>
+            </div>
+
+            {/* GIF Section 3 */}
+            <div className="space-y-4">
+              <div className="border border-green-400/30 rounded-lg p-6 md:p-8 bg-black/50">
+                <h3 className="text-sm text-green-400 uppercase tracking-[0.3em] mb-4">Section 3</h3>
+                <div className="aspect-video bg-zinc-900 border border-green-400/20 rounded-lg flex items-center justify-center mb-4">
+                  <p className="text-zinc-500 text-sm">GIF placeholder - Upload your third GIF here</p>
+                </div>
+                <p className="text-sm text-zinc-300 leading-relaxed">
+                  Add your explanatory copy here describing what this GIF demonstrates. This could show multimodal combination, the smart chip interactions, or the waterfall effect.
+                </p>
+              </div>
+            </div>
+
+            {/* GIF Section 4 */}
+            <div className="space-y-4">
+              <div className="border border-green-400/30 rounded-lg p-6 md:p-8 bg-black/50">
+                <h3 className="text-sm text-green-400 uppercase tracking-[0.3em] mb-4">Section 4</h3>
+                <div className="aspect-video bg-zinc-900 border border-green-400/20 rounded-lg flex items-center justify-center mb-4">
+                  <p className="text-zinc-500 text-sm">GIF placeholder - Upload your fourth GIF here</p>
+                </div>
+                <p className="text-sm text-zinc-300 leading-relaxed">
+                  Add your explanatory copy here describing what this GIF demonstrates. This could show the final output, the full workflow, or any advanced features.
+                </p>
+              </div>
             </div>
           </section>
 
