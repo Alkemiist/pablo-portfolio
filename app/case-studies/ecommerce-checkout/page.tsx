@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Navigation from '../../components/Navigation';
 import { aiCreativeContentCaseStudy } from '../data/aiCreativeContent';
+import Image from 'next/image';
 
 export default function AICreativeContentCaseStudyPage() {
   const study = aiCreativeContentCaseStudy;
@@ -252,32 +253,6 @@ export default function AICreativeContentCaseStudyPage() {
             </div>
           </section>
 
-          {/* ===== Case Study: Lessons & Next Steps ===== */}
-          <section className="grid lg:grid-cols-2 gap-10">
-            <div className="border border-green-400/30 rounded-lg p-6 md:p-8 bg-black/50 space-y-4 text-sm text-zinc-300">
-              <h3 className="text-sm text-green-400 uppercase tracking-[0.3em]">Lessons Learned</h3>
-              <ul className="space-y-3">
-                {study.lessons.map((lesson) => (
-                  <li key={lesson} className="flex items-start gap-3">
-                    <span className="text-green-400 mt-1">▹</span>
-                    <span>{lesson}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="border border-green-400/30 rounded-lg p-6 md:p-8 bg-black/50 space-y-4 text-sm text-zinc-300">
-              <h3 className="text-sm text-green-400 uppercase tracking-[0.3em]">Next Steps</h3>
-              <ul className="space-y-3">
-                {study.nextSteps.map((step) => (
-                  <li key={step} className="flex items-start gap-3">
-                    <span className="text-green-400 mt-1">▹</span>
-                    <span>{step}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </section>
-
           {/* ===== Case Study: Reflecting on the Work ===== */}
           <section className="space-y-6">
             <h2 className="text-lg text-green-400 uppercase tracking-[0.3em]">Reflecting on the Work</h2>
@@ -340,55 +315,85 @@ export default function AICreativeContentCaseStudyPage() {
           <section className="space-y-12">
             <h2 className="text-lg text-green-400 uppercase tracking-[0.3em]">Visual Walkthrough</h2>
             
-            {/* GIF Section 1 */}
-            <div className="space-y-4">
-              <div className="border border-green-400/30 rounded-lg p-6 md:p-8 bg-black/50">
-                <h3 className="text-sm text-green-400 uppercase tracking-[0.3em] mb-4">Section 1</h3>
-                <div className="aspect-video bg-zinc-900 border border-green-400/20 rounded-lg flex items-center justify-center mb-4">
-                  <p className="text-zinc-500 text-sm">GIF placeholder - Upload your first GIF here</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
+              {/* GIF Section 1 */}
+              <div className="flex">
+                <div className="border border-green-400/30 rounded-lg p-6 md:p-8 bg-black/50 flex flex-col w-full">
+                  <div className="aspect-square bg-zinc-900 border border-green-400/20 rounded-lg overflow-hidden mb-4 relative">
+                    <Image 
+                      src="/number_1.gif" 
+                      alt="GIF 1" 
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <h4 className="text-base font-semibold text-green-400 mb-2 mt-4">
+                    Prompt Building Flow
+                  </h4>
+                  <p className="text-sm text-zinc-300 leading-relaxed">
+                  The prompt-building flow grounds the AI with clear context to reduce hallucinations. By choosing the brief, content type, tactic, and medium, the user narrows what the model needs to generate, minimizing ambiguity. Users can then save their favorite outputs as inspiration or mood-board references.
+                  </p>
                 </div>
-                <p className="text-sm text-zinc-300 leading-relaxed">
-                  Add your explanatory copy here describing what this GIF demonstrates. This could show the initial brief builder, the step-by-step flow, or any key interaction pattern.
-                </p>
               </div>
-            </div>
 
-            {/* GIF Section 2 */}
-            <div className="space-y-4">
-              <div className="border border-green-400/30 rounded-lg p-6 md:p-8 bg-black/50">
-                <h3 className="text-sm text-green-400 uppercase tracking-[0.3em] mb-4">Section 2</h3>
-                <div className="aspect-video bg-zinc-900 border border-green-400/20 rounded-lg flex items-center justify-center mb-4">
-                  <p className="text-zinc-500 text-sm">GIF placeholder - Upload your second GIF here</p>
+              {/* GIF Section 2 */}
+              <div className="flex">
+                <div className="border border-green-400/30 rounded-lg p-6 md:p-8 bg-black/50 flex flex-col w-full">
+                  <div className="aspect-square bg-zinc-900 border border-green-400/20 rounded-lg overflow-hidden mb-4 relative">
+                    <Image 
+                      src="/number_2.gif" 
+                      alt="GIF 2" 
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <h4 className="text-base font-semibold text-green-400 mb-2 mt-4">
+                    Generation Controls
+                  </h4>
+                  <p className="text-sm text-zinc-300 leading-relaxed">
+                  The empty boxes show AI-generated options once the user sets the prompt and a control. This gives them a low-pressure way to explore ideas without starting from scratch. Since most people are better curators than creators, offering strong options upfront helps them see what’s possible with no guesswork or expertise required.
+                  </p>
                 </div>
-                <p className="text-sm text-zinc-300 leading-relaxed">
-                  Add your explanatory copy here describing what this GIF demonstrates. This could show the generation canvas, preview system, or adjustment controls.
-                </p>
               </div>
-            </div>
 
-            {/* GIF Section 3 */}
-            <div className="space-y-4">
-              <div className="border border-green-400/30 rounded-lg p-6 md:p-8 bg-black/50">
-                <h3 className="text-sm text-green-400 uppercase tracking-[0.3em] mb-4">Section 3</h3>
-                <div className="aspect-video bg-zinc-900 border border-green-400/20 rounded-lg flex items-center justify-center mb-4">
-                  <p className="text-zinc-500 text-sm">GIF placeholder - Upload your third GIF here</p>
+              {/* GIF Section 3 */}
+              <div className="flex">
+                <div className="border border-green-400/30 rounded-lg p-6 md:p-8 bg-black/50 flex flex-col w-full">
+                  <div className="aspect-square bg-zinc-900 border border-green-400/20 rounded-lg overflow-hidden mb-4 relative">
+                    <Image 
+                      src="/number_3.gif" 
+                      alt="GIF 3" 
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <h4 className="text-base font-semibold text-green-400 mb-2 mt-4">
+                    Post-Generation Edits
+                  </h4>
+                  <p className="text-sm text-zinc-300 leading-relaxed">
+                  When generating hybrid content (e.g., image + text or video + text), users can edit each element separately. This allows full control to refine visuals and text independently, avoiding the need to redo the entire creative set.
+                  </p>
                 </div>
-                <p className="text-sm text-zinc-300 leading-relaxed">
-                  Add your explanatory copy here describing what this GIF demonstrates. This could show multimodal combination, the smart chip interactions, or the waterfall effect.
-                </p>
               </div>
-            </div>
 
-            {/* GIF Section 4 */}
-            <div className="space-y-4">
-              <div className="border border-green-400/30 rounded-lg p-6 md:p-8 bg-black/50">
-                <h3 className="text-sm text-green-400 uppercase tracking-[0.3em] mb-4">Section 4</h3>
-                <div className="aspect-video bg-zinc-900 border border-green-400/20 rounded-lg flex items-center justify-center mb-4">
-                  <p className="text-zinc-500 text-sm">GIF placeholder - Upload your fourth GIF here</p>
+              {/* GIF Section 4 */}
+              <div className="flex">
+                <div className="border border-green-400/30 rounded-lg p-6 md:p-8 bg-black/50 flex flex-col w-full">
+                  <div className="aspect-square bg-zinc-900 border border-green-400/20 rounded-lg overflow-hidden mb-4 relative">
+                    <Image 
+                      src="/number_4.gif" 
+                      alt="GIF 4" 
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <h4 className="text-base font-semibold text-green-400 mb-2 mt-4">
+                    Collaboration
+                  </h4>
+                  <p className="text-sm text-zinc-300 leading-relaxed">
+                  Users can save ideas in folders and collaborate in real time. Shared spaces—like moodboards or inspiration boards—help teams iterate faster, make decisions quicker, and keep the creative process fluid and enjoyable.
+                  </p>
                 </div>
-                <p className="text-sm text-zinc-300 leading-relaxed">
-                  Add your explanatory copy here describing what this GIF demonstrates. This could show the final output, the full workflow, or any advanced features.
-                </p>
               </div>
             </div>
           </section>
@@ -405,12 +410,6 @@ export default function AICreativeContentCaseStudyPage() {
                 </p>
               </div>
               <div className="flex items-center gap-4">
-                <Link
-                  href="mailto:Pablo@ProgrammingPablo.com"
-                  className="border border-green-400 text-green-400 px-5 py-2 rounded-md hover:bg-green-400 hover:text-black transition-colors"
-                >
-                  Email Pablo
-                </Link>
                 <Link
                   href="/case-studies"
                   className="text-sm text-green-400 hover:text-green-300 transition-colors"

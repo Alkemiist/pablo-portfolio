@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Navigation from '../components/Navigation';
 import { caseStudies } from './data';
+import Image from 'next/image';
 
 export default function CaseStudies() {
   return (
@@ -223,7 +224,7 @@ export default function CaseStudies() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {caseStudies.map((study) => (
+              {caseStudies.map((study, index) => (
                 <Link
                   key={study.slug}
                   href={`/case-studies/${study.slug}`}
@@ -239,16 +240,24 @@ export default function CaseStudies() {
                       <span className="ml-4 text-green-400 text-sm font-mono">{study.preview.filename}</span>
                     </div>
 
-                    <div className={`h-48 ${study.preview.gradientClass} flex items-center justify-center`}>
-                      <div className="text-center text-white">
-                        <div className="text-4xl mb-2">{study.preview.icon}</div>
-                        <div className="text-sm font-mono">[IMAGE_PLACEHOLDER]</div>
-                      </div>
+                    <div className={`h-48 ${index === 0 ? 'relative' : study.preview.gradientClass} flex items-center justify-center overflow-hidden`}>
+                      {index === 0 ? (
+                        <Image 
+                          src="/god-flow.png" 
+                          alt={study.title} 
+                          fill
+                          className="object-cover"
+                        />
+                      ) : (
+                        <div className="text-center text-white">
+                          <div className="text-4xl mb-2">{study.preview.icon}</div>
+                        </div>
+                      )}
                     </div>
 
                     <div className="p-6">
                       <h3 className="text-xl font-bold text-zinc-50 mb-3 group-hover:text-green-400 transition-colors">
-                        {study.title}
+                        {index === 0 ? 'AI-Powered Creative Content Generation' : study.title}
                       </h3>
                       <p className="text-zinc-400 text-sm leading-relaxed mb-4">
                         {study.subtitle}
