@@ -1,12 +1,12 @@
 import { CaseStudy } from './caseStudyTypes';
 import { ecommerceCheckoutCaseStudy } from './ecommerceCheckout';
-import { mobileBankingCaseStudy } from './mobileBanking';
-import { saasDashboardCaseStudy } from './saasDashboard';
+// import { mobileBankingCaseStudy } from './mobileBanking';
+// import { saasDashboardCaseStudy } from './saasDashboard';
 
 export const caseStudies: CaseStudy[] = [
   ecommerceCheckoutCaseStudy,
-  mobileBankingCaseStudy,
-  saasDashboardCaseStudy,
+  // mobileBankingCaseStudy,
+  // saasDashboardCaseStudy,
 ];
 
 export function getCaseStudyBySlug(slug: string): CaseStudy | undefined {

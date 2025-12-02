@@ -4,6 +4,7 @@ import Navigation from '../../components/Navigation';
 import { caseStudies, getCaseStudyBySlug } from '../data';
 import EcommerceCheckoutDemo from '../components/EcommerceCheckoutDemo';
 import { ComponentType } from 'react';
+import Image from 'next/image';
 
 type CaseStudyPageProps = {
   params: {
@@ -32,16 +33,42 @@ export default function CaseStudyDetail({ params }: CaseStudyPageProps) {
     <div className="min-h-screen bg-black text-zinc-100">
       <Navigation />
 
-      <div className="pt-24 pb-20 px-4 sm:px-6 lg:px-8 font-mono">
+      {/* Hero Image - At the very top */}
+      <div className="w-full pt-24 pb-12 overflow-hidden">
+        <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+          <img 
+            src="/Feature-output.png" 
+            alt={`${study.title} - Final UI Output`}
+            className="w-full h-auto object-contain"
+            style={{ display: 'block', maxHeight: '75vh' }}
+            loading="eager"
+          />
+        </div>
+      </div>
+
+      {/* Floating Back Button */}
+      <Link
+        href="/case-studies"
+        className="fixed top-28 left-4 sm:left-6 z-50 inline-flex items-center gap-2 px-4 py-2.5 bg-black/90 backdrop-blur-sm border border-green-400/50 rounded-lg text-green-400 text-sm font-mono hover:border-green-400 hover:bg-black hover:shadow-[0_0_20px_rgba(34,197,94,0.4)] transition-all duration-300 shadow-[0_0_10px_rgba(34,197,94,0.2)]"
+      >
+        <svg 
+          className="w-4 h-4" 
+          fill="none" 
+          stroke="currentColor" 
+          viewBox="0 0 24 24"
+        >
+          <path 
+            strokeLinecap="round" 
+            strokeLinejoin="round" 
+            strokeWidth={2} 
+            d="M15 19l-7-7 7-7" 
+          />
+        </svg>
+        <span>Back</span>
+      </Link>
+
+      <div className="pb-20 px-4 sm:px-6 lg:px-8 font-mono">
         <div className="max-w-6xl mx-auto space-y-16">
-          <div className="flex items-center justify-between gap-4">
-            <Link
-              href="/case-studies"
-              className="inline-flex items-center text-green-400 text-sm hover:text-green-300 transition-colors"
-            >
-              <span className="text-lg mr-2">←</span> Back to Case Studies
-            </Link>
-          </div>
 
           <header className="space-y-8">
             <div className="space-y-4">
