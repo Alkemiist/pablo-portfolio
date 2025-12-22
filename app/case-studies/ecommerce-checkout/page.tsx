@@ -334,7 +334,7 @@ export default function AICreativeContentCaseStudyPage() {
                 <div className="border border-slate-700/50 rounded-lg p-6 md:p-8 bg-slate-800/30 backdrop-blur-sm flex flex-col w-full hover:border-indigo-500/50 hover:shadow-lg hover:shadow-indigo-500/10 transition-all duration-300">
                   <div className="aspect-square bg-slate-900 border border-slate-700/50 rounded-lg overflow-hidden mb-4 relative">
                     <Image 
-                      src="/number_1.gif" 
+                      src="/Number_1.gif" 
                       alt="GIF 1" 
                       fill
                       className="object-cover"
