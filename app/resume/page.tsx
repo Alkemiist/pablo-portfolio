@@ -3,21 +3,21 @@ import { Linkedin, Github } from 'lucide-react';
 
 export default function Resume() {
   return (
-    <div className="min-h-screen bg-[#0a0a0a] relative overflow-hidden font-mono">
-      {/* Terminal scan line overlay */}
-      <div className="fixed inset-0 bg-[linear-gradient(transparent_50%,rgba(0,255,0,.02)_50%,rgba(0,255,0,.04)_51%,transparent_51%)] bg-size-[100%_3px] opacity-60 pointer-events-none animate-[scan_15s_linear_infinite]"></div>
+    <div className="min-h-screen bg-[#0f0f23] relative overflow-hidden">
+      {/* Subtle gradient background */}
+      <div className="fixed inset-0 bg-gradient-to-br from-indigo-950/20 via-purple-950/10 to-cyan-950/20 pointer-events-none"></div>
       
-      {/* Subtle background noise/grid */}
-      <div className="fixed inset-0 bg-[linear-gradient(rgba(0,255,0,.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,255,0,.03)_1px,transparent_1px)] bg-size-[50px_50px] pointer-events-none opacity-20"></div>
+      {/* Animated grid pattern */}
+      <div className="fixed inset-0 bg-[linear-gradient(rgba(99,102,241,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(99,102,241,0.03)_1px,transparent_1px)] bg-[size:64px_64px] pointer-events-none opacity-40"></div>
       
       <Navigation />
       
-      <div className="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
+      <div className="pt-24 pb-16 px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-4xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-12 relative z-10">
-            <h1 className="text-4xl font-bold text-[#00ff41] mb-4 drop-shadow-[0_0_15px_rgba(0,255,65,0.6),0_0_30px_rgba(0,255,65,0.3)] tracking-wider">PABLO VILLARREAL</h1>
-            <p className="text-md text-[#ffea00] mb-6 drop-shadow-[0_0_10px_rgba(255,234,0,0.5)] font-medium">Founding Product Designer & Engineer</p>
+          <div className="text-center mb-12">
+            <h1 className="text-4xl font-bold text-slate-50 mb-4 tracking-tight">Pablo Villarreal</h1>
+            <p className="text-lg text-slate-300 mb-6 font-medium">Staff Product Designer & Engineer</p>
             {/* <div className="flex flex-wrap justify-center gap-4 text-[#00ff41]/80">
               <span className="hover:text-[#00ff41] transition-colors">📧 Pablo@ProgrammingPablo.com</span>
               <span className="hover:text-[#00ff41] transition-colors">📱 (469) 475-5508</span>
@@ -48,56 +48,103 @@ export default function Resume() {
           </section> */}
 
           {/* Skills */}
-          <section className="mb-12 relative">
-            {/* Glitchy scan line effect */}
-            <div className="absolute inset-0 bg-[linear-gradient(transparent_50%,rgba(0,255,0,.03)_50%,rgba(0,255,0,.05)_51%,transparent_51%)] bg-size-[100%_4px] opacity-80 pointer-events-none animate-[scan_20s_linear_infinite]"></div>
+          <section className="mb-12">
+            <h2 className="text-2xl font-bold text-slate-50 mb-6">Skills</h2>
             
-            <h2 className="text-2xl font-bold text-[#00ff41] mb-6 drop-shadow-[0_0_10px_rgba(0,255,65,0.5)] animate-pulse">Skills</h2>
-            
-            <div className="grid md:grid-cols-2 gap-8 relative z-10">
+            <div className="grid md:grid-cols-2 gap-8">
               <div>
-                <h3 className="text-lg font-semibold text-[#ffea00] mb-4 drop-shadow-[0_0_8px_rgba(255,234,0,0.4)]">Design</h3>
+                <h3 className="text-lg font-semibold text-indigo-400 mb-4">Design</h3>
                 <div className="flex flex-wrap gap-2">
-                  <span className="inline-flex items-center px-3 py-1.5 rounded-full text-sm font-medium bg-[#00ff41]/10 text-[#00ff41] border border-[#00ff41]/30 hover:bg-[#00ff41]/20 transition-all duration-300 shadow-[0_0_10px_rgba(0,255,65,0.3)] hover:shadow-[0_0_15px_rgba(0,255,65,0.5)]">
+                  <span className="inline-flex items-center px-3 py-1.5 rounded-lg text-sm font-medium bg-slate-800/50 text-slate-300 border border-slate-700/50 hover:bg-slate-700/50 hover:border-indigo-500/50 transition-all duration-300">
                     User Experience Design
                   </span>
-                  <span className="inline-flex items-center px-3 py-1.5 rounded-full text-sm font-medium bg-[#00ff41]/10 text-[#00ff41] border border-[#00ff41]/30 hover:bg-[#00ff41]/20 transition-all duration-300 shadow-[0_0_10px_rgba(0,255,65,0.3)] hover:shadow-[0_0_15px_rgba(0,255,65,0.5)]">
+                  <span className="inline-flex items-center px-3 py-1.5 rounded-lg text-sm font-medium bg-slate-800/50 text-slate-300 border border-slate-700/50 hover:bg-slate-700/50 hover:border-indigo-500/50 transition-all duration-300">
                     User Interface Design
                   </span>
-                  <span className="inline-flex items-center px-3 py-1.5 rounded-full text-sm font-medium bg-[#00ff41]/10 text-[#00ff41] border border-[#00ff41]/30 hover:bg-[#00ff41]/20 transition-all duration-300 shadow-[0_0_10px_rgba(0,255,65,0.3)] hover:shadow-[0_0_15px_rgba(0,255,65,0.5)]">
+                  <span className="inline-flex items-center px-3 py-1.5 rounded-lg text-sm font-medium bg-slate-800/50 text-slate-300 border border-slate-700/50 hover:bg-slate-700/50 hover:border-indigo-500/50 transition-all duration-300">
                     Design Systems
                   </span>
-                  <span className="inline-flex items-center px-3 py-1.5 rounded-full text-sm font-medium bg-[#00ff41]/10 text-[#00ff41] border border-[#00ff41]/30 hover:bg-[#00ff41]/20 transition-all duration-300 shadow-[0_0_10px_rgba(0,255,65,0.3)] hover:shadow-[0_0_15px_rgba(0,255,65,0.5)]">
+                  <span className="inline-flex items-center px-3 py-1.5 rounded-lg text-sm font-medium bg-slate-800/50 text-slate-300 border border-slate-700/50 hover:bg-slate-700/50 hover:border-indigo-500/50 transition-all duration-300">
                     Prototyping
                   </span>
-                  <span className="inline-flex items-center px-3 py-1.5 rounded-full text-sm font-medium bg-[#00ff41]/10 text-[#00ff41] border border-[#00ff41]/30 hover:bg-[#00ff41]/20 transition-all duration-300 shadow-[0_0_10px_rgba(0,255,65,0.3)] hover:shadow-[0_0_15px_rgba(0,255,65,0.5)]">
+                  <span className="inline-flex items-center px-3 py-1.5 rounded-lg text-sm font-medium bg-slate-800/50 text-slate-300 border border-slate-700/50 hover:bg-slate-700/50 hover:border-indigo-500/50 transition-all duration-300">
                     User Research
                   </span>
-                  <span className="inline-flex items-center px-3 py-1.5 rounded-full text-sm font-medium bg-[#00ff41]/10 text-[#00ff41] border border-[#00ff41]/30 hover:bg-[#00ff41]/20 transition-all duration-300 shadow-[0_0_10px_rgba(0,255,65,0.3)] hover:shadow-[0_0_15px_rgba(0,255,65,0.5)]">
+                  <span className="inline-flex items-center px-3 py-1.5 rounded-lg text-sm font-medium bg-slate-800/50 text-slate-300 border border-slate-700/50 hover:bg-slate-700/50 hover:border-indigo-500/50 transition-all duration-300">
+                    Information Architecture
+                  </span>
+                  <span className="inline-flex items-center px-3 py-1.5 rounded-lg text-sm font-medium bg-slate-800/50 text-slate-300 border border-slate-700/50 hover:bg-slate-700/50 hover:border-indigo-500/50 transition-all duration-300">
+                    Visual Design
+                  </span>
+                  <span className="inline-flex items-center px-3 py-1.5 rounded-lg text-sm font-medium bg-slate-800/50 text-slate-300 border border-slate-700/50 hover:bg-slate-700/50 hover:border-indigo-500/50 transition-all duration-300">
+                    Accessibility
+                  </span>
+                  <span className="inline-flex items-center px-3 py-1.5 rounded-lg text-sm font-medium bg-slate-800/50 text-slate-300 border border-slate-700/50 hover:bg-slate-700/50 hover:border-indigo-500/50 transition-all duration-300">
                     Figma, Sketch, Adobe
                   </span>
                 </div>
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-[#ffea00] mb-4 drop-shadow-[0_0_8px_rgba(255,234,0,0.4)]">Development</h3>
+                <h3 className="text-lg font-semibold text-indigo-400 mb-4">Development</h3>
                 <div className="flex flex-wrap gap-2">
-                  <span className="inline-flex items-center px-3 py-1.5 rounded-full text-sm font-medium bg-[#00ff41]/10 text-[#00ff41] border border-[#00ff41]/30 hover:bg-[#00ff41]/20 transition-all duration-300 shadow-[0_0_10px_rgba(0,255,65,0.3)] hover:shadow-[0_0_15px_rgba(0,255,65,0.5)]">
+                  <span className="inline-flex items-center px-3 py-1.5 rounded-lg text-sm font-medium bg-slate-800/50 text-slate-300 border border-slate-700/50 hover:bg-slate-700/50 hover:border-indigo-500/50 transition-all duration-300">
                     React, TypeScript
                   </span>
-                  <span className="inline-flex items-center px-3 py-1.5 rounded-full text-sm font-medium bg-[#00ff41]/10 text-[#00ff41] border border-[#00ff41]/30 hover:bg-[#00ff41]/20 transition-all duration-300 shadow-[0_0_10px_rgba(0,255,65,0.3)] hover:shadow-[0_0_15px_rgba(0,255,65,0.5)]">
+                  <span className="inline-flex items-center px-3 py-1.5 rounded-lg text-sm font-medium bg-slate-800/50 text-slate-300 border border-slate-700/50 hover:bg-slate-700/50 hover:border-indigo-500/50 transition-all duration-300">
                     Next.js
                   </span>
-                  <span className="inline-flex items-center px-3 py-1.5 rounded-full text-sm font-medium bg-[#00ff41]/10 text-[#00ff41] border border-[#00ff41]/30 hover:bg-[#00ff41]/20 transition-all duration-300 shadow-[0_0_10px_rgba(0,255,65,0.3)] hover:shadow-[0_0_15px_rgba(0,255,65,0.5)]">
+                  <span className="inline-flex items-center px-3 py-1.5 rounded-lg text-sm font-medium bg-slate-800/50 text-slate-300 border border-slate-700/50 hover:bg-slate-700/50 hover:border-indigo-500/50 transition-all duration-300">
                     HTML5, CSS3, JS
                   </span>
-                  <span className="inline-flex items-center px-3 py-1.5 rounded-full text-sm font-medium bg-[#00ff41]/10 text-[#00ff41] border border-[#00ff41]/30 hover:bg-[#00ff41]/20 transition-all duration-300 shadow-[0_0_10px_rgba(0,255,65,0.3)] hover:shadow-[0_0_15px_rgba(0,255,65,0.5)]">
+                  <span className="inline-flex items-center px-3 py-1.5 rounded-lg text-sm font-medium bg-slate-800/50 text-slate-300 border border-slate-700/50 hover:bg-slate-700/50 hover:border-indigo-500/50 transition-all duration-300">
                     Tailwind CSS
                   </span>
-                  <span className="inline-flex items-center px-3 py-1.5 rounded-full text-sm font-medium bg-[#00ff41]/10 text-[#00ff41] border border-[#00ff41]/30 hover:bg-[#00ff41]/20 transition-all duration-300 shadow-[0_0_10px_rgba(0,255,65,0.3)] hover:shadow-[0_0_15px_rgba(0,255,65,0.5)]">
+                  <span className="inline-flex items-center px-3 py-1.5 rounded-lg text-sm font-medium bg-slate-800/50 text-slate-300 border border-slate-700/50 hover:bg-slate-700/50 hover:border-indigo-500/50 transition-all duration-300">
+                    Node.js
+                  </span>
+                  <span className="inline-flex items-center px-3 py-1.5 rounded-lg text-sm font-medium bg-slate-800/50 text-slate-300 border border-slate-700/50 hover:bg-slate-700/50 hover:border-indigo-500/50 transition-all duration-300">
+                    API Integration
+                  </span>
+                  <span className="inline-flex items-center px-3 py-1.5 rounded-lg text-sm font-medium bg-slate-800/50 text-slate-300 border border-slate-700/50 hover:bg-slate-700/50 hover:border-indigo-500/50 transition-all duration-300">
+                    Component Libraries
+                  </span>
+                  <span className="inline-flex items-center px-3 py-1.5 rounded-lg text-sm font-medium bg-slate-800/50 text-slate-300 border border-slate-700/50 hover:bg-slate-700/50 hover:border-indigo-500/50 transition-all duration-300">
                     Git, GitHub
                   </span>
-                  <span className="inline-flex items-center px-3 py-1.5 rounded-full text-sm font-medium bg-[#00ff41]/10 text-[#00ff41] border border-[#00ff41]/30 hover:bg-[#00ff41]/20 transition-all duration-300 shadow-[0_0_10px_rgba(0,255,65,0.3)] hover:shadow-[0_0_15px_rgba(0,255,65,0.5)]">
+                  <span className="inline-flex items-center px-3 py-1.5 rounded-lg text-sm font-medium bg-slate-800/50 text-slate-300 border border-slate-700/50 hover:bg-slate-700/50 hover:border-indigo-500/50 transition-all duration-300">
                     Responsive Design
+                  </span>
+                </div>
+              </div>
+              <div className="md:col-span-2">
+                <h3 className="text-lg font-semibold text-indigo-400 mb-4">AI</h3>
+                <div className="flex flex-wrap gap-2">
+                  <span className="inline-flex items-center px-3 py-1.5 rounded-lg text-sm font-medium bg-slate-800/50 text-slate-300 border border-slate-700/50 hover:bg-slate-700/50 hover:border-indigo-500/50 transition-all duration-300">
+                    Prompt Engineering
+                  </span>
+                  <span className="inline-flex items-center px-3 py-1.5 rounded-lg text-sm font-medium bg-slate-800/50 text-slate-300 border border-slate-700/50 hover:bg-slate-700/50 hover:border-indigo-500/50 transition-all duration-300">
+                    AI Product Design
+                  </span>
+                  <span className="inline-flex items-center px-3 py-1.5 rounded-lg text-sm font-medium bg-slate-800/50 text-slate-300 border border-slate-700/50 hover:bg-slate-700/50 hover:border-indigo-500/50 transition-all duration-300">
+                    LLM Integration
+                  </span>
+                  <span className="inline-flex items-center px-3 py-1.5 rounded-lg text-sm font-medium bg-slate-800/50 text-slate-300 border border-slate-700/50 hover:bg-slate-700/50 hover:border-indigo-500/50 transition-all duration-300">
+                    Human-AI Interaction Design
+                  </span>
+                  <span className="inline-flex items-center px-3 py-1.5 rounded-lg text-sm font-medium bg-slate-800/50 text-slate-300 border border-slate-700/50 hover:bg-slate-700/50 hover:border-indigo-500/50 transition-all duration-300">
+                    AI-assisted Workflows
+                  </span>
+                  <span className="inline-flex items-center px-3 py-1.5 rounded-lg text-sm font-medium bg-slate-800/50 text-slate-300 border border-slate-700/50 hover:bg-slate-700/50 hover:border-indigo-500/50 transition-all duration-300">
+                    AI Prototyping & Testing
+                  </span>
+                  <span className="inline-flex items-center px-3 py-1.5 rounded-lg text-sm font-medium bg-slate-800/50 text-slate-300 border border-slate-700/50 hover:bg-slate-700/50 hover:border-indigo-500/50 transition-all duration-300">
+                    RAG Systems
+                  </span>
+                  <span className="inline-flex items-center px-3 py-1.5 rounded-lg text-sm font-medium bg-slate-800/50 text-slate-300 border border-slate-700/50 hover:bg-slate-700/50 hover:border-indigo-500/50 transition-all duration-300">
+                    Conversational AI
+                  </span>
+                  <span className="inline-flex items-center px-3 py-1.5 rounded-lg text-sm font-medium bg-slate-800/50 text-slate-300 border border-slate-700/50 hover:bg-slate-700/50 hover:border-indigo-500/50 transition-all duration-300">
+                    Vector Databases
                   </span>
                 </div>
               </div>
@@ -105,158 +152,173 @@ export default function Resume() {
           </section>
 
           {/* Experience */}
-          <section className="mb-12 relative z-10">
-            <h2 className="text-2xl font-bold text-[#00ff41] mb-6 drop-shadow-[0_0_10px_rgba(0,255,65,0.5)] animate-pulse">Experience</h2>
+          <section className="mb-12">
+            <h2 className="text-2xl font-bold text-slate-50 mb-6">Experience</h2>
             
-            <div className="space-y-8">
+            <div className="space-y-6">
               {/* Job 1 - ØPUS Intelligence */}
-              <div className="border-l-4 border-[#00ff41] pl-6 bg-[#00ff41]/5 p-4 rounded-r-lg hover:bg-[#00ff41]/10 transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,255,65,0.3)]">
+              <div className="border-l-4 border-indigo-500 pl-6 bg-slate-800/30 backdrop-blur-sm border-r border-t border-b border-slate-700/50 rounded-r-lg p-6 hover:bg-slate-800/50 transition-all duration-300">
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2">
-                  <h3 className="text-xl font-semibold text-[#00ff41] drop-shadow-[0_0_8px_rgba(0,255,65,0.6)]">Founding Designer + Frontend Engineer</h3>
-                  <span className="text-[#ffea00] font-medium">May 2023 - Present</span>
+                  <h3 className="text-xl font-semibold text-slate-50">Founding Designer + Frontend Engineer</h3>
+                  <span className="text-indigo-400 font-medium text-sm">May 2023 - Present</span>
                 </div>
-                <p className="text-[#00ff41]/90 text-sm font-medium mb-3 uppercase tracking-wider">ØPUS Intelligence · Full-time</p>
-                <ul className="space-y-2 text-[#00ff41]/70 list-none pl-0">
-                  <li className="pl-4 relative before:content-['•'] before:absolute before:left-0">Designed and built AI-driven products from zero to one — shaping the product vision as both designer and engineer</li>
-                  <li className="pl-4 relative before:content-['•'] before:absolute before:left-0">Architected the entire design lifecycle: discovery, validation, systems thinking, and high-fidelity execution</li>
-                  <li className="pl-4 relative before:content-['•'] before:absolute before:left-0">Built products using Next.js and Node.js, bringing designs to life in code with seamless vision-to-implementation alignment</li>
-                  <li className="pl-4 relative before:content-['•'] before:absolute before:left-0">Spent two years designing directly for AI experiences, exploring how intelligence enhances human creativity</li>
+                <p className="text-indigo-400 text-sm font-medium mb-3">ØPUS Intelligence · Full-time</p>
+                <ul className="space-y-2 text-slate-300 text-sm list-none pl-0">
+                  <li className="pl-4 relative before:content-['•'] before:absolute before:left-0 before:text-indigo-400">Designed and built AI-driven products from zero to one — shaping the product vision as both designer and engineer</li>
+                  <li className="pl-4 relative before:content-['•'] before:absolute before:left-0 before:text-indigo-400">Architected the entire design lifecycle: discovery, validation, systems thinking, and high-fidelity execution</li>
+                  <li className="pl-4 relative before:content-['•'] before:absolute before:left-0 before:text-indigo-400">Built products using Next.js and Node.js, bringing designs to life in code with seamless vision-to-implementation alignment</li>
+                  <li className="pl-4 relative before:content-['•'] before:absolute before:left-0 before:text-indigo-400">Spent two years designing directly for AI experiences, exploring how intelligence enhances human creativity</li>
                 </ul>
               </div>
 
               {/* Job 2 - IPSY */}
-              <div className="border-l-4 border-[#00ff41] pl-6 bg-[#00ff41]/5 p-4 rounded-r-lg hover:bg-[#00ff41]/10 transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,255,65,0.3)]">
+              <div className="border-l-4 border-indigo-500 pl-6 bg-slate-800/30 backdrop-blur-sm border-r border-t border-b border-slate-700/50 rounded-r-lg p-6 hover:bg-slate-800/50 transition-all duration-300">
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2">
-                  <h3 className="text-xl font-semibold text-[#00ff41] drop-shadow-[0_0_8px_rgba(0,255,65,0.6)]">Lead Product Designer</h3>
-                  <span className="text-[#ffea00] font-medium">Aug 2021 - May 2023</span>
+                  <h3 className="text-xl font-semibold text-slate-50">Lead Product Designer</h3>
+                  <span className="text-indigo-400 font-medium text-sm">Aug 2021 - May 2023</span>
                 </div>
-                <p className="text-[#00ff41]/90 text-sm font-medium mb-3 uppercase tracking-wider">IPSY · Full-time</p>
-                <ul className="space-y-2 text-[#00ff41]/70 list-none pl-0">
-                  <li className="pl-4 relative before:content-['•'] before:absolute before:left-0">Led design for accounts, subscriptions, and personalization for 4M+ members across IPSY and BoxyCharm</li>
-                  <li className="pl-4 relative before:content-['•'] before:absolute before:left-0">Redesigned Refreshments brand from the ground up — balancing delight with clarity, improving the entire subscription flow</li>
-                  <li className="pl-4 relative before:content-['•'] before:absolute before:left-0">Restructured the design process between PMs, UX, and engineering — increased efficiency 50%, fostered transparency and accountability</li>
-                  <li className="pl-4 relative before:content-['•'] before:absolute before:left-0">Built and scaled a design system that unified brand and product experiences — empowering teams to move faster while maintaining precision</li>
+                <p className="text-indigo-400 text-sm font-medium mb-3">IPSY · Full-time</p>
+                <ul className="space-y-2 text-slate-300 text-sm list-none pl-0">
+                  <li className="pl-4 relative before:content-['•'] before:absolute before:left-0 before:text-indigo-400">Led design for accounts, subscriptions, and personalization for 4M+ members across IPSY and BoxyCharm</li>
+                  <li className="pl-4 relative before:content-['•'] before:absolute before:left-0 before:text-indigo-400">Redesigned Refreshments brand from the ground up — balancing delight with clarity, improving the entire subscription flow</li>
+                  <li className="pl-4 relative before:content-['•'] before:absolute before:left-0 before:text-indigo-400">Restructured the design process between PMs, UX, and engineering — increased efficiency 50%, fostered transparency and accountability</li>
+                  <li className="pl-4 relative before:content-['•'] before:absolute before:left-0 before:text-indigo-400">Built and scaled a design system that unified brand and product experiences — empowering teams to move faster while maintaining precision</li>
                 </ul>
               </div>
 
               {/* Job 3 - Solo Stove */}
-              <div className="border-l-4 border-[#00ff41] pl-6 bg-[#00ff41]/5 p-4 rounded-r-lg hover:bg-[#00ff41]/10 transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,255,65,0.3)]">
+              <div className="border-l-4 border-indigo-500 pl-6 bg-slate-800/30 backdrop-blur-sm border-r border-t border-b border-slate-700/50 rounded-r-lg p-6 hover:bg-slate-800/50 transition-all duration-300">
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2">
-                  <h3 className="text-xl font-semibold text-[#00ff41] drop-shadow-[0_0_8px_rgba(0,255,65,0.6)]">Lead UX/UI Designer</h3>
-                  <span className="text-[#ffea00] font-medium">Mar 2021 - Aug 2021</span>
+                  <h3 className="text-xl font-semibold text-slate-50">Lead UX/UI Designer</h3>
+                  <span className="text-indigo-400 font-medium text-sm">Mar 2021 - Aug 2021</span>
                 </div>
-                <p className="text-[#00ff41]/90 text-sm font-medium mb-3 uppercase tracking-wider">Solo Stove · Contract</p>
-                <ul className="space-y-2 text-[#00ff41]/70 list-none pl-0">
-                  <li className="pl-4 relative before:content-['•'] before:absolute before:left-0">Led the redesign of their core e-commerce experience for U.S. and Canadian markets</li>
-                  <li className="pl-4 relative before:content-['•'] before:absolute before:left-0">Built a scalable, modular design system that enabled global expansion</li>
-                  <li className="pl-4 relative before:content-['•'] before:absolute before:left-0">Established the company's first structured workflow between UX, Product, and Engineering</li>
-                  <li className="pl-4 relative before:content-['•'] before:absolute before:left-0">Transitioned the org to Figma and embedded UX principles into product strategy — evolved them from a functional site into an emotional, high-performing product</li>
+                <p className="text-indigo-400 text-sm font-medium mb-3">Solo Stove · Contract</p>
+                <ul className="space-y-2 text-slate-300 text-sm list-none pl-0">
+                  <li className="pl-4 relative before:content-['•'] before:absolute before:left-0 before:text-indigo-400">Led the redesign of their core e-commerce experience for U.S. and Canadian markets</li>
+                  <li className="pl-4 relative before:content-['•'] before:absolute before:left-0 before:text-indigo-400">Built a scalable, modular design system that enabled global expansion</li>
+                  <li className="pl-4 relative before:content-['•'] before:absolute before:left-0 before:text-indigo-400">Established the company's first structured workflow between UX, Product, and Engineering</li>
+                  <li className="pl-4 relative before:content-['•'] before:absolute before:left-0 before:text-indigo-400">Transitioned the org to Figma and embedded UX principles into product strategy — evolved them from a functional site into an emotional, high-performing product</li>
                 </ul>
               </div>
 
-              {/* Job 4 - Globe Life */}
-              <div className="border-l-4 border-[#00ff41] pl-6 bg-[#00ff41]/5 p-4 rounded-r-lg hover:bg-[#00ff41]/10 transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,255,65,0.3)]">
+              {/* Job 4 - Tesla */}
+              <div className="border-l-4 border-indigo-500 pl-6 bg-slate-800/30 backdrop-blur-sm border-r border-t border-b border-slate-700/50 rounded-r-lg p-6 hover:bg-slate-800/50 transition-all duration-300">
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2">
-                  <h3 className="text-xl font-semibold text-[#00ff41] drop-shadow-[0_0_8px_rgba(0,255,65,0.6)]">Senior UX/UI Designer</h3>
-                  <span className="text-[#ffea00] font-medium">Aug 2019 - Mar 2021</span>
+                  <h3 className="text-xl font-semibold text-slate-50">Senior Product Designer</h3>
+                  <span className="text-indigo-400 font-medium text-sm">Mar 2020 - Mar 2021</span>
                 </div>
-                <p className="text-[#00ff41]/90 text-sm font-medium mb-3 uppercase tracking-wider">Globe Life · Full-time</p>
-                <ul className="space-y-2 text-[#00ff41]/70 list-none pl-0">
-                  <li className="pl-4 relative before:content-['•'] before:absolute before:left-0">Led one of the company's most ambitious initiatives: consolidating seven subsidiary brands into a single unified platform</li>
-                  <li className="pl-4 relative before:content-['•'] before:absolute before:left-0">Developed a tailored process to coordinate across eight distinct teams — ensuring alignment on vision and execution</li>
-                  <li className="pl-4 relative before:content-['•'] before:absolute before:left-0">Built a comprehensive design system that streamlined collaboration across hundreds of user flows and components</li>
-                  <li className="pl-4 relative before:content-['•'] before:absolute before:left-0">Contributed to frontend development — ensuring every design decision was grounded in technical feasibility and performance</li>
+                <p className="text-indigo-400 text-sm font-medium mb-3">Tesla · Contract</p>
+                <ul className="space-y-2 text-slate-300 text-sm list-none pl-0">
+                  <li className="pl-4 relative before:content-['•'] before:absolute before:left-0 before:text-indigo-400">Designed core user experiences for the Tesla mobile app — focusing on vehicle control, charging, and ownership features that connect millions of owners to their vehicles</li>
+                  <li className="pl-4 relative before:content-['•'] before:absolute before:left-0 before:text-indigo-400">Led design initiatives for tesla.com, creating seamless pathways from discovery to purchase — balancing technical complexity with intuitive user flows</li>
+                  <li className="pl-4 relative before:content-['•'] before:absolute before:left-0 before:text-indigo-400">Collaborated with engineering teams to ensure design fidelity across web and mobile platforms — maintaining consistency while optimizing for each platform's unique capabilities</li>
+                  <li className="pl-4 relative before:content-['•'] before:absolute before:left-0 before:text-indigo-400">Applied systems thinking to complex product ecosystems — designing experiences that scale across multiple touchpoints while preserving Tesla's brand identity</li>
                 </ul>
               </div>
 
-              {/* Job 5 - Masergy */}
-              <div className="border-l-4 border-[#00ff41] pl-6 bg-[#00ff41]/5 p-4 rounded-r-lg hover:bg-[#00ff41]/10 transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,255,65,0.3)]">
+              {/* Job 5 - Globe Life */}
+              <div className="border-l-4 border-indigo-500 pl-6 bg-slate-800/30 backdrop-blur-sm border-r border-t border-b border-slate-700/50 rounded-r-lg p-6 hover:bg-slate-800/50 transition-all duration-300">
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2">
-                  <h3 className="text-xl font-semibold text-[#00ff41] drop-shadow-[0_0_8px_rgba(0,255,65,0.6)]">UX Designer</h3>
-                  <span className="text-[#ffea00] font-medium">Aug 2016 - Aug 2019</span>
+                  <h3 className="text-xl font-semibold text-slate-50">Senior UX/UI Designer</h3>
+                  <span className="text-indigo-400 font-medium text-sm">Aug 2019 - Mar 2021</span>
                 </div>
-                <p className="text-[#00ff41]/90 text-sm font-medium mb-3 uppercase tracking-wider">Masergy · Full-time</p>
-                <ul className="space-y-2 text-[#00ff41]/70 list-none pl-0">
-                  <li className="pl-4 relative before:content-['•'] before:absolute before:left-0">Shaped digital experiences across web, content, and multimedia — pushing the brand into new territory</li>
-                  <li className="pl-4 relative before:content-['•'] before:absolute before:left-0">Redesigned how the company communicated complex technologies — making networking, cybersecurity, and AI accessible and human</li>
-                  <li className="pl-4 relative before:content-['•'] before:absolute before:left-0">Built digital campaigns, directed video production, and produced the Artificial Intelligence podcast</li>
-                  <li className="pl-4 relative before:content-['•'] before:absolute before:left-0">Connected storytelling with execution — ensuring every artifact reinforced the same vision: innovation with purpose</li>
+                <p className="text-indigo-400 text-sm font-medium mb-3">Globe Life · Full-time</p>
+                <ul className="space-y-2 text-slate-300 text-sm list-none pl-0">
+                  <li className="pl-4 relative before:content-['•'] before:absolute before:left-0 before:text-indigo-400">Led one of the company's most ambitious initiatives: consolidating seven subsidiary brands into a single unified platform</li>
+                  <li className="pl-4 relative before:content-['•'] before:absolute before:left-0 before:text-indigo-400">Developed a tailored process to coordinate across eight distinct teams — ensuring alignment on vision and execution</li>
+                  <li className="pl-4 relative before:content-['•'] before:absolute before:left-0 before:text-indigo-400">Built a comprehensive design system that streamlined collaboration across hundreds of user flows and components</li>
+                  <li className="pl-4 relative before:content-['•'] before:absolute before:left-0 before:text-indigo-400">Contributed to frontend development — ensuring every design decision was grounded in technical feasibility and performance</li>
+                </ul>
+              </div>
+
+              {/* Job 6 - Masergy */}
+              <div className="border-l-4 border-indigo-500 pl-6 bg-slate-800/30 backdrop-blur-sm border-r border-t border-b border-slate-700/50 rounded-r-lg p-6 hover:bg-slate-800/50 transition-all duration-300">
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2">
+                  <h3 className="text-xl font-semibold text-slate-50">UX Designer</h3>
+                  <span className="text-indigo-400 font-medium text-sm">Aug 2016 - Aug 2019</span>
+                </div>
+                <p className="text-indigo-400 text-sm font-medium mb-3">Masergy · Full-time</p>
+                <ul className="space-y-2 text-slate-300 text-sm list-none pl-0">
+                  <li className="pl-4 relative before:content-['•'] before:absolute before:left-0 before:text-indigo-400">Shaped digital experiences across web, content, and multimedia — pushing the brand into new territory</li>
+                  <li className="pl-4 relative before:content-['•'] before:absolute before:left-0 before:text-indigo-400">Redesigned how the company communicated complex technologies — making networking, cybersecurity, and AI accessible and human</li>
+                  <li className="pl-4 relative before:content-['•'] before:absolute before:left-0 before:text-indigo-400">Built digital campaigns, directed video production, and produced the Artificial Intelligence podcast</li>
+                  <li className="pl-4 relative before:content-['•'] before:absolute before:left-0 before:text-indigo-400">Connected storytelling with execution — ensuring every artifact reinforced the same vision: innovation with purpose</li>
                 </ul>
               </div>
             </div>
           </section>
 
           {/* Certifications */}
-          <section className="mb-12 relative z-10">
-            <h2 className="text-2xl font-bold text-[#00ff41] mb-6 drop-shadow-[0_0_10px_rgba(0,255,65,0.5)]">Certifications</h2>
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-[#00ff41]/5 p-4 rounded-lg border border-[#00ff41]/30 hover:bg-[#00ff41]/10 hover:border-[#00ff41] transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,255,65,0.3)]">
-                <h3 className="font-semibold text-[#00ff41] mb-1 drop-shadow-[0_0_8px_rgba(0,255,65,0.6)]">Prompt Engineering</h3>
-                <p className="text-[#00ff41]/70 text-sm">Codecademy</p>
+          <section className="mb-12">
+            <h2 className="text-2xl font-bold text-slate-50 mb-6">Certifications</h2>
+            <div className="grid md:grid-cols-2 gap-4">
+              <div className="bg-slate-800/30 backdrop-blur-sm p-4 rounded-lg border border-slate-700/50 hover:bg-slate-800/50 hover:border-indigo-500/50 transition-all duration-300">
+                <h3 className="font-semibold text-slate-50 mb-1">Prompt Engineering</h3>
+                <p className="text-slate-400 text-sm">Codecademy</p>
               </div>
-              <div className="bg-[#00ff41]/5 p-4 rounded-lg border border-[#00ff41]/30 hover:bg-[#00ff41]/10 hover:border-[#00ff41] transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,255,65,0.3)]">
-                <h3 className="font-semibold text-[#00ff41] mb-1 drop-shadow-[0_0_8px_rgba(0,255,65,0.6)]">JavaScript</h3>
-                <p className="text-[#00ff41]/70 text-sm">Codecademy</p>
+              <div className="bg-slate-800/30 backdrop-blur-sm p-4 rounded-lg border border-slate-700/50 hover:bg-slate-800/50 hover:border-indigo-500/50 transition-all duration-300">
+                <h3 className="font-semibold text-slate-50 mb-1">JavaScript</h3>
+                <p className="text-slate-400 text-sm">Codecademy</p>
               </div>
-              <div className="bg-[#00ff41]/5 p-4 rounded-lg border border-[#00ff41]/30 hover:bg-[#00ff41]/10 hover:border-[#00ff41] transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,255,65,0.3)]">
-                <h3 className="font-semibold text-[#00ff41] mb-1 drop-shadow-[0_0_8px_rgba(0,255,65,0.6)]">TypeScript</h3>
-                <p className="text-[#00ff41]/70 text-sm">Codecademy</p>
+              <div className="bg-slate-800/30 backdrop-blur-sm p-4 rounded-lg border border-slate-700/50 hover:bg-slate-800/50 hover:border-indigo-500/50 transition-all duration-300">
+                <h3 className="font-semibold text-slate-50 mb-1">TypeScript</h3>
+                <p className="text-slate-400 text-sm">Codecademy</p>
               </div>
-              <div className="bg-[#00ff41]/5 p-4 rounded-lg border border-[#00ff41]/30 hover:bg-[#00ff41]/10 hover:border-[#00ff41] transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,255,65,0.3)]">
-                <h3 className="font-semibold text-[#00ff41] mb-1 drop-shadow-[0_0_8px_rgba(0,255,65,0.6)]">Accessibility Best Practices</h3>
-                <p className="text-[#00ff41]/70 text-sm">Bureau of Internet Accessibility</p>
+              <div className="bg-slate-800/30 backdrop-blur-sm p-4 rounded-lg border border-slate-700/50 hover:bg-slate-800/50 hover:border-indigo-500/50 transition-all duration-300">
+                <h3 className="font-semibold text-slate-50 mb-1">Accessibility Best Practices</h3>
+                <p className="text-slate-400 text-sm">Bureau of Internet Accessibility</p>
               </div>
-              <div className="bg-[#00ff41]/5 p-4 rounded-lg border border-[#00ff41]/30 hover:bg-[#00ff41]/10 hover:border-[#00ff41] transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,255,65,0.3)]">
-                <h3 className="font-semibold text-[#00ff41] mb-1 drop-shadow-[0_0_8px_rgba(0,255,65,0.6)]">Mobility Accessibility Best Practices</h3>
-                <p className="text-[#00ff41]/70 text-sm">Bureau of Internet Accessibility</p>
+              <div className="bg-slate-800/30 backdrop-blur-sm p-4 rounded-lg border border-slate-700/50 hover:bg-slate-800/50 hover:border-indigo-500/50 transition-all duration-300">
+                <h3 className="font-semibold text-slate-50 mb-1">Mobility Accessibility Best Practices</h3>
+                <p className="text-slate-400 text-sm">Bureau of Internet Accessibility</p>
               </div>
-              <div className="bg-[#00ff41]/5 p-4 rounded-lg border border-[#00ff41]/30 hover:bg-[#00ff41]/10 hover:border-[#00ff41] transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,255,65,0.3)]">
-                <h3 className="font-semibold text-[#00ff41] mb-1 drop-shadow-[0_0_8px_rgba(0,255,65,0.6)]">NVDA Training</h3>
-                <p className="text-[#00ff41]/70 text-sm">Bureau of Internet Accessibility</p>
+              <div className="bg-slate-800/30 backdrop-blur-sm p-4 rounded-lg border border-slate-700/50 hover:bg-slate-800/50 hover:border-indigo-500/50 transition-all duration-300">
+                <h3 className="font-semibold text-slate-50 mb-1">NVDA Training</h3>
+                <p className="text-slate-400 text-sm">Bureau of Internet Accessibility</p>
               </div>
-              <div className="bg-[#00ff41]/5 p-4 rounded-lg border border-[#00ff41]/30 hover:bg-[#00ff41]/10 hover:border-[#00ff41] transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,255,65,0.3)]">
-                <h3 className="font-semibold text-[#00ff41] mb-1 drop-shadow-[0_0_8px_rgba(0,255,65,0.6)]">PDF Accessibility</h3>
-                <p className="text-[#00ff41]/70 text-sm">Bureau of Internet Accessibility</p>
+              <div className="bg-slate-800/30 backdrop-blur-sm p-4 rounded-lg border border-slate-700/50 hover:bg-slate-800/50 hover:border-indigo-500/50 transition-all duration-300">
+                <h3 className="font-semibold text-slate-50 mb-1">PDF Accessibility</h3>
+                <p className="text-slate-400 text-sm">Bureau of Internet Accessibility</p>
               </div>
-              <div className="bg-[#00ff41]/5 p-4 rounded-lg border border-[#00ff41]/30 hover:bg-[#00ff41]/10 hover:border-[#00ff41] transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,255,65,0.3)]">
-                <h3 className="font-semibold text-[#00ff41] mb-1 drop-shadow-[0_0_8px_rgba(0,255,65,0.6)]">Backend Engineer</h3>
-                <p className="text-[#00ff41]/70 text-sm">Codecademy</p>
+              <div className="bg-slate-800/30 backdrop-blur-sm p-4 rounded-lg border border-slate-700/50 hover:bg-slate-800/50 hover:border-indigo-500/50 transition-all duration-300">
+                <h3 className="font-semibold text-slate-50 mb-1">Backend Engineer</h3>
+                <p className="text-slate-400 text-sm">Codecademy</p>
               </div>
-              <div className="bg-[#00ff41]/5 p-4 rounded-lg border border-[#00ff41]/30 hover:bg-[#00ff41]/10 hover:border-[#00ff41] transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,255,65,0.3)]">
-                <h3 className="font-semibold text-[#00ff41] mb-1 drop-shadow-[0_0_8px_rgba(0,255,65,0.6)]">Next.js</h3>
-                <p className="text-[#00ff41]/70 text-sm">Codecademy</p>
+              <div className="bg-slate-800/30 backdrop-blur-sm p-4 rounded-lg border border-slate-700/50 hover:bg-slate-800/50 hover:border-indigo-500/50 transition-all duration-300">
+                <h3 className="font-semibold text-slate-50 mb-1">Next.js</h3>
+                <p className="text-slate-400 text-sm">Codecademy</p>
               </div>
-              <div className="bg-[#00ff41]/5 p-4 rounded-lg border border-[#00ff41]/30 hover:bg-[#00ff41]/10 hover:border-[#00ff41] transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,255,65,0.3)]">
-                <h3 className="font-semibold text-[#00ff41] mb-1 drop-shadow-[0_0_8px_rgba(0,255,65,0.6)]">Advanced Python</h3>
-                <p className="text-[#00ff41]/70 text-sm">Codecademy</p>
+              <div className="bg-slate-800/30 backdrop-blur-sm p-4 rounded-lg border border-slate-700/50 hover:bg-slate-800/50 hover:border-indigo-500/50 transition-all duration-300">
+                <h3 className="font-semibold text-slate-50 mb-1">Advanced Python</h3>
+                <p className="text-slate-400 text-sm">Codecademy</p>
               </div>
             </div>
           </section>
 
           {/* Languages */}
-          <section className="relative z-10">
-            <h2 className="text-2xl font-bold text-[#00ff41] mb-6 drop-shadow-[0_0_10px_rgba(0,255,65,0.5)]">Languages</h2>
+          <section>
+            <h2 className="text-2xl font-bold text-slate-50 mb-6">Languages</h2>
             <div className="grid md:grid-cols-3 gap-6">
               <div className="text-center group">
-                <div className="w-16 h-16 bg-[#00ff41]/10 rounded-full flex items-center justify-center mx-auto mb-2 border border-[#00ff41]/30 group-hover:border-[#00ff41] group-hover:shadow-[0_0_20px_rgba(0,255,65,0.5)] transition-all duration-300">
-                  <span className="text-[#00ff41] font-bold text-lg drop-shadow-[0_0_8px_rgba(0,255,65,0.6)]">EN</span>
+                <div className="w-16 h-16 bg-slate-800/30 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-2 border border-slate-700/50 group-hover:border-indigo-500/50 group-hover:bg-slate-800/50 transition-all duration-300">
+                  <span className="text-indigo-400 font-bold text-lg">EN</span>
                 </div>
-                <p className="font-medium text-[#00ff41]">English</p>
-                <p className="text-[#00ff41]/70 text-sm">Native</p>
+                <p className="font-medium text-slate-50">English</p>
+                <p className="text-slate-400 text-sm">Native</p>
               </div>
               <div className="text-center group">
-                <div className="w-16 h-16 bg-[#00ff41]/10 rounded-full flex items-center justify-center mx-auto mb-2 border border-[#00ff41]/30 group-hover:border-[#00ff41] group-hover:shadow-[0_0_20px_rgba(0,255,65,0.5)] transition-all duration-300">
-                  <span className="text-[#00ff41] font-bold text-lg drop-shadow-[0_0_8px_rgba(0,255,65,0.6)]">ES</span>
+                <div className="w-16 h-16 bg-slate-800/30 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-2 border border-slate-700/50 group-hover:border-indigo-500/50 group-hover:bg-slate-800/50 transition-all duration-300">
+                  <span className="text-indigo-400 font-bold text-lg">ES</span>
                 </div>
-                <p className="font-medium text-[#00ff41]">Spanish</p>
-                <p className="text-[#00ff41]/70 text-sm">Fluent</p>
+                <p className="font-medium text-slate-50">Spanish</p>
+                <p className="text-slate-400 text-sm">Fluent</p>
               </div>
               <div className="text-center group">
-                <div className="w-16 h-16 bg-[#00ff41]/10 rounded-full flex items-center justify-center mx-auto mb-2 border border-[#00ff41]/30 group-hover:border-[#00ff41] group-hover:shadow-[0_0_20px_rgba(0,255,65,0.5)] transition-all duration-300">
-                  <span className="text-[#00ff41] font-bold text-lg drop-shadow-[0_0_8px_rgba(0,255,65,0.6)]">FR</span>
+                <div className="w-16 h-16 bg-slate-800/30 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-2 border border-slate-700/50 group-hover:border-indigo-500/50 group-hover:bg-slate-800/50 transition-all duration-300">
+                  <span className="text-indigo-400 font-bold text-lg">FR</span>
                 </div>
-                <p className="font-medium text-[#00ff41]">French</p>
-                <p className="text-[#00ff41]/70 text-sm">Conversational</p>
+                <p className="font-medium text-slate-50">French</p>
+                <p className="text-slate-400 text-sm">Conversational</p>
               </div>
             </div>
           </section>
