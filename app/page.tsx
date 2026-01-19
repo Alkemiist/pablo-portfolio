@@ -42,7 +42,7 @@ export default function Home() {
               </p>
             </div>
 
-            {/* CTA Buttons & Status */}
+            {/* CTA Buttons */}
             <div className="flex flex-wrap items-center gap-4 pt-2">
               <Link
                 href="/case-studies"
@@ -56,10 +56,12 @@ export default function Home() {
               >
                 View Resume
               </Link>
-              <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-800/30 border border-slate-700/50">
-                <div className="w-2 h-2 rounded-full bg-emerald-400"></div>
-                <span className="text-xs text-slate-300 font-medium">Available for opportunities</span>
-              </div>
+            </div>
+
+            {/* Status */}
+            <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-800/30 border border-slate-700/50 w-fit">
+              <div className="w-2 h-2 rounded-full bg-emerald-400"></div>
+              <span className="text-xs text-slate-300 font-medium">Available for opportunities in the US</span>
             </div>
 
             {/* Social Links */}
