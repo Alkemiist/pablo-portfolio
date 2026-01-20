@@ -181,6 +181,43 @@ export default function CaseStudies() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {/* Featured: OnlyEdge AI - VP of Product / Founder Designer Case Study */}
+              <Link
+                href="/case-studies/onlyedge-ai"
+                className="group block focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0f0f23] rounded-xl overflow-hidden md:col-span-2 lg:col-span-2"
+              >
+                <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700/50 rounded-xl overflow-hidden hover:border-slate-600 hover:shadow-xl hover:shadow-slate-900/20 transition-all duration-300 h-full flex flex-col">
+                  <div className="p-8 flex-1 flex flex-col">
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      <span className="px-2 py-1 text-xs font-medium uppercase tracking-wider bg-slate-800/50 text-slate-400 border border-slate-700/50 rounded-full">
+                        Pre-Seed
+                      </span>
+                      <span className="px-2 py-1 text-xs font-medium uppercase tracking-wider bg-slate-800/50 text-slate-400 border border-slate-700/50 rounded-full">
+                        0 → 1
+                      </span>
+                      <span className="px-2 py-1 text-xs font-medium uppercase tracking-wider bg-slate-800/50 text-slate-400 border border-slate-700/50 rounded-full">
+                        VP of Product
+                      </span>
+                    </div>
+                    <h3 className="text-2xl font-bold text-slate-100 mb-3 group-hover:text-slate-50 transition-colors">
+                      Designing the Foundation of an AI Product at Pre-Seed
+                    </h3>
+                    <p className="text-slate-300 font-medium mb-3">
+                      Turning a Founder-Led Demo into a Sellable MVP
+                    </p>
+                    <p className="text-slate-400 text-sm leading-relaxed mb-6 flex-grow">
+                      When I joined OnlyEdge AI, the company had a founder-led demo—not a product. I was brought in to fix the fundamentals, define a real MVP, and establish the foundation the company would build from.
+                    </p>
+                    <div className="flex items-center text-slate-400 group-hover:text-slate-200 text-sm font-medium transition-colors">
+                      <span>View case study</span>
+                      <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </Link>
+
               {caseStudies.map((study, index) => (
                 <Link
                   key={study.slug}
