@@ -343,11 +343,13 @@ export default function OnlyEdgeAICaseStudyPage() {
                 </p>
               </div>
 
-              {/* Image Placeholder */}
-              <div className="bg-slate-900/50 border-2 border-dashed border-slate-700 rounded-xl p-12 flex flex-col items-center justify-center text-center">
-                <div className="text-4xl mb-4 opacity-30">🖼️</div>
-                <p className="text-slate-500 text-sm font-medium">Final Home / Project List Screen</p>
-                <p className="text-slate-600 text-xs mt-1">Image placeholder</p>
+              {/* Home Screen Image */}
+              <div className="rounded-xl overflow-hidden border border-slate-700/50">
+                <img 
+                  src="/home.png" 
+                  alt="OnlyEdge AI Home Screen - Project List" 
+                  className="w-full h-auto"
+                />
               </div>
             </div>
 
@@ -388,17 +390,21 @@ export default function OnlyEdgeAICaseStudyPage() {
                 </p>
               </div>
 
-              {/* Image Placeholders */}
-              <div className="grid md:grid-cols-2 gap-4">
-                <div className="bg-slate-900/50 border-2 border-dashed border-slate-700 rounded-xl p-8 flex flex-col items-center justify-center text-center">
-                  <div className="text-3xl mb-3 opacity-30">🖼️</div>
-                  <p className="text-slate-500 text-sm font-medium">Step 1: Basic Project Details</p>
-                  <p className="text-slate-600 text-xs mt-1">Image placeholder</p>
+              {/* Step Images */}
+              <div className="space-y-6">
+                <div className="rounded-xl overflow-hidden border border-slate-700/50">
+                  <img 
+                    src="/create-project.png" 
+                    alt="Step 1: Basic Project Details" 
+                    className="w-full h-auto"
+                  />
                 </div>
-                <div className="bg-slate-900/50 border-2 border-dashed border-slate-700 rounded-xl p-8 flex flex-col items-center justify-center text-center">
-                  <div className="text-3xl mb-3 opacity-30">🖼️</div>
-                  <p className="text-slate-500 text-sm font-medium">Step 2: Chat-Style Context Input</p>
-                  <p className="text-slate-600 text-xs mt-1">Image placeholder</p>
+                <div className="rounded-xl overflow-hidden border border-slate-700/50">
+                  <img 
+                    src="/context-gathering.png" 
+                    alt="Step 2: Chat-Style Context Gathering" 
+                    className="w-full h-auto"
+                  />
                 </div>
               </div>
             </div>
@@ -457,18 +463,13 @@ export default function OnlyEdgeAICaseStudyPage() {
                 </div>
               </div>
 
-              {/* Image Placeholders */}
-              <div className="grid md:grid-cols-2 gap-4">
-                <div className="bg-slate-900/50 border-2 border-dashed border-slate-700 rounded-xl p-8 flex flex-col items-center justify-center text-center">
-                  <div className="text-3xl mb-3 opacity-30">🖼️</div>
-                  <p className="text-slate-500 text-sm font-medium">Project Overview with Recommendations</p>
-                  <p className="text-slate-600 text-xs mt-1">Image placeholder</p>
-                </div>
-                <div className="bg-slate-900/50 border-2 border-dashed border-slate-700 rounded-xl p-8 flex flex-col items-center justify-center text-center">
-                  <div className="text-3xl mb-3 opacity-30">🖼️</div>
-                  <p className="text-slate-500 text-sm font-medium">Navigation Tabs (Info, Recommendations, Search, Pipeline)</p>
-                  <p className="text-slate-600 text-xs mt-1">Image placeholder</p>
-                </div>
+              {/* Project Viewing Image */}
+              <div className="rounded-xl overflow-hidden border border-slate-700/50">
+                <img 
+                  src="/recommendations.png" 
+                  alt="Project Overview with Recommendations" 
+                  className="w-full h-auto"
+                />
               </div>
             </div>
 
@@ -514,18 +515,13 @@ export default function OnlyEdgeAICaseStudyPage() {
                 </p>
               </div>
 
-              {/* Image Placeholders */}
-              <div className="grid md:grid-cols-2 gap-4">
-                <div className="bg-slate-900/50 border-2 border-dashed border-slate-700 rounded-xl p-8 flex flex-col items-center justify-center text-center">
-                  <div className="text-3xl mb-3 opacity-30">🖼️</div>
-                  <p className="text-slate-500 text-sm font-medium">Old vs New Candidate Card</p>
-                  <p className="text-slate-600 text-xs mt-1">Image placeholder (optional)</p>
-                </div>
-                <div className="bg-slate-900/50 border-2 border-dashed border-slate-700 rounded-xl p-8 flex flex-col items-center justify-center text-center">
-                  <div className="text-3xl mb-3 opacity-30">🖼️</div>
-                  <p className="text-slate-500 text-sm font-medium">Final Candidate Card</p>
-                  <p className="text-slate-600 text-xs mt-1">"Why this candidate" emphasis</p>
-                </div>
+              {/* Candidate Search Image */}
+              <div className="rounded-xl overflow-hidden border border-slate-700/50">
+                <img 
+                  src="/candidate-search.png" 
+                  alt="Candidate Search View" 
+                  className="w-full h-auto"
+                />
               </div>
             </div>
           </section>
@@ -580,6 +576,55 @@ export default function OnlyEdgeAICaseStudyPage() {
                   </li>
                 </ul>
               </div>
+            </div>
+          </section>
+
+          {/* ===== Product Updates ===== */}
+          <section className="mb-20">
+            <h2 className="text-2xl font-bold text-slate-50 mb-2">Building in Public: Product Updates</h2>
+            <p className="text-slate-400 mb-8">Transparency as a feature, not an afterthought.</p>
+            
+            <div className="bg-slate-800/30 border border-slate-700/50 rounded-xl p-6 mb-6">
+              <p className="text-slate-300 leading-relaxed mb-4">
+                One principle I carried forward from this work: <strong className="text-slate-200">users deserve to know what's happening</strong>. No black boxes. No silent updates. No guessing.
+              </p>
+              <p className="text-slate-400 leading-relaxed mb-4">
+                I designed a Product Updates experience that gives users full visibility into:
+              </p>
+              <ul className="space-y-2 text-slate-300 text-sm mb-6">
+                <li className="flex items-start gap-3">
+                  <span className="text-slate-500">▹</span>
+                  <span>How to get started with the app</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-slate-500">▹</span>
+                  <span>New features and updates</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-slate-500">▹</span>
+                  <span>Improvements and optimizations</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-slate-500">▹</span>
+                  <span>Bug fixes</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-slate-500">▹</span>
+                  <span>UI updates</span>
+                </li>
+              </ul>
+              <p className="text-slate-400 leading-relaxed">
+                This isn't just documentation—it's a commitment to treating users as partners, not passengers. When people can see the roadmap, they feel ownership. When they see progress, they trust the team. When they understand what changed and why, they don't feel lost after an update.
+              </p>
+            </div>
+
+            {/* Product Updates Image */}
+            <div className="rounded-xl overflow-hidden border border-slate-700/50">
+              <img 
+                src="/documentation.png" 
+                alt="Product Updates Screen" 
+                className="w-full h-auto"
+              />
             </div>
           </section>
 
