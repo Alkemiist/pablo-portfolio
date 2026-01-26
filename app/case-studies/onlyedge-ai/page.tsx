@@ -65,10 +65,18 @@ export default function OnlyEdgeAICaseStudyPage() {
           <section className="mb-20">
             <div className="prose prose-lg prose-invert max-w-none">
               <p className="text-xl text-slate-300 leading-relaxed">
-                When I joined OnlyEdge AI, the company did not yet have a product—it had a <strong className="text-amber-400">founder-led demo</strong>.
+                When I joined OnlyEdge AI, the company did not yet have a product—it had a <strong className="text-amber-400">founder-led demo that required constant narration</strong>.
               </p>
+              <p className="text-slate-400 leading-relaxed mb-6">
+                During one demo session, a potential customer said it plainly:
+              </p>
+              <blockquote className="border-l-4 border-rose-500/50 pl-6 py-2 mb-6 bg-rose-950/10">
+                <p className="text-lg text-slate-300 italic">
+                  "If you weren't guiding me through this, I wouldn't know what to do."
+                </p>
+              </blockquote>
               <p className="text-slate-400 leading-relaxed">
-                The experience required constant explanation, relied heavily on assumptions about user behavior, and could not stand on its own without guidance. The UX was unintuitive, the UI lacked hierarchy, and the core flows were incomplete. As a result, the product could not be sold, and the company risked locking in the wrong direction too early.
+                That wasn't feedback—it was a diagnosis. The company was weeks away from losing credibility with investors and customers. We had <strong className="text-rose-400">zero signed contracts</strong>, and the product's broken information architecture made it unsellable without hand-holding.
               </p>
               <p className="text-slate-400 leading-relaxed">
                 I was brought in as the first product designer to <strong className="text-slate-200">fix the fundamentals</strong>, define a real MVP, and establish the foundation the company would build from.
@@ -79,19 +87,19 @@ export default function OnlyEdgeAICaseStudyPage() {
             <div className="mt-10 grid sm:grid-cols-2 gap-4">
               <div className="bg-slate-800/30 border border-slate-700/50 rounded-lg p-5">
                 <div className="text-slate-300 text-sm font-medium mb-2">Diagnosed</div>
-                <p className="text-slate-400 text-sm">A broken mental model that made the product unsellable without founder hand-holding</p>
+                <p className="text-slate-400 text-sm">A broken mental model and 6-step navigation maze that made the product unsellable</p>
               </div>
               <div className="bg-slate-800/30 border border-slate-700/50 rounded-lg p-5">
                 <div className="text-slate-300 text-sm font-medium mb-2">Simplified</div>
-                <p className="text-slate-400 text-sm">Core workflows by applying first principles, not iterating on broken foundations</p>
+                <p className="text-slate-400 text-sm">6 steps to 2, eliminating backward navigation and blank-screen drop-offs</p>
               </div>
               <div className="bg-slate-800/30 border border-slate-700/50 rounded-lg p-5">
-                <div className="text-slate-300 text-sm font-medium mb-2">Designed</div>
-                <p className="text-slate-400 text-sm">An intuitive, sellable MVP centered on the company's true differentiator</p>
+                <div className="text-slate-300 text-sm font-medium mb-2">Delivered</div>
+                <p className="text-slate-400 text-sm">0 → 2 signed contracts in first wave of demos post-redesign</p>
               </div>
               <div className="bg-slate-800/30 border border-slate-700/50 rounded-lg p-5">
                 <div className="text-slate-300 text-sm font-medium mb-2">Established</div>
-                <p className="text-slate-400 text-sm">The product foundation and roadmap for an AI-driven platform</p>
+                <p className="text-slate-400 text-sm">The product foundation and roadmap for scalable growth</p>
               </div>
             </div>
           </section>
@@ -100,9 +108,19 @@ export default function OnlyEdgeAICaseStudyPage() {
           <section className="mb-20">
             <h2 className="text-2xl font-bold text-slate-50 mb-6">Context & Stakes</h2>
             
-            <p className="text-slate-400 leading-relaxed mb-8">
+            <p className="text-slate-400 leading-relaxed mb-6">
               OnlyEdge AI was pre-seed and actively demoing the product to potential customers and investors. There were no real users yet—only walkthroughs led by the co-founder.
             </p>
+
+            <p className="text-slate-400 leading-relaxed mb-6">
+              During demo sessions, the friction was obvious. Potential customers poked at the interface, clearly confused. One said it plainly:
+            </p>
+
+            <blockquote className="mb-8 border-l-4 border-rose-500/50 pl-6 py-2 bg-rose-950/10">
+              <p className="text-lg text-slate-300 italic">
+                "If you weren't guiding me through this, I wouldn't know what to do."
+              </p>
+            </blockquote>
 
             {/* The Risk - Highlighted - THIS deserves color */}
             <div className="bg-rose-950/20 border border-rose-500/30 rounded-xl p-6 md:p-8">
@@ -116,11 +134,11 @@ export default function OnlyEdgeAICaseStudyPage() {
                 </li>
                 <li className="flex items-start gap-3 text-slate-300">
                   <span className="text-rose-400/70 mt-1">▹</span>
-                  <span>The MVP could not be sold independently</span>
+                  <span>The product could not be sold independently</span>
                 </li>
                 <li className="flex items-start gap-3 text-slate-300">
                   <span className="text-rose-400/70 mt-1">▹</span>
-                  <span>Funding was at risk</span>
+                  <span>Funding was at risk with zero signed contracts</span>
                 </li>
                 <li className="flex items-start gap-3 text-slate-300">
                   <span className="text-rose-400/70 mt-1">▹</span>
@@ -192,15 +210,144 @@ export default function OnlyEdgeAICaseStudyPage() {
               <div className="bg-slate-800/30 border border-slate-700/50 rounded-xl p-6">
                 <h3 className="text-lg font-semibold text-slate-200 mb-3">Dead-end experience</h3>
                 <p className="text-slate-400">
-                  After completing project creation, users were dropped into a blank screen with no guidance—leading to immediate confusion and drop-off.
+                  After completing project creation, users were dropped into a blank screen ("CIM & Deal Info" tab) with no guidance—leading to immediate confusion and drop-off.
                 </p>
               </div>
             </div>
 
             {/* Critical Signal - Key insight, deserves color */}
             <div className="mt-8 bg-amber-500/5 border border-amber-500/20 rounded-xl p-6">
-              <p className="text-slate-200 leading-relaxed">
+              <p className="text-slate-200 leading-relaxed mb-4">
                 A critical signal that this was not "just UI" was that <strong className="text-amber-400">users could not operate the product without the founder present</strong>. The experience had no self-guiding logic.
+              </p>
+              <p className="text-slate-400 leading-relaxed italic">
+                "If you weren't guiding me through this, I wouldn't know what to do." — Potential customer during demo
+              </p>
+            </div>
+          </section>
+
+          {/* ===== The Navigation Labyrinth ===== */}
+          <section className="mb-20">
+            <h2 className="text-2xl font-bold text-slate-50 mb-6">The Navigation Labyrinth: Why Users Couldn't Succeed Alone</h2>
+            
+            <p className="text-slate-400 leading-relaxed mb-8">
+              The broken mental model wasn't abstract—it was architectural. The navigation structure made success nearly impossible without guidance.
+            </p>
+
+            {/* The Old Flow */}
+            <div className="mb-8">
+              <h3 className="text-lg font-semibold text-rose-400 mb-4">The Old Flow (6-7 Steps to See Results)</h3>
+              <div className="bg-rose-950/20 border border-rose-500/30 rounded-xl p-6">
+                <ol className="space-y-3 text-slate-300">
+                  <li className="flex items-start gap-3">
+                    <span className="text-rose-400 font-mono text-sm mt-1">1.</span>
+                    <span>Create project → complete context gathering ✓</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-rose-400 font-mono text-sm mt-1">2.</span>
+                    <span>Land on "CIM & Deal Info" tab → <strong className="text-rose-400">BLANK SCREEN</strong> ❌</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-rose-400 font-mono text-sm mt-1">3.</span>
+                    <span>Manually handpick extractions from context</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-rose-400 font-mono text-sm mt-1">4.</span>
+                    <span>Navigate <strong>BACKWARDS</strong> 2 tabs to "Candidate Pipeline"</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-rose-400 font-mono text-sm mt-1">5.</span>
+                    <span>Navigate through 4 children tabs</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-rose-400 font-mono text-sm mt-1">6.</span>
+                    <span>Select tab #4 (far right) to reach "Search"</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-rose-400 font-mono text-sm mt-1">7.</span>
+                    <span>Manually add handpicked criteria and click search to finally see results</span>
+                  </li>
+                </ol>
+                <div className="mt-6 pt-6 border-t border-rose-500/20">
+                  <p className="text-slate-300 font-medium">
+                    This wasn't just a UX problem—it was an <span className="text-rose-400">architecture problem</span>. Users were punished for completing the flow.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* The New Flow */}
+            <div className="mb-8">
+              <h3 className="text-lg font-semibold text-emerald-400 mb-4">The New Flow (2 Steps to Value)</h3>
+              <div className="bg-emerald-950/20 border border-emerald-500/30 rounded-xl p-6">
+                <ol className="space-y-3 text-slate-300">
+                  <li className="flex items-start gap-3">
+                    <span className="text-emerald-400 font-mono text-sm mt-1">1.</span>
+                    <span>Create project → complete context gathering ✓</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-emerald-400 font-mono text-sm mt-1">2.</span>
+                    <span>Auto-land on "Search" with <strong className="text-emerald-400">pre-populated, context-driven results</strong> ✓</span>
+                  </li>
+                </ol>
+                <div className="mt-6 pt-6 border-t border-emerald-500/20">
+                  <p className="text-slate-300">
+                    <strong className="text-emerald-400">Zero backwards navigation.</strong> Results appear immediately. The system demonstrates understanding before asking users to do anything else.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Before/After Screenshots - Add CEO demo photos here */}
+            <div className="mb-8">
+              <h3 className="text-lg font-semibold text-slate-200 mb-4">Visual Comparison</h3>
+              <div className="grid md:grid-cols-2 gap-6">
+                {/* Before photo 1 - Old Recommendations tab */}
+                <div className="space-y-3">
+                  <div className="rounded-xl overflow-hidden border border-rose-500/30">
+                    <img src="/old-recs.png" alt="Old: Blank CIM & Deal Info screen after project creation" className="w-full h-auto" />
+                  </div>
+                  <p className="text-sm text-slate-400">
+                    <strong className="text-rose-400">Before:</strong> Users landed on a blank "CIM & Deal Info" screen with no guidance
+                  </p>
+                </div>
+
+                {/* Before photo 2 - Old Candidate Search */}
+                <div className="space-y-3">
+                  <div className="rounded-xl overflow-hidden border border-rose-500/30">
+                    <img src="/old-search.png" alt="Old: Manual candidate search requiring backward navigation" className="w-full h-auto" />
+                  </div>
+                  <p className="text-sm text-slate-400">
+                    <strong className="text-rose-400">Before:</strong> Required navigating backward through tabs and manually adding criteria
+                  </p>
+                </div>
+
+                {/* After: New Recommendations */}
+                <div className="space-y-3">
+                  <div className="rounded-xl overflow-hidden border border-emerald-500/30">
+                    <img src="/recommendations.png" alt="New: Auto-populated recommendations immediately after project creation" className="w-full h-auto" />
+                  </div>
+                  <p className="text-sm text-slate-400">
+                    <strong className="text-emerald-400">After:</strong> Recommendations auto-populate and learn from user searches
+                  </p>
+                </div>
+
+                {/* After: New Search */}
+                <div className="space-y-3">
+                  <div className="rounded-xl overflow-hidden border border-emerald-500/30">
+                    <img src="/candidate-search.png" alt="New: Auto-populated search results based on context" className="w-full h-auto" />
+                  </div>
+                  <p className="text-sm text-slate-400">
+                    <strong className="text-emerald-400">After:</strong> Users land directly on search with pre-populated, context-driven results
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Key Insight */}
+            <div className="bg-amber-500/5 border border-amber-500/20 rounded-xl p-6">
+              <p className="text-slate-200 leading-relaxed">
+                The old design assumed users would <em>explore and discover</em>. The new design assumes users want to <strong className="text-amber-400">see value immediately and iterate from there</strong>. This single architectural change eliminated the need for founder narration.
               </p>
             </div>
           </section>
@@ -209,8 +356,12 @@ export default function OnlyEdgeAICaseStudyPage() {
           <section className="mb-20">
             <h2 className="text-2xl font-bold text-slate-50 mb-6">Diagnosis: The Real Problem</h2>
             
-            <p className="text-xl text-slate-300 leading-relaxed mb-8">
+            <p className="text-xl text-slate-300 leading-relaxed mb-6">
               The core issue was a <strong className="text-amber-400">broken mental model driven by unchecked assumptions</strong>.
+            </p>
+
+            <p className="text-slate-400 leading-relaxed mb-8">
+              The navigation labyrinth wasn't the disease—it was a symptom. The real problem was that the product had been built around what the founders <em>thought</em> would impress users, not what users actually needed to accomplish their jobs.
             </p>
 
             <div className="grid md:grid-cols-2 gap-6 mb-8">
@@ -258,6 +409,41 @@ export default function OnlyEdgeAICaseStudyPage() {
             </p>
           </section>
 
+          {/* ===== The Market Gap ===== */}
+          <section className="mb-20">
+            <h2 className="text-2xl font-bold text-slate-50 mb-6">The Market Gap: Why Keyword Match Isn't Enough</h2>
+            
+            <p className="text-slate-400 leading-relaxed mb-6">
+              Before defining our MVP, I needed to understand what made us different. The competitive landscape revealed a critical gap.
+            </p>
+
+            <div className="bg-slate-800/30 border border-slate-700/50 rounded-xl p-6 mb-6">
+              <h3 className="text-lg font-semibold text-slate-200 mb-4">The Standard Experience</h3>
+              <div className="bg-slate-900/50 rounded-lg p-4 mb-4 font-mono text-sm text-slate-400">
+                <p>"17 candidates found"</p>
+                <p className="mt-2">• Candidate #2: <span className="text-emerald-500">5/5 criteria met</span></p>
+                <p>• Candidate #8: <span className="text-emerald-500">5/5 criteria met</span></p>
+                <p>• Candidate #14: <span className="text-emerald-500">5/5 criteria met</span></p>
+              </div>
+              <p className="text-slate-300 leading-relaxed">
+                The question users always ask: <strong className="text-amber-400">What makes candidate #2 better than candidate #8?</strong>
+              </p>
+              <p className="text-slate-400 leading-relaxed mt-4">
+                Traditional platforms can't answer this. They rely on basic keyword matching against public LinkedIn data. Everyone has access to the same information, so everyone gets the same undifferentiated results.
+              </p>
+            </div>
+
+            <div className="bg-amber-500/5 border border-amber-500/20 rounded-xl p-6 md:p-8">
+              <h3 className="text-lg font-semibold text-amber-400 mb-4">OnlyEdge's Differentiator</h3>
+              <p className="text-slate-300 leading-relaxed mb-4">
+                We go deeper. By combining <strong className="text-slate-200">proprietary data sources</strong> with the context gathered during project creation, we don't just <em>find</em> candidates—we explain <strong className="text-amber-400">why they're the right fit for this specific role</strong>.
+              </p>
+              <p className="text-slate-400 leading-relaxed">
+                This is what PE sponsors actually need: not more candidates, but <strong className="text-slate-200">better judgment</strong>.
+              </p>
+            </div>
+          </section>
+
           {/* ===== Product Strategy - THE key insight ===== */}
           <section className="mb-20">
             <h2 className="text-2xl font-bold text-slate-50 mb-6">Product Strategy: Defining the Real MVP</h2>
@@ -272,6 +458,38 @@ export default function OnlyEdgeAICaseStudyPage() {
               </blockquote>
               <p className="mt-6 text-slate-400 leading-relaxed">
                 That differentiator was not automation—it was <strong className="text-slate-200">context-driven recommendations with a clear point of view</strong> explaining <em>why</em> a candidate was a strong fit.
+              </p>
+            </div>
+
+            {/* Why PE Specifically */}
+            <div className="mb-8 bg-slate-800/30 border border-slate-700/50 rounded-xl p-6 md:p-8">
+              <h3 className="text-lg font-semibold text-slate-200 mb-4">Why PE Specifically?</h3>
+              <p className="text-slate-400 leading-relaxed mb-4">
+                Rather than trying to serve everyone, we focused on the ICP with the most acute pain and the highest willingness to pay for a better solution.
+              </p>
+              <p className="text-slate-300 leading-relaxed mb-4">
+                Private equity executive hiring is uniquely fragmented:
+              </p>
+              <ul className="space-y-2 text-slate-400 mb-4">
+                <li className="flex items-start gap-3">
+                  <span className="text-slate-600">—</span>
+                  <span>Legacy recruiting firms using manual processes</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-slate-600">—</span>
+                  <span>Disconnected tools and spreadsheets</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-slate-600">—</span>
+                  <span>No standardization across deals</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-slate-600">—</span>
+                  <span>High stakes with limited time</span>
+                </li>
+              </ul>
+              <p className="text-slate-200 font-medium">
+                This focus shaped everything: the context we gathered, the data we prioritized, and the recommendations we surfaced.
               </p>
             </div>
 
@@ -327,7 +545,32 @@ export default function OnlyEdgeAICaseStudyPage() {
           {/* ===== Execution: Rebuilding the Core Experience ===== */}
           <section className="mb-20">
             <h2 className="text-2xl font-bold text-slate-50 mb-2">Execution: Rebuilding the Core Experience</h2>
-            <p className="text-slate-400 mb-10">Each decision was intentional, not decorative.</p>
+            <p className="text-slate-400 mb-6">Each decision was intentional, not decorative.</p>
+
+            {/* Working Within Constraints */}
+            <div className="mb-10 bg-slate-800/40 border border-slate-700/50 rounded-xl p-6">
+              <h3 className="text-sm uppercase tracking-[0.2em] text-slate-500 font-medium mb-3">Working Within Constraints</h3>
+              <p className="text-slate-300 leading-relaxed mb-4">
+                With limited engineering resources and aggressive timelines, I couldn't rebuild from scratch. Instead, I:
+              </p>
+              <ul className="space-y-2 text-slate-300 text-sm mb-4">
+                <li className="flex items-start gap-3">
+                  <span className="text-amber-400">→</span>
+                  <span>Restructured existing components rather than creating new ones</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-amber-400">→</span>
+                  <span>Focused on <strong>information architecture and UX</strong>, not net-new features</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-amber-400">→</span>
+                  <span>Made the current pieces work harder and smarter</span>
+                </li>
+              </ul>
+              <p className="text-slate-400 text-sm italic">
+                The best 0→1 work isn't about having unlimited resources—it's about making the right tradeoffs.
+              </p>
+            </div>
 
             {/* Screen 1: Home Screen */}
             <div className="mb-16">
@@ -378,15 +621,35 @@ export default function OnlyEdgeAICaseStudyPage() {
                   The second step uses a <strong className="text-slate-200">chat-style interface</strong> familiar to users of tools like ChatGPT or Claude, lowering friction and increasing comprehension.
                 </p>
                 <div className="border-t border-slate-700/50 pt-4 mt-4">
-                  <p className="text-sm text-slate-400">Crucially:</p>
+                  <p className="text-sm text-slate-400 font-medium mb-3">Strategic Decision: Voice as Option, Not Mandate</p>
+                  <p className="text-sm text-slate-400 mb-3">
+                    The original voice-first approach created multiple single points of failure:
+                  </p>
+                  <ul className="space-y-2 text-sm text-slate-300 mb-4">
+                    <li className="flex items-start gap-2">
+                      <span className="text-rose-400">×</span>
+                      <span><strong>Accessibility:</strong> Users in public spaces or quiet offices couldn't use the product</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-rose-400">×</span>
+                      <span><strong>Reliability:</strong> If the voice API failed, the entire flow broke</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-rose-400">×</span>
+                      <span><strong>User agency:</strong> Users were locked into a linear path with no escape hatches</span>
+                    </li>
+                  </ul>
+                  <p className="text-sm text-slate-300">
+                    The redesign wasn't about <em>removing</em> voice—it was about making it <strong className="text-emerald-400">optional, not mandatory</strong>:
+                  </p>
                   <ul className="mt-2 space-y-1 text-sm text-slate-300">
-                    <li>• Users can type or speak</li>
+                    <li>• Users can type <strong>or</strong> speak at any point</li>
                     <li>• All inputs are visible and editable</li>
-                    <li>• Nothing is locked or hidden</li>
+                    <li>• Multiple pathways to success, not one fragile route</li>
                   </ul>
                 </div>
-                <p className="text-slate-500 text-sm mt-4 italic">
-                  This design respects the reality that PE hiring is iterative and precise.
+                <p className="text-slate-400 text-sm mt-4 italic">
+                  This wasn't about features—it was about <strong className="text-slate-200">resilience</strong>. PE hiring is too critical to depend on a single interaction mode.
                 </p>
               </div>
 
@@ -495,7 +758,7 @@ export default function OnlyEdgeAICaseStudyPage() {
                 <ul className="space-y-2 text-slate-300 text-sm mb-6">
                   <li className="flex items-start gap-3">
                     <span className="text-slate-500">▹</span>
-                    <span>Clear hierarchy</span>
+                    <span>Clear visual hierarchy</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-slate-500">▹</span>
@@ -509,9 +772,13 @@ export default function OnlyEdgeAICaseStudyPage() {
                     <span className="text-slate-500">▹</span>
                     <span>Removed irrelevant or distracting data</span>
                   </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-slate-500">▹</span>
+                    <span>Emphasized the AI-generated "fit explanation" as the primary value</span>
+                  </li>
                 </ul>
-                <p className="text-slate-500 text-sm italic">
-                  The most difficult but important removal was the <strong className="text-slate-300">voice-first emphasis</strong>—it added novelty but hurt clarity.
+                <p className="text-slate-400 text-sm italic">
+                  Every element now serves a purpose: help the user understand <strong className="text-slate-200">why this person matters</strong>.
                 </p>
               </div>
 
@@ -530,26 +797,49 @@ export default function OnlyEdgeAICaseStudyPage() {
           <section className="mb-20">
             <h2 className="text-2xl font-bold text-slate-50 mb-8">Impact & Outcomes</h2>
             
+            {/* Hard Metrics */}
+            <div className="mb-8 bg-emerald-950/20 border border-emerald-500/30 rounded-xl p-6 md:p-8">
+              <h3 className="text-lg font-semibold text-emerald-400 mb-4">Measurable Results</h3>
+              <div className="grid sm:grid-cols-2 gap-6">
+                <div>
+                  <div className="text-3xl font-bold text-emerald-400 mb-2">0 → 2</div>
+                  <p className="text-slate-300">Signed contracts in first wave of demos post-redesign</p>
+                </div>
+                <div>
+                  <div className="text-3xl font-bold text-emerald-400 mb-2">6 → 2</div>
+                  <p className="text-slate-300">Steps to see value (70% reduction in user effort)</p>
+                </div>
+                <div>
+                  <div className="text-3xl font-bold text-emerald-400 mb-2">~15 min → ~2 min</div>
+                  <p className="text-slate-300">Time to first value (estimated)</p>
+                </div>
+                <div>
+                  <div className="text-3xl font-bold text-emerald-400 mb-2">100% → 0%</div>
+                  <p className="text-slate-300">Demos requiring founder hand-holding</p>
+                </div>
+              </div>
+            </div>
+
             <div className="grid md:grid-cols-2 gap-6">
               {/* Immediate Results */}
               <div className="bg-slate-800/30 border border-slate-700/50 rounded-xl p-6">
-                <h3 className="text-lg font-semibold text-slate-200 mb-4">Immediate Results</h3>
+                <h3 className="text-lg font-semibold text-slate-200 mb-4">Product Improvements</h3>
                 <ul className="space-y-3 text-slate-300">
                   <li className="flex items-start gap-3">
                     <span className="text-emerald-500">✓</span>
-                    <span>A complete, intuitive end-to-end flow</span>
+                    <span>Eliminated backwards navigation entirely</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-emerald-500">✓</span>
-                    <span>A product that could be demoed without explanation</span>
+                    <span>Auto-populated search results based on context</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-emerald-500">✓</span>
-                    <span>A real MVP that could be sold</span>
+                    <span>Clear mental model users could navigate independently</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-emerald-500">✓</span>
-                    <span>Alignment around PE as the core ICP</span>
+                    <span>Multiple interaction pathways (voice + text)</span>
                   </li>
                 </ul>
               </div>
@@ -568,11 +858,11 @@ export default function OnlyEdgeAICaseStudyPage() {
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-emerald-500">✓</span>
-                    <span>Prevented costly misdirection and rework later</span>
+                    <span>Prevented costly misdirection and rework</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-emerald-500">✓</span>
-                    <span>Enabled the company to move toward an OS vision from a solid base</span>
+                    <span>Built momentum with initial customers</span>
                   </li>
                 </ul>
               </div>
@@ -586,35 +876,35 @@ export default function OnlyEdgeAICaseStudyPage() {
             
             <div className="bg-slate-800/30 border border-slate-700/50 rounded-xl p-6 mb-6">
               <p className="text-slate-300 leading-relaxed mb-4">
-                One principle I carried forward from this work: <strong className="text-slate-200">users deserve to know what's happening</strong>. No black boxes. No silent updates. No guessing.
+                One principle I carried forward from rebuilding the foundation: <strong className="text-slate-200">users deserve to know what's happening</strong>. No black boxes. No silent updates. No guessing.
               </p>
               <p className="text-slate-400 leading-relaxed mb-4">
-                I designed a Product Updates experience that gives users full visibility into:
+                I designed a Product Updates experience that gives users full visibility into product evolution:
               </p>
               <ul className="space-y-2 text-slate-300 text-sm mb-6">
                 <li className="flex items-start gap-3">
                   <span className="text-slate-500">▹</span>
-                  <span>How to get started with the app</span>
+                  <span>Getting started guides and onboarding</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-slate-500">▹</span>
-                  <span>New features and updates</span>
+                  <span>New features with context on why they matter</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-slate-500">▹</span>
-                  <span>Improvements and optimizations</span>
+                  <span>Performance improvements and optimizations</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-slate-500">▹</span>
-                  <span>Bug fixes</span>
+                  <span>Bug fixes and quality improvements</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-slate-500">▹</span>
-                  <span>UI updates</span>
+                  <span>UI/UX refinements based on user feedback</span>
                 </li>
               </ul>
               <p className="text-slate-400 leading-relaxed">
-                This isn't just documentation—it's a commitment to treating users as partners, not passengers. When people can see the roadmap, they feel ownership. When they see progress, they trust the team. When they understand what changed and why, they don't feel lost after an update.
+                This isn't just documentation—it's a commitment to treating users as partners in the product journey. When people understand what changed and why, they don't feel disoriented after updates. When they see steady progress, they trust the team. When they can influence the roadmap, they feel ownership.
               </p>
             </div>
 
@@ -625,6 +915,48 @@ export default function OnlyEdgeAICaseStudyPage() {
                 alt="Product Updates Screen" 
                 className="w-full h-auto"
               />
+            </div>
+          </section>
+
+          {/* ===== From Foundation to Iteration ===== */}
+          <section className="mb-20">
+            <h2 className="text-2xl font-bold text-slate-50 mb-6">From Foundation to Iteration</h2>
+            
+            <p className="text-slate-400 leading-relaxed mb-6">
+              Launching the redesigned MVP wasn't the end—it was the beginning.
+            </p>
+
+            <div className="bg-slate-800/30 border border-slate-700/50 rounded-xl p-6 md:p-8 mb-6">
+              <p className="text-slate-300 leading-relaxed mb-4">
+                With a solid foundation in place, we could finally:
+              </p>
+              <ul className="space-y-3 text-slate-300">
+                <li className="flex items-start gap-3">
+                  <span className="text-amber-400">→</span>
+                  <span><strong>Build a clear roadmap</strong> grounded in real user behavior, not assumptions</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-amber-400">→</span>
+                  <span><strong>Iterate with confidence</strong>, knowing the core mental model was sound</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-amber-400">→</span>
+                  <span><strong>Add complexity strategically</strong>, rather than inheriting legacy decisions</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-amber-400">→</span>
+                  <span><strong>Learn from real customers</strong> as they used the product in their actual workflows</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="bg-slate-800/30 border border-slate-700/50 rounded-xl p-6">
+              <p className="text-slate-300 leading-relaxed">
+                Features like pipeline management and outreach workflows—previously impossible on the broken foundation—now had a clear home in the product architecture. The recommendations system continues to learn from user searches, getting smarter with each interaction.
+              </p>
+              <p className="text-slate-400 leading-relaxed mt-4">
+                The MVP gave us something more valuable than perfection: <strong className="text-slate-200">clarity on what to build next</strong>.
+              </p>
             </div>
           </section>
 
@@ -676,11 +1008,25 @@ export default function OnlyEdgeAICaseStudyPage() {
             <div className="border border-slate-700/50 rounded-2xl p-8 md:p-12">
               <h2 className="text-2xl font-bold text-slate-50 mb-6">Why This Work Matters</h2>
               <p className="text-lg text-slate-400 leading-relaxed mb-4">
-                This wasn't a redesign.
+                This wasn't a redesign. It wasn't a polish pass.
               </p>
-              <p className="text-xl text-slate-200 leading-relaxed">
-                It was a <strong className="text-amber-400">course correction</strong>—transforming a fragile demo into a product with a clear mental model, real value, and a foundation the company could confidently build on.
+              <p className="text-xl text-slate-200 leading-relaxed mb-6">
+                It was a <strong className="text-amber-400">course correction</strong>—transforming a fragile, founder-dependent demo into a product with a clear mental model, measurable value, and a foundation the company could confidently build on.
               </p>
+              <div className="grid sm:grid-cols-3 gap-4 pt-6 border-t border-slate-700/50">
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-emerald-400 mb-1">0 → 2</div>
+                  <div className="text-sm text-slate-400">Signed contracts</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-emerald-400 mb-1">70%</div>
+                  <div className="text-sm text-slate-400">Reduction in user effort</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-emerald-400 mb-1">100% → 0%</div>
+                  <div className="text-sm text-slate-400">Hand-holding required</div>
+                </div>
+              </div>
             </div>
           </section>
 
