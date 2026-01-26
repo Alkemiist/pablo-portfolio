@@ -23,22 +23,18 @@ export default function Home() {
               </div>
               
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-[1.1] tracking-tight">
-                <span className="text-slate-50">I design and build</span>
-                <br />
                 <span className="bg-gradient-to-r from-indigo-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
-                  enterprise products
+                  Strategic product designer.
                 </span>
                 <br />
-                <span className="text-slate-50">that people actually want to use.</span>
+                <span className="text-slate-50">I code, I ship, I challenge decisions.</span>
               </h1>
               
               <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl font-light">
-                I'm a designer who codes, working at the intersection of craft and engineering. 
-                Over the past two years, I've been deep in AI design—building experiences that make 
-                complex intelligence feel intuitive and trustworthy. If you're building AI products, 
-                need a thoughtful product designer, working on innovative projects, or looking to build 
-                the right culture—I'm your guy. I move fast, collaborate closely, and ship products 
-                where design and engineering speak the same language.
+                Founding designer at ØPUS Intelligence with two years deep in AI product design. I code, 
+                so I partner seamlessly with engineering. I understand the business side—GTM, technical debt, 
+                resource constraints. I don't just execute specs—I challenge assumptions, shape product 
+                strategy, and own what we ship.
               </p>
             </div>
 
