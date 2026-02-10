@@ -104,131 +104,286 @@ export default function OnlyEdgeAICaseStudyPage() {
             </div>
           </section>
 
-          {/* ===== Context & Stakes ===== */}
+          {/* ===== OBSERVE ===== */}
           <section className="mb-20">
-            <h2 className="text-2xl font-bold text-slate-50 mb-6">Context & Stakes</h2>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-sm text-indigo-400 mb-6">
+              <span className="font-mono font-semibold">01</span>
+              <span>Observe</span>
+            </div>
+            <h2 className="text-3xl font-bold text-slate-50 mb-8">Understanding the Problem Space</h2>
             
-            <p className="text-slate-400 leading-relaxed mb-6">
-              OnlyEdge AI was pre-seed and actively demoing the product to potential customers and investors. There were no real users yet—only walkthroughs led by the co-founder.
-            </p>
-
-            <p className="text-slate-400 leading-relaxed mb-6">
-              During demo sessions, the friction was obvious. Potential customers poked at the interface, clearly confused. One said it plainly:
-            </p>
-
-            <blockquote className="mb-8 border-l-4 border-rose-500/50 pl-6 py-2 bg-rose-950/10">
-              <p className="text-lg text-slate-300 italic">
-                "If you weren't guiding me through this, I wouldn't know what to do."
+            {/* Context & Stakes */}
+            <div className="mb-12">
+              <h3 className="text-xl font-semibold text-slate-200 mb-6">Context & Stakes</h3>
+              
+              <p className="text-slate-400 leading-relaxed mb-6">
+                OnlyEdge AI was pre-seed and actively demoing the product to potential customers and investors. There were no real users yet—only walkthroughs led by the co-founder.
               </p>
-            </blockquote>
 
-            {/* The Risk - Highlighted - THIS deserves color */}
-            <div className="bg-rose-950/20 border border-rose-500/30 rounded-xl p-6 md:p-8">
-              <h3 className="text-lg font-semibold text-rose-400 mb-4 flex items-center gap-2">
-                <span className="text-xl">⚠</span> The Risk
-              </h3>
-              <ul className="space-y-3">
-                <li className="flex items-start gap-3 text-slate-300">
-                  <span className="text-rose-400/70 mt-1">▹</span>
-                  <span>Deals were being lost during demos</span>
-                </li>
-                <li className="flex items-start gap-3 text-slate-300">
-                  <span className="text-rose-400/70 mt-1">▹</span>
-                  <span>The product could not be sold independently</span>
-                </li>
-                <li className="flex items-start gap-3 text-slate-300">
-                  <span className="text-rose-400/70 mt-1">▹</span>
-                  <span>Funding was at risk with zero signed contracts</span>
-                </li>
-                <li className="flex items-start gap-3 text-slate-300">
-                  <span className="text-rose-400/70 mt-1">▹</span>
-                  <span>Continuing forward without correction would have made restarting later catastrophic</span>
-                </li>
-              </ul>
-              <p className="mt-6 text-slate-200 font-medium border-t border-rose-500/20 pt-4">
-                The company needed more than better UI—it needed <span className="text-amber-400">product clarity</span>.
+              <p className="text-slate-400 leading-relaxed mb-6">
+                During demo sessions, the friction was obvious. Potential customers poked at the interface, clearly confused. One said it plainly:
               </p>
-            </div>
-          </section>
 
-          {/* ===== The Initial Product State ===== */}
-          <section className="mb-20">
-            <h2 className="text-2xl font-bold text-slate-50 mb-6">The Initial Product State</h2>
-            <p className="text-slate-400 leading-relaxed mb-8">
-              The issues extended far beyond aesthetics:
-            </p>
-
-            <div className="space-y-6">
-              {/* Issue 1 */}
-              <div className="bg-slate-800/30 border border-slate-700/50 rounded-xl p-6">
-                <h3 className="text-lg font-semibold text-slate-200 mb-3">Broken mental model</h3>
-                <p className="text-slate-400 mb-4">Users had no clear understanding of:</p>
-                <ul className="space-y-2 text-slate-300 text-sm">
-                  <li className="flex items-start gap-3">
-                    <span className="text-slate-500">—</span>
-                    <span>What the product was doing</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-slate-500">—</span>
-                    <span>What they were supposed to do next</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-slate-500">—</span>
-                    <span>What success looked like</span>
-                  </li>
-                </ul>
-              </div>
-
-              {/* Issue 2 */}
-              <div className="bg-slate-800/30 border border-slate-700/50 rounded-xl p-6">
-                <h3 className="text-lg font-semibold text-slate-200 mb-3">Over-automation without control</h3>
-                <p className="text-slate-400">
-                  The product led heavily with voice input, assuming users would be impressed by automation and "figure it out," without the ability to review, edit, or refine answers.
+              <blockquote className="mb-8 border-l-4 border-rose-500/50 pl-6 py-2 bg-rose-950/10">
+                <p className="text-lg text-slate-300 italic">
+                  "If you weren't guiding me through this, I wouldn't know what to do."
                 </p>
-              </div>
+              </blockquote>
 
-              {/* Issue 3 */}
-              <div className="bg-slate-800/30 border border-slate-700/50 rounded-xl p-6">
-                <h3 className="text-lg font-semibold text-slate-200 mb-3">High cognitive load</h3>
-                <ul className="space-y-2 text-slate-400 text-sm">
-                  <li className="flex items-start gap-3">
-                    <span className="text-slate-500">—</span>
-                    <span>Long, rigid project creation flow</span>
+              {/* The Risk - Highlighted */}
+              <div className="bg-rose-950/20 border border-rose-500/30 rounded-xl p-6 md:p-8">
+                <h3 className="text-lg font-semibold text-rose-400 mb-4 flex items-center gap-2">
+                  <span className="text-xl">⚠</span> The Risk
+                </h3>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3 text-slate-300">
+                    <span className="text-rose-400/70 mt-1">▹</span>
+                    <span>Deals were being lost during demos</span>
                   </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-slate-500">—</span>
-                    <span>No progressive disclosure</span>
+                  <li className="flex items-start gap-3 text-slate-300">
+                    <span className="text-rose-400/70 mt-1">▹</span>
+                    <span>The product could not be sold independently</span>
                   </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-slate-500">—</span>
-                    <span>No clear hierarchy or information architecture</span>
+                  <li className="flex items-start gap-3 text-slate-300">
+                    <span className="text-rose-400/70 mt-1">▹</span>
+                    <span>Funding was at risk with zero signed contracts</span>
+                  </li>
+                  <li className="flex items-start gap-3 text-slate-300">
+                    <span className="text-rose-400/70 mt-1">▹</span>
+                    <span>Continuing forward without correction would have made restarting later catastrophic</span>
                   </li>
                 </ul>
-              </div>
-
-              {/* Issue 4 */}
-              <div className="bg-slate-800/30 border border-slate-700/50 rounded-xl p-6">
-                <h3 className="text-lg font-semibold text-slate-200 mb-3">Dead-end experience</h3>
-                <p className="text-slate-400">
-                  After completing project creation, users were dropped into a blank screen ("CIM & Deal Info" tab) with no guidance—leading to immediate confusion and drop-off.
+                <p className="mt-6 text-slate-200 font-medium border-t border-rose-500/20 pt-4">
+                  The company needed more than better UI—it needed <span className="text-amber-400">product clarity</span>.
                 </p>
               </div>
             </div>
 
-            {/* Critical Signal - Key insight, deserves color */}
-            <div className="mt-8 bg-amber-500/5 border border-amber-500/20 rounded-xl p-6">
-              <p className="text-slate-200 leading-relaxed mb-4">
-                A critical signal that this was not "just UI" was that <strong className="text-amber-400">users could not operate the product without the founder present</strong>. The experience had no self-guiding logic.
+            {/* User Behavior Observations */}
+            <div className="mb-12">
+              <h3 className="text-xl font-semibold text-slate-200 mb-6">Observed User Behavior & Pain Points</h3>
+              <p className="text-slate-400 leading-relaxed mb-8">
+                Watching potential customers interact with the product revealed systemic issues that extended far beyond aesthetics:
               </p>
-              <p className="text-slate-400 leading-relaxed italic">
-                "If you weren't guiding me through this, I wouldn't know what to do." — Potential customer during demo
+
+              <div className="space-y-6">
+                {/* Issue 1 */}
+                <div className="bg-slate-800/30 border border-slate-700/50 rounded-xl p-6">
+                  <h4 className="text-lg font-semibold text-slate-200 mb-3">Broken mental model</h4>
+                  <p className="text-slate-400 mb-4">Users had no clear understanding of:</p>
+                  <ul className="space-y-2 text-slate-300 text-sm">
+                    <li className="flex items-start gap-3">
+                      <span className="text-slate-500">—</span>
+                      <span>What the product was doing</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-slate-500">—</span>
+                      <span>What they were supposed to do next</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-slate-500">—</span>
+                      <span>What success looked like</span>
+                    </li>
+                  </ul>
+                </div>
+
+                {/* Issue 2 */}
+                <div className="bg-slate-800/30 border border-slate-700/50 rounded-xl p-6">
+                  <h4 className="text-lg font-semibold text-slate-200 mb-3">Over-automation without control</h4>
+                  <p className="text-slate-400">
+                    The product led heavily with voice input, assuming users would be impressed by automation and "figure it out," without the ability to review, edit, or refine answers.
+                  </p>
+                </div>
+
+                {/* Issue 3 */}
+                <div className="bg-slate-800/30 border border-slate-700/50 rounded-xl p-6">
+                  <h4 className="text-lg font-semibold text-slate-200 mb-3">High cognitive load</h4>
+                  <ul className="space-y-2 text-slate-400 text-sm">
+                    <li className="flex items-start gap-3">
+                      <span className="text-slate-500">—</span>
+                      <span>Long, rigid project creation flow</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-slate-500">—</span>
+                      <span>No progressive disclosure</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-slate-500">—</span>
+                      <span>No clear hierarchy or information architecture</span>
+                    </li>
+                  </ul>
+                </div>
+
+                {/* Issue 4 */}
+                <div className="bg-slate-800/30 border border-slate-700/50 rounded-xl p-6">
+                  <h4 className="text-lg font-semibold text-slate-200 mb-3">Dead-end experience</h4>
+                  <p className="text-slate-400">
+                    After completing project creation, users were dropped into a blank screen ("CIM & Deal Info" tab) with no guidance—leading to immediate confusion and drop-off.
+                  </p>
+                </div>
+              </div>
+
+              {/* Critical Signal */}
+              <div className="mt-8 bg-amber-500/5 border border-amber-500/20 rounded-xl p-6">
+                <p className="text-slate-200 leading-relaxed mb-4">
+                  A critical signal that this was not "just UI" was that <strong className="text-amber-400">users could not operate the product without the founder present</strong>. The experience had no self-guiding logic.
+                </p>
+                <p className="text-slate-400 leading-relaxed italic">
+                  "If you weren't guiding me through this, I wouldn't know what to do." — Potential customer during demo
+                </p>
+              </div>
+            </div>
+
+            {/* Research & Competitive Analysis - NEW SECTION */}
+            <div className="mb-12">
+              <h3 className="text-xl font-semibold text-slate-200 mb-6">Research & Competitive Analysis</h3>
+              
+              <p className="text-slate-400 leading-relaxed mb-8">
+                Before proposing solutions, I needed to understand the competitive landscape and ground my decisions in established UX principles. I analyzed the incumbent platforms and studied successful B2B workflow patterns.
               </p>
+
+              {/* Competitive Landscape */}
+              <div className="bg-slate-800/30 border border-slate-700/50 rounded-xl p-6 mb-6">
+                <h4 className="text-sm uppercase tracking-[0.2em] text-slate-500 font-medium mb-4">Competitive Landscape Analysis</h4>
+                
+                <p className="text-slate-300 leading-relaxed mb-6">
+                  I audited several executive search and recruiting platforms to understand what "table stakes" looked like and where opportunities existed:
+                </p>
+
+                <div className="space-y-6">
+                  <div>
+                    <h5 className="text-slate-200 font-semibold mb-3">LinkedIn Recruiter / LinkedIn Talent Solutions</h5>
+                    <ul className="space-y-2 text-slate-400 text-sm">
+                      <li className="flex items-start gap-3">
+                        <span className="text-slate-500">•</span>
+                        <span><strong className="text-slate-300">Strength:</strong> Massive candidate database, familiar interface</span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <span className="text-slate-500">•</span>
+                        <span><strong className="text-slate-300">Weakness:</strong> Generic keyword matching with no context awareness. Results are undifferentiated—everyone sees the same public data</span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <span className="text-slate-500">•</span>
+                        <span><strong className="text-slate-300">Pattern observed:</strong> Boolean search strings and manual filtering. No "why" behind recommendations</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <h5 className="text-slate-200 font-semibold mb-3">SeekOut / Eightfold AI</h5>
+                    <ul className="space-y-2 text-slate-400 text-sm">
+                      <li className="flex items-start gap-3">
+                        <span className="text-slate-500">•</span>
+                        <span><strong className="text-slate-300">Strength:</strong> AI-powered matching, diversity insights, skills-based search</span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <span className="text-slate-500">•</span>
+                        <span><strong className="text-slate-300">Weakness:</strong> Still relies on surface-level matching. No deep context gathering about the specific role, company culture, or deal dynamics</span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <span className="text-slate-500">•</span>
+                        <span><strong className="text-slate-300">Pattern observed:</strong> AI used for matching efficiency, not judgment or point of view</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <h5 className="text-slate-200 font-semibold mb-3">Traditional Executive Search Firms (Heidrick & Struggles, Korn Ferry)</h5>
+                    <ul className="space-y-2 text-slate-400 text-sm">
+                      <li className="flex items-start gap-3">
+                        <span className="text-slate-500">•</span>
+                        <span><strong className="text-slate-300">Strength:</strong> Deep contextual understanding, trusted relationships, nuanced judgment</span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <span className="text-slate-500">•</span>
+                        <span><strong className="text-slate-300">Weakness:</strong> Expensive, slow, manual processes that don't scale</span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <span className="text-slate-500">•</span>
+                        <span><strong className="text-slate-300">Pattern observed:</strong> PE sponsors pay premium prices because they need judgment, not just lists of names</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="mt-6 pt-6 border-t border-slate-700/50">
+                  <p className="text-slate-200 font-medium mb-2">The Opportunity</p>
+                  <p className="text-slate-400 text-sm leading-relaxed">
+                    No platform combined <strong className="text-slate-300">context-driven judgment</strong> (like high-end search firms) with <strong className="text-slate-300">speed and scalability</strong> (like tech platforms). This became our differentiation thesis.
+                  </p>
+                </div>
+              </div>
+
+              {/* UX Principles & Research */}
+              <div className="bg-slate-800/30 border border-slate-700/50 rounded-xl p-6">
+                <h4 className="text-sm uppercase tracking-[0.2em] text-slate-500 font-medium mb-4">UX Principles & Design Research</h4>
+                
+                <p className="text-slate-300 leading-relaxed mb-6">
+                  I grounded my redesign decisions in established cognitive science and UX principles:
+                </p>
+
+                <div className="space-y-4 text-slate-400 text-sm">
+                  <div className="flex items-start gap-4">
+                    <div className="w-20 shrink-0 text-slate-500 font-semibold">Miller's Law</div>
+                    <div>
+                      <p className="text-slate-300 mb-1">The average person can hold 7±2 items in working memory</p>
+                      <p className="text-slate-400">Applied: Reduced navigation from 6-7 steps to 2 steps, eliminating cognitive overload and decision paralysis</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-20 shrink-0 text-slate-500 font-semibold">Progressive Disclosure</div>
+                    <div>
+                      <p className="text-slate-300 mb-1">Show only what's necessary at each step, reveal complexity gradually</p>
+                      <p className="text-slate-400">Applied: Context gathering happens in focused steps. Search and pipeline features unlock only after initial project setup</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-20 shrink-0 text-slate-500 font-semibold">Recognition over Recall</div>
+                    <div>
+                      <p className="text-slate-300 mb-1">Users perform better when they recognize information rather than recall it from memory</p>
+                      <p className="text-slate-400">Applied: Auto-populated recommendations demonstrate what the system understood, eliminating guesswork</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-20 shrink-0 text-slate-500 font-semibold">User Control & Freedom</div>
+                    <div>
+                      <p className="text-slate-300 mb-1">Users need clearly marked exits and the ability to undo actions</p>
+                      <p className="text-slate-400">Applied: Made voice optional, not mandatory. Added edit capability at every step. Multiple pathways to success</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-20 shrink-0 text-slate-500 font-semibold">Peak-End Rule</div>
+                    <div>
+                      <p className="text-slate-300 mb-1">People judge an experience by its peak moments and how it ends</p>
+                      <p className="text-slate-400">Applied: Redesigned the "end" of project creation to land users on value (recommendations) instead of a blank screen</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-6 pt-6 border-t border-slate-700/50">
+                  <p className="text-slate-300 text-sm leading-relaxed">
+                    I also studied successful B2B workflow patterns from platforms like <strong className="text-slate-200">Salesforce</strong> (progressive onboarding), <strong className="text-slate-200">Notion</strong> (contextual empty states), and <strong className="text-slate-200">Linear</strong> (fast, opinionated defaults) to understand how best-in-class products guide users through complex tasks.
+                  </p>
+                </div>
+              </div>
             </div>
           </section>
 
-          {/* ===== The Navigation Labyrinth ===== */}
+          {/* ===== QUESTION ===== */}
           <section className="mb-20">
-            <h2 className="text-2xl font-bold text-slate-50 mb-6">The Navigation Labyrinth: Why Users Couldn't Succeed Alone</h2>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 text-sm text-purple-400 mb-6">
+              <span className="font-mono font-semibold">02</span>
+              <span>Question</span>
+            </div>
+            <h2 className="text-3xl font-bold text-slate-50 mb-8">Defining the Real Problem</h2>
+
+            {/* The Navigation Labyrinth */}
+            <div className="mb-12">
+              <h3 className="text-xl font-semibold text-slate-200 mb-6">The Navigation Labyrinth: Why Users Couldn't Succeed Alone</h3>
             
             <p className="text-slate-400 leading-relaxed mb-8">
               The broken mental model wasn't abstract—it was architectural. The navigation structure made success nearly impossible without guidance.
@@ -350,202 +505,251 @@ export default function OnlyEdgeAICaseStudyPage() {
                 The old design assumed users would <em>explore and discover</em>. The new design assumes users want to <strong className="text-amber-400">see value immediately and iterate from there</strong>. This single architectural change eliminated the need for founder narration.
               </p>
             </div>
-          </section>
-
-          {/* ===== Diagnosis: The Real Problem ===== */}
-          <section className="mb-20">
-            <h2 className="text-2xl font-bold text-slate-50 mb-6">Diagnosis: The Real Problem</h2>
-            
-            <p className="text-xl text-slate-300 leading-relaxed mb-6">
-              The core issue was a <strong className="text-amber-400">broken mental model driven by unchecked assumptions</strong>.
-            </p>
-
-            <p className="text-slate-400 leading-relaxed mb-8">
-              The navigation labyrinth wasn't the disease—it was a symptom. The real problem was that the product had been built around what the founders <em>thought</em> would impress users, not what users actually needed to accomplish their jobs.
-            </p>
-
-            <div className="grid md:grid-cols-2 gap-6 mb-8">
-              {/* Assumptions */}
-              <div className="bg-slate-800/30 border border-slate-700/50 rounded-xl p-6">
-                <h3 className="text-sm uppercase tracking-[0.3em] text-slate-500 font-medium mb-4">Assumptions Baked In</h3>
-                <ul className="space-y-3 text-slate-400">
-                  <li className="flex items-start gap-3">
-                    <span className="text-slate-600">×</span>
-                    <span>Voice-first interaction would inherently create delight</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-slate-600">×</span>
-                    <span>Users would tolerate complexity if AI was involved</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-slate-600">×</span>
-                    <span>One system could serve multiple ICPs equally well</span>
-                  </li>
-                </ul>
-              </div>
-
-              {/* Reality - The contrast is the insight */}
-              <div className="bg-slate-800/30 border border-slate-700/50 rounded-xl p-6">
-                <h3 className="text-sm uppercase tracking-[0.3em] text-slate-500 font-medium mb-4">Reality</h3>
-                <ul className="space-y-3 text-slate-300">
-                  <li className="flex items-start gap-3">
-                    <span className="text-emerald-500">✓</span>
-                    <span>PE workflows demand clarity and specificity</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-emerald-500">✓</span>
-                    <span>AI value depends on <strong className="text-slate-100">context and point of view</strong>, not novelty</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-emerald-500">✓</span>
-                    <span>Users need agency, not magic</span>
-                  </li>
-                </ul>
-              </div>
             </div>
 
-            <p className="text-slate-400 leading-relaxed">
-              This required a reset grounded in <strong className="text-slate-200">first principles</strong>, not iteration on top of flawed foundations.
-            </p>
-          </section>
+            {/* Diagnosis: Root Cause */}
+            <div className="mb-12">
+              <h3 className="text-xl font-semibold text-slate-200 mb-6">Diagnosis: The Root Cause</h3>
+              
+              <p className="text-xl text-slate-300 leading-relaxed mb-6">
+                The core issue was a <strong className="text-amber-400">broken mental model driven by unchecked assumptions</strong>.
+              </p>
 
-          {/* ===== The Market Gap ===== */}
-          <section className="mb-20">
-            <h2 className="text-2xl font-bold text-slate-50 mb-6">The Market Gap: Why Keyword Match Isn't Enough</h2>
-            
-            <p className="text-slate-400 leading-relaxed mb-6">
-              Before defining our MVP, I needed to understand what made us different. The competitive landscape revealed a critical gap.
-            </p>
+              <p className="text-slate-400 leading-relaxed mb-8">
+                The navigation labyrinth wasn't the disease—it was a symptom. The real problem was that the product had been built around what the founders <em>thought</em> would impress users, not what users actually needed to accomplish their jobs.
+              </p>
 
-            <div className="bg-slate-800/30 border border-slate-700/50 rounded-xl p-6 mb-6">
-              <h3 className="text-lg font-semibold text-slate-200 mb-4">The Standard Experience</h3>
-              <div className="bg-slate-900/50 rounded-lg p-4 mb-4 font-mono text-sm text-slate-400">
-                <p>"17 candidates found"</p>
-                <p className="mt-2">• Candidate #2: <span className="text-emerald-500">5/5 criteria met</span></p>
-                <p>• Candidate #8: <span className="text-emerald-500">5/5 criteria met</span></p>
-                <p>• Candidate #14: <span className="text-emerald-500">5/5 criteria met</span></p>
+              <div className="grid md:grid-cols-2 gap-6 mb-8">
+                {/* Assumptions */}
+                <div className="bg-slate-800/30 border border-slate-700/50 rounded-xl p-6">
+                  <h4 className="text-sm uppercase tracking-[0.3em] text-slate-500 font-medium mb-4">Assumptions Baked In</h4>
+                  <ul className="space-y-3 text-slate-400">
+                    <li className="flex items-start gap-3">
+                      <span className="text-slate-600">×</span>
+                      <span>Voice-first interaction would inherently create delight</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-slate-600">×</span>
+                      <span>Users would tolerate complexity if AI was involved</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-slate-600">×</span>
+                      <span>One system could serve multiple ICPs equally well</span>
+                    </li>
+                  </ul>
+                </div>
+
+                {/* Reality */}
+                <div className="bg-slate-800/30 border border-slate-700/50 rounded-xl p-6">
+                  <h4 className="text-sm uppercase tracking-[0.3em] text-slate-500 font-medium mb-4">Reality</h4>
+                  <ul className="space-y-3 text-slate-300">
+                    <li className="flex items-start gap-3">
+                      <span className="text-emerald-500">✓</span>
+                      <span>PE workflows demand clarity and specificity</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-emerald-500">✓</span>
+                      <span>AI value depends on <strong className="text-slate-100">context and point of view</strong>, not novelty</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-emerald-500">✓</span>
+                      <span>Users need agency, not magic</span>
+                    </li>
+                  </ul>
+                </div>
               </div>
-              <p className="text-slate-300 leading-relaxed">
-                The question users always ask: <strong className="text-amber-400">What makes candidate #2 better than candidate #8?</strong>
-              </p>
-              <p className="text-slate-400 leading-relaxed mt-4">
-                Traditional platforms can't answer this. They rely on basic keyword matching against public LinkedIn data. Everyone has access to the same information, so everyone gets the same undifferentiated results.
-              </p>
-            </div>
 
-            <div className="bg-amber-500/5 border border-amber-500/20 rounded-xl p-6 md:p-8">
-              <h3 className="text-lg font-semibold text-amber-400 mb-4">OnlyEdge's Differentiator</h3>
-              <p className="text-slate-300 leading-relaxed mb-4">
-                We go deeper. By combining <strong className="text-slate-200">proprietary data sources</strong> with the context gathered during project creation, we don't just <em>find</em> candidates—we explain <strong className="text-amber-400">why they're the right fit for this specific role</strong>.
-              </p>
               <p className="text-slate-400 leading-relaxed">
-                This is what PE sponsors actually need: not more candidates, but <strong className="text-slate-200">better judgment</strong>.
+                This required a reset grounded in <strong className="text-slate-200">first principles</strong>, not iteration on top of flawed foundations.
               </p>
             </div>
-          </section>
 
-          {/* ===== Product Strategy - THE key insight ===== */}
-          <section className="mb-20">
-            <h2 className="text-2xl font-bold text-slate-50 mb-6">Product Strategy: Defining the Real MVP</h2>
-            
-            {/* This is THE key strategic insight - deserves emphasis */}
-            <div className="bg-amber-500/5 border border-amber-500/20 rounded-xl p-6 md:p-8 mb-8">
-              <p className="text-lg text-slate-300 leading-relaxed mb-4">
-                I redefined the MVP as:
-              </p>
-              <blockquote className="text-xl md:text-2xl font-medium text-amber-400 border-l-4 border-amber-500 pl-6">
-                The smallest product we could confidently sell, centered on our strongest differentiator.
+            {/* Problem Statement */}
+            <div className="bg-indigo-950/20 border border-indigo-500/30 rounded-xl p-6 md:p-8">
+              <h3 className="text-sm uppercase tracking-[0.3em] text-indigo-400 font-medium mb-4">Core Question Defined</h3>
+              <blockquote className="text-xl md:text-2xl font-medium text-slate-200 leading-relaxed">
+                How might we create a product that PE sponsors can use independently, that demonstrates value immediately, and that delivers judgment—not just lists—while maintaining speed and scalability?
               </blockquote>
-              <p className="mt-6 text-slate-400 leading-relaxed">
-                That differentiator was not automation—it was <strong className="text-slate-200">context-driven recommendations with a clear point of view</strong> explaining <em>why</em> a candidate was a strong fit.
+              <p className="mt-6 text-slate-400 leading-relaxed border-t border-indigo-500/20 pt-6">
+                This question aligned user needs (clarity, speed, trust) with business goals (sellable product, signed contracts, scalable foundation).
               </p>
             </div>
+          </section>
 
-            {/* Why PE Specifically */}
-            <div className="mb-8 bg-slate-800/30 border border-slate-700/50 rounded-xl p-6 md:p-8">
-              <h3 className="text-lg font-semibold text-slate-200 mb-4">Why PE Specifically?</h3>
-              <p className="text-slate-400 leading-relaxed mb-4">
-                Rather than trying to serve everyone, we focused on the ICP with the most acute pain and the highest willingness to pay for a better solution.
-              </p>
-              <p className="text-slate-300 leading-relaxed mb-4">
-                Private equity executive hiring is uniquely fragmented:
-              </p>
-              <ul className="space-y-2 text-slate-400 mb-4">
-                <li className="flex items-start gap-3">
-                  <span className="text-slate-600">—</span>
-                  <span>Legacy recruiting firms using manual processes</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-slate-600">—</span>
-                  <span>Disconnected tools and spreadsheets</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-slate-600">—</span>
-                  <span>No standardization across deals</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-slate-600">—</span>
-                  <span>High stakes with limited time</span>
-                </li>
-              </ul>
-              <p className="text-slate-200 font-medium">
-                This focus shaped everything: the context we gathered, the data we prioritized, and the recommendations we surfaced.
-              </p>
+          {/* ===== HYPOTHESIS ===== */}
+          <section className="mb-20">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-sm text-cyan-400 mb-6">
+              <span className="font-mono font-semibold">03</span>
+              <span>Hypothesis</span>
             </div>
+            <h2 className="text-3xl font-bold text-slate-50 mb-8">Strategic Assumptions & Product Thesis</h2>
 
-            <div className="grid md:grid-cols-2 gap-6">
-              {/* Guiding Principles */}
-              <div className="bg-slate-800/30 border border-slate-700/50 rounded-xl p-6">
-                <h3 className="text-lg font-semibold text-slate-200 mb-4">Guiding Principles</h3>
-                <ul className="space-y-3 text-slate-300">
-                  <li className="flex items-start gap-3">
-                    <span className="text-slate-500">▹</span>
-                    <span>Reduce cognitive load</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-slate-500">▹</span>
-                    <span>Apply progressive disclosure</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-slate-500">▹</span>
-                    <span>Maintain user agency</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-slate-500">▹</span>
-                    <span>Always answer: <em className="text-slate-400">Where am I? What's happening? What's next?</em></span>
-                  </li>
-                </ul>
+            {/* Product Strategy */}
+            <div className="mb-12">
+              <h3 className="text-xl font-semibold text-slate-200 mb-6">Product Strategy: Defining the Real MVP</h3>
+            
+              {/* MVP Definition - THE key strategic insight */}
+              <div className="bg-amber-500/5 border border-amber-500/20 rounded-xl p-6 md:p-8 mb-8">
+                <p className="text-lg text-slate-300 leading-relaxed mb-4">
+                  I redefined the MVP as:
+                </p>
+                <blockquote className="text-xl md:text-2xl font-medium text-amber-400 border-l-4 border-amber-500 pl-6">
+                  The smallest product we could confidently sell, centered on our strongest differentiator.
+                </blockquote>
+                <p className="mt-6 text-slate-400 leading-relaxed">
+                  That differentiator was not automation—it was <strong className="text-slate-200">context-driven recommendations with a clear point of view</strong> explaining <em>why</em> a candidate was a strong fit.
+                </p>
               </div>
 
-              {/* Intentional Tradeoffs */}
-              <div className="bg-slate-800/30 border border-slate-700/50 rounded-xl p-6">
-                <h3 className="text-lg font-semibold text-slate-200 mb-4">Intentional Tradeoffs</h3>
-                <ul className="space-y-3 text-slate-300">
+              {/* Why PE Specifically */}
+              <div className="mb-8 bg-slate-800/30 border border-slate-700/50 rounded-xl p-6 md:p-8">
+                <h4 className="text-lg font-semibold text-slate-200 mb-4">Why PE Specifically?</h4>
+                <p className="text-slate-400 leading-relaxed mb-4">
+                  Rather than trying to serve everyone, we focused on the ICP with the most acute pain and the highest willingness to pay for a better solution.
+                </p>
+                <p className="text-slate-300 leading-relaxed mb-4">
+                  Private equity executive hiring is uniquely fragmented:
+                </p>
+                <ul className="space-y-2 text-slate-400 mb-4">
                   <li className="flex items-start gap-3">
-                    <span className="text-slate-500">▹</span>
-                    <span>Fewer steps, but more clarity</span>
+                    <span className="text-slate-600">—</span>
+                    <span>Legacy recruiting firms using manual processes</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="text-slate-500">▹</span>
-                    <span>Voice as an option, not the default</span>
+                    <span className="text-slate-600">—</span>
+                    <span>Disconnected tools and spreadsheets</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="text-slate-500">▹</span>
-                    <span>Recommendations first, search second</span>
+                    <span className="text-slate-600">—</span>
+                    <span>No standardization across deals</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="text-slate-500">▹</span>
-                    <span>Simplification without loss of functionality</span>
+                    <span className="text-slate-600">—</span>
+                    <span>High stakes with limited time</span>
                   </li>
                 </ul>
+                <p className="text-slate-200 font-medium">
+                  This focus shaped everything: the context we gathered, the data we prioritized, and the recommendations we surfaced.
+                </p>
+              </div>
+            </div>
+
+            {/* Testable Hypotheses */}
+            <div className="mb-12">
+              <h3 className="text-xl font-semibold text-slate-200 mb-6">Testable Hypotheses</h3>
+              
+              <p className="text-slate-400 leading-relaxed mb-6">
+                Based on research, observations, and first-principles thinking, I developed specific hypotheses to test:
+              </p>
+
+              <div className="space-y-4">
+                <div className="bg-slate-800/30 border border-slate-700/50 rounded-xl p-6">
+                  <div className="flex items-start gap-4">
+                    <div className="w-20 shrink-0 text-cyan-400 font-semibold text-sm">H1</div>
+                    <div>
+                      <p className="text-slate-200 font-medium mb-2">If we reduce navigation from 6+ steps to 2 steps, users will reach value faster and comprehend the product flow</p>
+                      <p className="text-slate-400 text-sm"><strong>Based on:</strong> Miller's Law (cognitive load), Progressive Disclosure principle</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-slate-800/30 border border-slate-700/50 rounded-xl p-6">
+                  <div className="flex items-start gap-4">
+                    <div className="w-20 shrink-0 text-cyan-400 font-semibold text-sm">H2</div>
+                    <div>
+                      <p className="text-slate-200 font-medium mb-2">If we auto-populate recommendations immediately after context gathering, users will trust the system understood their needs</p>
+                      <p className="text-slate-400 text-sm"><strong>Based on:</strong> Recognition over Recall, Peak-End Rule, competitive analysis of consumer AI products (ChatGPT, Perplexity)</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-slate-800/30 border border-slate-700/50 rounded-xl p-6">
+                  <div className="flex items-start gap-4">
+                    <div className="w-20 shrink-0 text-cyan-400 font-semibold text-sm">H3</div>
+                    <div>
+                      <p className="text-slate-200 font-medium mb-2">If we make voice optional instead of mandatory, we reduce failure points and give users agency</p>
+                      <p className="text-slate-400 text-sm"><strong>Based on:</strong> User Control & Freedom principle, observation of voice failures during demos</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-slate-800/30 border border-slate-700/50 rounded-xl p-6">
+                  <div className="flex items-start gap-4">
+                    <div className="w-20 shrink-0 text-cyan-400 font-semibold text-sm">H4</div>
+                    <div>
+                      <p className="text-slate-200 font-medium mb-2">If we show "why" a candidate fits (not just "that" they match), we differentiate from keyword-based competitors</p>
+                      <p className="text-slate-400 text-sm"><strong>Based on:</strong> Competitive analysis (LinkedIn Recruiter, SeekOut lack explanatory depth), PE sponsor pain point (need judgment, not lists)</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Design Principles */}
+            <div className="mb-12">
+              <h3 className="text-xl font-semibold text-slate-200 mb-6">Guiding Design Principles</h3>
+              
+              <div className="grid md:grid-cols-2 gap-6">
+                {/* Guiding Principles */}
+                <div className="bg-slate-800/30 border border-slate-700/50 rounded-xl p-6">
+                  <h4 className="text-lg font-semibold text-slate-200 mb-4">Core Principles</h4>
+                  <ul className="space-y-3 text-slate-300">
+                    <li className="flex items-start gap-3">
+                      <span className="text-slate-500">▹</span>
+                      <span>Reduce cognitive load</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-slate-500">▹</span>
+                      <span>Apply progressive disclosure</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-slate-500">▹</span>
+                      <span>Maintain user agency</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-slate-500">▹</span>
+                      <span>Always answer: <em className="text-slate-400">Where am I? What's happening? What's next?</em></span>
+                    </li>
+                  </ul>
+                </div>
+
+                {/* Intentional Tradeoffs */}
+                <div className="bg-slate-800/30 border border-slate-700/50 rounded-xl p-6">
+                  <h4 className="text-lg font-semibold text-slate-200 mb-4">Intentional Tradeoffs</h4>
+                  <ul className="space-y-3 text-slate-300">
+                    <li className="flex items-start gap-3">
+                      <span className="text-slate-500">▹</span>
+                      <span>Fewer steps, but more clarity</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-slate-500">▹</span>
+                      <span>Voice as an option, not the default</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-slate-500">▹</span>
+                      <span>Recommendations first, search second</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-slate-500">▹</span>
+                      <span>Simplification without loss of functionality</span>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </section>
 
-          {/* ===== Execution: Rebuilding the Core Experience ===== */}
+          {/* ===== EXPERIMENT ===== */}
           <section className="mb-20">
-            <h2 className="text-2xl font-bold text-slate-50 mb-2">Execution: Rebuilding the Core Experience</h2>
-            <p className="text-slate-400 mb-6">Each decision was intentional, not decorative.</p>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-sm text-indigo-400 mb-6">
+              <span className="font-mono font-semibold">04</span>
+              <span>Experiment</span>
+            </div>
+            <h2 className="text-3xl font-bold text-slate-50 mb-8">Execution: Rebuilding the Core Experience</h2>
+            
+            <p className="text-slate-400 leading-relaxed mb-8">
+              With hypotheses defined and principles established, I redesigned the product to test these assumptions. Each decision was intentional, not decorative.
+            </p>
 
             {/* Working Within Constraints */}
             <div className="mb-10 bg-slate-800/40 border border-slate-700/50 rounded-xl p-6">
@@ -793,13 +997,84 @@ export default function OnlyEdgeAICaseStudyPage() {
             </div>
           </section>
 
-          {/* ===== Impact & Outcomes ===== */}
+          {/* ===== ANALYZE ===== */}
           <section className="mb-20">
-            <h2 className="text-2xl font-bold text-slate-50 mb-8">Impact & Outcomes</h2>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 text-sm text-purple-400 mb-6">
+              <span className="font-mono font-semibold">05</span>
+              <span>Analyze</span>
+            </div>
+            <h2 className="text-3xl font-bold text-slate-50 mb-8">Results & Validation</h2>
             
-            {/* Hard Metrics */}
+            <p className="text-slate-400 leading-relaxed mb-8">
+              After launching the redesigned product, I analyzed the results to validate our hypotheses and understand what worked, what didn't, and why.
+            </p>
+
+            {/* Hypothesis Validation */}
+            <div className="mb-12">
+              <h3 className="text-xl font-semibold text-slate-200 mb-6">Hypothesis Validation</h3>
+              
+              <div className="space-y-4">
+                <div className="bg-emerald-950/20 border border-emerald-500/30 rounded-xl p-6">
+                  <div className="flex items-start gap-4">
+                    <div className="w-20 shrink-0">
+                      <span className="text-emerald-400 font-semibold text-sm">H1</span>
+                      <span className="block text-emerald-500 text-2xl mt-1">✓</span>
+                    </div>
+                    <div>
+                      <p className="text-slate-200 font-medium mb-2">6 → 2 steps reduction: VALIDATED</p>
+                      <p className="text-slate-300 text-sm mb-3">Time to first value dropped from ~15 minutes to ~2 minutes. Users no longer needed guidance to complete the flow.</p>
+                      <p className="text-slate-400 text-sm"><strong>Evidence:</strong> 0% of post-redesign demos required hand-holding (down from 100%)</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-emerald-950/20 border border-emerald-500/30 rounded-xl p-6">
+                  <div className="flex items-start gap-4">
+                    <div className="w-20 shrink-0">
+                      <span className="text-emerald-400 font-semibold text-sm">H2</span>
+                      <span className="block text-emerald-500 text-2xl mt-1">✓</span>
+                    </div>
+                    <div>
+                      <p className="text-slate-200 font-medium mb-2">Auto-populated recommendations: VALIDATED</p>
+                      <p className="text-slate-300 text-sm mb-3">Eliminated the "blank screen" drop-off. Users immediately saw value and understood what the system had learned from their context.</p>
+                      <p className="text-slate-400 text-sm"><strong>Evidence:</strong> 2 signed contracts in first wave of demos (up from 0)</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-emerald-950/20 border border-emerald-500/30 rounded-xl p-6">
+                  <div className="flex items-start gap-4">
+                    <div className="w-20 shrink-0">
+                      <span className="text-emerald-400 font-semibold text-sm">H3</span>
+                      <span className="block text-emerald-500 text-2xl mt-1">✓</span>
+                    </div>
+                    <div>
+                      <p className="text-slate-200 font-medium mb-2">Optional voice input: VALIDATED</p>
+                      <p className="text-slate-300 text-sm mb-3">Users adopted text input as primary mode, with voice as supplementary. Zero voice-related failures blocked progress.</p>
+                      <p className="text-slate-400 text-sm"><strong>Evidence:</strong> Product could be used in any environment (office, public spaces, quiet settings)</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-emerald-950/20 border border-emerald-500/30 rounded-xl p-6">
+                  <div className="flex items-start gap-4">
+                    <div className="w-20 shrink-0">
+                      <span className="text-emerald-400 font-semibold text-sm">H4</span>
+                      <span className="block text-emerald-500 text-2xl mt-1">✓</span>
+                    </div>
+                    <div>
+                      <p className="text-slate-200 font-medium mb-2">Explanatory "why" differentiation: VALIDATED</p>
+                      <p className="text-slate-300 text-sm mb-3">PE sponsors responded positively to the AI-generated fit explanations, noting this was "exactly what we pay search firms for."</p>
+                      <p className="text-slate-400 text-sm"><strong>Evidence:</strong> Customer feedback during demos highlighted this as key differentiator from LinkedIn/SeekOut</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Measurable Results */}
             <div className="mb-8 bg-emerald-950/20 border border-emerald-500/30 rounded-xl p-6 md:p-8">
-              <h3 className="text-lg font-semibold text-emerald-400 mb-4">Measurable Results</h3>
+              <h3 className="text-lg font-semibold text-emerald-400 mb-6">Measurable Results</h3>
               <div className="grid sm:grid-cols-2 gap-6">
                 <div>
                   <div className="text-3xl font-bold text-emerald-400 mb-2">0 → 2</div>
@@ -821,7 +1096,7 @@ export default function OnlyEdgeAICaseStudyPage() {
             </div>
 
             <div className="grid md:grid-cols-2 gap-6">
-              {/* Immediate Results */}
+              {/* Product Improvements */}
               <div className="bg-slate-800/30 border border-slate-700/50 rounded-xl p-6">
                 <h3 className="text-lg font-semibold text-slate-200 mb-4">Product Improvements</h3>
                 <ul className="space-y-3 text-slate-300">
@@ -869,136 +1144,189 @@ export default function OnlyEdgeAICaseStudyPage() {
             </div>
           </section>
 
-          {/* ===== Product Updates ===== */}
+          {/* ===== SYNTHESIZE ===== */}
           <section className="mb-20">
-            <h2 className="text-2xl font-bold text-slate-50 mb-2">Building in Public: Product Updates</h2>
-            <p className="text-slate-400 mb-8">Transparency as a feature, not an afterthought.</p>
-            
-            <div className="bg-slate-800/30 border border-slate-700/50 rounded-xl p-6 mb-6">
-              <p className="text-slate-300 leading-relaxed mb-4">
-                One principle I carried forward from rebuilding the foundation: <strong className="text-slate-200">users deserve to know what's happening</strong>. No black boxes. No silent updates. No guessing.
-              </p>
-              <p className="text-slate-400 leading-relaxed mb-4">
-                I designed a Product Updates experience that gives users full visibility into product evolution:
-              </p>
-              <ul className="space-y-2 text-slate-300 text-sm mb-6">
-                <li className="flex items-start gap-3">
-                  <span className="text-slate-500">▹</span>
-                  <span>Getting started guides and onboarding</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-slate-500">▹</span>
-                  <span>New features with context on why they matter</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-slate-500">▹</span>
-                  <span>Performance improvements and optimizations</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-slate-500">▹</span>
-                  <span>Bug fixes and quality improvements</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-slate-500">▹</span>
-                  <span>UI/UX refinements based on user feedback</span>
-                </li>
-              </ul>
-              <p className="text-slate-400 leading-relaxed">
-                This isn't just documentation—it's a commitment to treating users as partners in the product journey. When people understand what changed and why, they don't feel disoriented after updates. When they see steady progress, they trust the team. When they can influence the roadmap, they feel ownership.
-              </p>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-sm text-cyan-400 mb-6">
+              <span className="font-mono font-semibold">06</span>
+              <span>Synthesize</span>
             </div>
-
-            {/* Product Updates Image */}
-            <div className="rounded-xl overflow-hidden border border-slate-700/50">
-              <img 
-                src="/documentation.png" 
-                alt="Product Updates Screen" 
-                className="w-full h-auto"
-              />
-            </div>
-          </section>
-
-          {/* ===== From Foundation to Iteration ===== */}
-          <section className="mb-20">
-            <h2 className="text-2xl font-bold text-slate-50 mb-6">From Foundation to Iteration</h2>
-            
-            <p className="text-slate-400 leading-relaxed mb-6">
-              Launching the redesigned MVP wasn't the end—it was the beginning.
-            </p>
-
-            <div className="bg-slate-800/30 border border-slate-700/50 rounded-xl p-6 md:p-8 mb-6">
-              <p className="text-slate-300 leading-relaxed mb-4">
-                With a solid foundation in place, we could finally:
-              </p>
-              <ul className="space-y-3 text-slate-300">
-                <li className="flex items-start gap-3">
-                  <span className="text-amber-400">→</span>
-                  <span><strong>Build a clear roadmap</strong> grounded in real user behavior, not assumptions</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-amber-400">→</span>
-                  <span><strong>Iterate with confidence</strong>, knowing the core mental model was sound</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-amber-400">→</span>
-                  <span><strong>Add complexity strategically</strong>, rather than inheriting legacy decisions</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-amber-400">→</span>
-                  <span><strong>Learn from real customers</strong> as they used the product in their actual workflows</span>
-                </li>
-              </ul>
-            </div>
-
-            <div className="bg-slate-800/30 border border-slate-700/50 rounded-xl p-6">
-              <p className="text-slate-300 leading-relaxed">
-                Features like pipeline management and outreach workflows—previously impossible on the broken foundation—now had a clear home in the product architecture. The recommendations system continues to learn from user searches, getting smarter with each interaction.
-              </p>
-              <p className="text-slate-400 leading-relaxed mt-4">
-                The MVP gave us something more valuable than perfection: <strong className="text-slate-200">clarity on what to build next</strong>.
-              </p>
-            </div>
-          </section>
-
-          {/* ===== Reflection ===== */}
-          <section className="mb-20">
-            <h2 className="text-2xl font-bold text-slate-50 mb-8">Reflection</h2>
+            <h2 className="text-3xl font-bold text-slate-50 mb-8">Key Learnings & Iteration Forward</h2>
             
             <p className="text-slate-400 leading-relaxed mb-8">
-              This project reinforced several core lessons:
+              Launching the redesigned MVP wasn't the end—it was the beginning. I synthesized learnings from the redesign to inform future work and establish principles that would guide the product forward.
             </p>
 
-            <div className="grid sm:grid-cols-3 gap-4 mb-10">
-              <div className="bg-slate-800/30 border border-slate-700/50 rounded-xl p-5 text-center">
-                <p className="text-slate-200 font-medium">More AI does not mean more value</p>
+            {/* Core Learnings */}
+            <div className="mb-12">
+              <h3 className="text-xl font-semibold text-slate-200 mb-6">Core Learnings</h3>
+              
+              <p className="text-slate-400 leading-relaxed mb-6">
+                This project reinforced several lessons that now guide my approach to product design:
+              </p>
+
+              <div className="grid sm:grid-cols-3 gap-4 mb-8">
+                <div className="bg-slate-800/30 border border-slate-700/50 rounded-xl p-5 text-center">
+                  <p className="text-slate-200 font-medium">More AI does not mean more value</p>
+                </div>
+                <div className="bg-slate-800/30 border border-slate-700/50 rounded-xl p-5 text-center">
+                  <p className="text-slate-200 font-medium">Context and point of view are the true differentiators</p>
+                </div>
+                <div className="bg-slate-800/30 border border-slate-700/50 rounded-xl p-5 text-center">
+                  <p className="text-slate-200 font-medium">Great 0→1 work is about restraint, not excess</p>
+                </div>
               </div>
-              <div className="bg-slate-800/30 border border-slate-700/50 rounded-xl p-5 text-center">
-                <p className="text-slate-200 font-medium">Context and point of view are the true differentiators</p>
-              </div>
-              <div className="bg-slate-800/30 border border-slate-700/50 rounded-xl p-5 text-center">
-                <p className="text-slate-200 font-medium">Great 0→1 work is about restraint, not excess</p>
+
+              <div className="space-y-6">
+                <div className="bg-slate-800/30 border border-slate-700/50 rounded-xl p-6">
+                  <h4 className="text-slate-200 font-semibold mb-3">Research early, validate continuously</h4>
+                  <p className="text-slate-400 text-sm leading-relaxed">
+                    Grounding decisions in UX principles (Miller's Law, Progressive Disclosure) and competitive patterns gave me confidence when challenging foundational assumptions. Research isn't just for discovery—it's armor for defending necessary changes.
+                  </p>
+                </div>
+
+                <div className="bg-slate-800/30 border border-slate-700/50 rounded-xl p-6">
+                  <h4 className="text-slate-200 font-semibold mb-3">Architecture before aesthetics</h4>
+                  <p className="text-slate-400 text-sm leading-relaxed">
+                    The broken navigation wasn't a UI problem—it was an architecture problem. No amount of visual polish would fix a mental model that punished users for progressing through the flow. Information architecture must come first.
+                  </p>
+                </div>
+
+                <div className="bg-slate-800/30 border border-slate-700/50 rounded-xl p-6">
+                  <h4 className="text-slate-200 font-semibold mb-3">Testable hypotheses create accountability</h4>
+                  <p className="text-slate-400 text-sm leading-relaxed">
+                    Framing decisions as testable hypotheses (H1: reduce steps, H2: auto-populate recommendations) made it possible to measure success objectively. This removed ego from design decisions and focused the team on outcomes.
+                  </p>
+                </div>
+
+                <div className="bg-slate-800/30 border border-slate-700/50 rounded-xl p-6">
+                  <h4 className="text-slate-200 font-semibold mb-3">User agency beats automation magic</h4>
+                  <p className="text-slate-400 text-sm leading-relaxed">
+                    PE sponsors didn't want magic—they wanted control. Making voice optional (not mandatory) and surfacing what the system understood (recommendations) built trust faster than any "wow" feature could.
+                  </p>
+                </div>
               </div>
             </div>
 
-            <div className="bg-slate-800/30 border border-slate-700/50 rounded-xl p-6 md:p-8">
-              <h3 className="text-sm uppercase tracking-[0.3em] text-slate-500 font-medium mb-4">The principles that now guide my work</h3>
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div className="flex items-center gap-3 text-slate-300">
-                  <span className="text-slate-500">→</span>
-                  <span>First principles thinking</span>
+            {/* From Foundation to Iteration */}
+            <div className="mb-12">
+              <h3 className="text-xl font-semibold text-slate-200 mb-6">From Foundation to Iteration</h3>
+              
+              <div className="bg-slate-800/30 border border-slate-700/50 rounded-xl p-6 md:p-8 mb-6">
+                <p className="text-slate-300 leading-relaxed mb-4">
+                  With a solid foundation in place, we could finally:
+                </p>
+                <ul className="space-y-3 text-slate-300">
+                  <li className="flex items-start gap-3">
+                    <span className="text-amber-400">→</span>
+                    <span><strong>Build a clear roadmap</strong> grounded in real user behavior, not assumptions</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-amber-400">→</span>
+                    <span><strong>Iterate with confidence</strong>, knowing the core mental model was sound</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-amber-400">→</span>
+                    <span><strong>Add complexity strategically</strong>, rather than inheriting legacy decisions</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-amber-400">→</span>
+                    <span><strong>Learn from real customers</strong> as they used the product in their actual workflows</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="bg-slate-800/30 border border-slate-700/50 rounded-xl p-6">
+                <p className="text-slate-300 leading-relaxed">
+                  Features like pipeline management and outreach workflows—previously impossible on the broken foundation—now had a clear home in the product architecture. The recommendations system continues to learn from user searches, getting smarter with each interaction.
+                </p>
+                <p className="text-slate-400 leading-relaxed mt-4">
+                  The MVP gave us something more valuable than perfection: <strong className="text-slate-200">clarity on what to build next</strong>.
+                </p>
+              </div>
+            </div>
+
+            {/* Principles That Guide Future Work */}
+            <div className="mb-12">
+              <h3 className="text-xl font-semibold text-slate-200 mb-6">Design Principles Established</h3>
+              
+              <div className="bg-slate-800/30 border border-slate-700/50 rounded-xl p-6 md:p-8">
+                <p className="text-slate-300 leading-relaxed mb-6">
+                  The redesign established product principles that now guide all future work:
+                </p>
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <div className="flex items-center gap-3 text-slate-300">
+                    <span className="text-slate-500">→</span>
+                    <span>First principles thinking over incremental fixes</span>
+                  </div>
+                  <div className="flex items-center gap-3 text-slate-300">
+                    <span className="text-slate-500">→</span>
+                    <span>Consider second-order consequences of every decision</span>
+                  </div>
+                  <div className="flex items-center gap-3 text-slate-300">
+                    <span className="text-slate-500">→</span>
+                    <span>Progressive disclosure to reduce cognitive load</span>
+                  </div>
+                  <div className="flex items-center gap-3 text-slate-300">
+                    <span className="text-slate-500">→</span>
+                    <span>User agency over automation when stakes are high</span>
+                  </div>
+                  <div className="flex items-center gap-3 text-slate-300">
+                    <span className="text-slate-500">→</span>
+                    <span>Show value immediately, then enable customization</span>
+                  </div>
+                  <div className="flex items-center gap-3 text-slate-300">
+                    <span className="text-slate-500">→</span>
+                    <span>Transparency builds trust faster than perfection</span>
+                  </div>
                 </div>
-                <div className="flex items-center gap-3 text-slate-300">
-                  <span className="text-slate-500">→</span>
-                  <span>Second-order consequences</span>
-                </div>
-                <div className="flex items-center gap-3 text-slate-300">
-                  <span className="text-slate-500">→</span>
-                  <span>Progressive disclosure</span>
-                </div>
-                <div className="flex items-center gap-3 text-slate-300">
-                  <span className="text-slate-500">→</span>
-                  <span>User agency over automation</span>
-                </div>
+              </div>
+            </div>
+
+            {/* Building in Public: Product Updates */}
+            <div className="mb-12">
+              <h3 className="text-xl font-semibold text-slate-200 mb-6">Carrying Forward: Transparency as a Feature</h3>
+              
+              <div className="bg-slate-800/30 border border-slate-700/50 rounded-xl p-6 mb-6">
+                <p className="text-slate-300 leading-relaxed mb-4">
+                  One principle I carried forward from rebuilding the foundation: <strong className="text-slate-200">users deserve to know what's happening</strong>. No black boxes. No silent updates. No guessing.
+                </p>
+                <p className="text-slate-400 leading-relaxed mb-4">
+                  I designed a Product Updates experience that gives users full visibility into product evolution:
+                </p>
+                <ul className="space-y-2 text-slate-300 text-sm mb-6">
+                  <li className="flex items-start gap-3">
+                    <span className="text-slate-500">▹</span>
+                    <span>Getting started guides and onboarding</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-slate-500">▹</span>
+                    <span>New features with context on why they matter</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-slate-500">▹</span>
+                    <span>Performance improvements and optimizations</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-slate-500">▹</span>
+                    <span>Bug fixes and quality improvements</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-slate-500">▹</span>
+                    <span>UI/UX refinements based on user feedback</span>
+                  </li>
+                </ul>
+                <p className="text-slate-400 leading-relaxed">
+                  This isn't just documentation—it's a commitment to treating users as partners in the product journey. When people understand what changed and why, they don't feel disoriented after updates. When they see steady progress, they trust the team. When they can influence the roadmap, they feel ownership.
+                </p>
+              </div>
+
+              {/* Product Updates Image */}
+              <div className="rounded-xl overflow-hidden border border-slate-700/50">
+                <img 
+                  src="/documentation.png" 
+                  alt="Product Updates Screen" 
+                  className="w-full h-auto"
+                />
               </div>
             </div>
           </section>
