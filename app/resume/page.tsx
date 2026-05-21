@@ -202,7 +202,7 @@ export default function Resume() {
               </div>
 
               {/* Job 4 - Tesla */}
-              <div className="border-l-4 border-indigo-500 pl-6 bg-slate-800/30 backdrop-blur-sm border-r border-t border-b border-slate-700/50 rounded-r-lg p-6 hover:bg-slate-800/50 transition-all duration-300">
+              {/* <div className="border-l-4 border-indigo-500 pl-6 bg-slate-800/30 backdrop-blur-sm border-r border-t border-b border-slate-700/50 rounded-r-lg p-6 hover:bg-slate-800/50 transition-all duration-300">
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2">
                   <h3 className="text-xl font-semibold text-slate-50">Senior Product Designer</h3>
                   <span className="text-indigo-400 font-medium text-sm">Mar 2020 - Mar 2021</span>
@@ -214,7 +214,7 @@ export default function Resume() {
                   <li className="pl-4 relative before:content-['•'] before:absolute before:left-0 before:text-indigo-400">Collaborated with engineering teams to ensure design fidelity across web and mobile platforms — maintaining consistency while optimizing for each platform's unique capabilities</li>
                   <li className="pl-4 relative before:content-['•'] before:absolute before:left-0 before:text-indigo-400">Applied systems thinking to complex product ecosystems — designing experiences that scale across multiple touchpoints while preserving Tesla's brand identity</li>
                 </ul>
-              </div>
+              </div> */}
 
               {/* Job 5 - Globe Life */}
               <div className="border-l-4 border-indigo-500 pl-6 bg-slate-800/30 backdrop-blur-sm border-r border-t border-b border-slate-700/50 rounded-r-lg p-6 hover:bg-slate-800/50 transition-all duration-300">
