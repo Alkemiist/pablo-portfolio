@@ -1,7 +1,5 @@
 import Link from 'next/link';
 import Navigation from '../components/Navigation';
-import Image from 'next/image';
-
 export default function CaseStudies() {
   return (
     <div className="min-h-screen bg-[#0f0f23]">
@@ -83,19 +81,24 @@ export default function CaseStudies() {
                 className="group block focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0f0f23] rounded-xl overflow-hidden"
               >
                 <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700/50 rounded-xl overflow-hidden hover:border-indigo-500/50 hover:shadow-xl hover:shadow-indigo-500/10 transition-all duration-300 h-full flex flex-col">
-                  {/* Card hero — styled placeholder until screenshot is ready */}
                   <div className="h-64 md:h-80 relative overflow-hidden bg-[#0d0d12] flex items-center justify-center">
-                    <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse at 30% 50%, rgba(124,111,247,0.12) 0%, transparent 65%), radial-gradient(ellipse at 80% 30%, rgba(196,168,130,0.07) 0%, transparent 60%)' }} />
-                    <div className="relative z-10 text-center px-8">
-                      <div className="text-xs uppercase tracking-[0.15em] mb-3" style={{ fontFamily: 'monospace', color: 'rgba(124,111,247,0.7)' }}>
-                        Legal AI · Word Add-in · 48 hrs
+                    <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse at 25% 60%, rgba(124,111,247,0.18) 0%, transparent 60%), radial-gradient(ellipse at 80% 20%, rgba(196,168,130,0.09) 0%, transparent 55%)' }} />
+                    {/* Simulated add-in panel */}
+                    <div className="relative z-10 flex items-stretch gap-0 w-64 h-44 rounded-xl overflow-hidden" style={{ border: '0.5px solid rgba(255,255,255,0.1)' }}>
+                      <div className="flex-1 bg-white/[0.03] flex flex-col justify-center px-4 gap-2">
+                        {[100,75,90,60,85,70].map((w,i) => (
+                          <div key={i} style={{ height: 5, width: `${w}%`, borderRadius: 2, background: 'rgba(255,255,255,0.08)' }} />
+                        ))}
                       </div>
-                      <div className="text-3xl font-bold mb-2" style={{ color: '#edeaf5', letterSpacing: '-0.02em' }}>
-                        LOIS for Word
+                      <div className="w-20 flex flex-col gap-2 p-3" style={{ background: 'rgba(124,111,247,0.06)', borderLeft: '0.5px solid rgba(255,255,255,0.08)' }}>
+                        <div className="text-center" style={{ fontFamily: 'monospace', fontSize: 7, color: 'rgba(124,111,247,0.7)', letterSpacing: '0.08em', textTransform: 'uppercase' }}>340px</div>
+                        <div style={{ height: 16, borderRadius: 3, background: 'rgba(124,111,247,0.25)' }} />
+                        {[1,2,3,4].map(i => <div key={i} style={{ height: 5, borderRadius: 2, background: 'rgba(255,255,255,0.07)' }} />)}
+                        <div style={{ height: 16, borderRadius: 3, background: 'rgba(124,111,247,0.15)', border: '0.5px solid rgba(124,111,247,0.3)' }} />
                       </div>
-                      <div className="text-sm" style={{ color: '#8e8aaa', fontStyle: 'italic' }}>
-                        A take-home that became a production redesign
-                      </div>
+                    </div>
+                    <div className="absolute bottom-6 left-0 right-0 text-center">
+                      <div style={{ fontFamily: 'monospace', fontSize: 10, color: 'rgba(124,111,247,0.6)', textTransform: 'uppercase', letterSpacing: '0.12em' }}>Legal AI · Word Add-in · 48 hrs</div>
                     </div>
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent" />
                   </div>
@@ -137,16 +140,29 @@ export default function CaseStudies() {
                 className="group block focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0f0f23] rounded-xl overflow-hidden"
               >
                 <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700/50 rounded-xl overflow-hidden hover:border-indigo-500/50 hover:shadow-xl hover:shadow-indigo-500/10 transition-all duration-300 h-full flex flex-col">
-                  {/* Hero Image */}
-                  <div className="h-64 md:h-80 relative overflow-hidden bg-slate-900/50">
-                    <Image 
-                      src="/recommendations.png" 
-                      alt="OnlyEdge AI - Context-driven recommendations interface" 
-                      fill
-                      className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                    />
-                    {/* Gradient overlay for better text readability */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent"></div>
+                  <div className="h-64 md:h-80 relative overflow-hidden bg-[#0d0d12] flex items-center justify-center">
+                    <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse at 60% 30%, rgba(124,111,247,0.14) 0%, transparent 60%), radial-gradient(ellipse at 15% 75%, rgba(76,175,130,0.08) 0%, transparent 55%)' }} />
+                    {/* Candidate card stack */}
+                    <div className="relative z-10 flex flex-col gap-2 w-56">
+                      {[
+                        { initials: 'JM', match: '94%', tag: 'Why this candidate →' },
+                        { initials: 'SR', match: '88%', tag: 'Why this candidate →' },
+                        { initials: 'AL', match: '81%', tag: 'Why this candidate →' },
+                      ].map((c, i) => (
+                        <div key={i} className="flex items-center gap-3 rounded-lg px-3 py-2.5" style={{ background: i === 0 ? 'rgba(124,111,247,0.1)' : 'rgba(255,255,255,0.04)', border: `0.5px solid ${i === 0 ? 'rgba(124,111,247,0.35)' : 'rgba(255,255,255,0.08)'}`, opacity: 1 - i * 0.2 }}>
+                          <div className="w-7 h-7 rounded-full flex items-center justify-center shrink-0" style={{ background: 'rgba(124,111,247,0.2)', fontFamily: 'monospace', fontSize: 9, color: 'rgba(124,111,247,0.9)' }}>{c.initials}</div>
+                          <div className="flex-1 min-w-0">
+                            <div style={{ height: 5, borderRadius: 2, background: 'rgba(255,255,255,0.15)', width: '60%', marginBottom: 4 }} />
+                            <div style={{ fontFamily: 'monospace', fontSize: 8, color: 'rgba(124,111,247,0.7)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>{c.tag}</div>
+                          </div>
+                          <div style={{ fontFamily: 'monospace', fontSize: 10, color: 'rgba(76,175,130,0.9)', fontWeight: 500 }}>{c.match}</div>
+                        </div>
+                      ))}
+                    </div>
+                    <div className="absolute bottom-6 left-0 right-0 text-center">
+                      <div style={{ fontFamily: 'monospace', fontSize: 10, color: 'rgba(124,111,247,0.6)', textTransform: 'uppercase', letterSpacing: '0.12em' }}>Hiring Intelligence · Pre-seed · 0→1</div>
+                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent" />
                   </div>
 
                   <div className="p-8 flex-1 flex flex-col">
@@ -187,17 +203,23 @@ export default function CaseStudies() {
               >
                 <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700/50 rounded-xl overflow-hidden hover:border-indigo-500/50 hover:shadow-xl hover:shadow-indigo-500/10 transition-all duration-300 h-full flex flex-col">
                   <div className="h-64 md:h-80 relative overflow-hidden bg-[#0d0d12] flex items-center justify-center">
-                    <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse at 70% 40%, rgba(124,111,247,0.1) 0%, transparent 60%), radial-gradient(ellipse at 20% 70%, rgba(196,168,130,0.07) 0%, transparent 55%)' }} />
-                    <div className="relative z-10 text-center px-8">
-                      <div className="text-xs uppercase tracking-[0.15em] mb-3" style={{ fontFamily: 'monospace', color: 'rgba(124,111,247,0.7)' }}>
-                        AI Creative · Opus Intelligence · Feature 0→1
-                      </div>
-                      <div className="text-3xl font-bold mb-2" style={{ color: '#edeaf5', letterSpacing: '-0.02em' }}>
-                        Inspo
-                      </div>
-                      <div className="text-sm" style={{ color: '#8e8aaa', fontStyle: 'italic' }}>
-                        From a 1-way street to a creative playground
-                      </div>
+                    <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse at 50% 40%, rgba(124,111,247,0.12) 0%, transparent 65%), radial-gradient(ellipse at 85% 70%, rgba(196,168,130,0.08) 0%, transparent 50%)' }} />
+                    {/* 4-idea grid */}
+                    <div className="relative z-10 grid grid-cols-2 gap-2 w-56">
+                      {[
+                        { label: 'Idea 01', color: 'rgba(124,111,247,0.2)', border: 'rgba(124,111,247,0.4)' },
+                        { label: 'Idea 02', color: 'rgba(196,168,130,0.12)', border: 'rgba(196,168,130,0.3)' },
+                        { label: 'Idea 03', color: 'rgba(124,111,247,0.1)', border: 'rgba(124,111,247,0.25)' },
+                        { label: 'Idea 04', color: 'rgba(196,168,130,0.08)', border: 'rgba(196,168,130,0.2)' },
+                      ].map((idea) => (
+                        <div key={idea.label} className="rounded-lg p-2.5 flex flex-col gap-1.5" style={{ background: idea.color, border: `0.5px solid ${idea.border}` }}>
+                          <div style={{ fontFamily: 'monospace', fontSize: 8, color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>{idea.label}</div>
+                          {[80,60,90].map((w,i) => <div key={i} style={{ height: 4, borderRadius: 1, background: 'rgba(255,255,255,0.12)', width: `${w}%` }} />)}
+                        </div>
+                      ))}
+                    </div>
+                    <div className="absolute bottom-6 left-0 right-0 text-center">
+                      <div style={{ fontFamily: 'monospace', fontSize: 10, color: 'rgba(124,111,247,0.6)', textTransform: 'uppercase', letterSpacing: '0.12em' }}>AI Creative · Opus Intelligence · Feature 0→1</div>
                     </div>
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent" />
                   </div>

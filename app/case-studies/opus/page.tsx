@@ -434,7 +434,7 @@ export default function OpusCaseStudy() {
             <div className="flex flex-wrap gap-2" style={{ marginBottom: 40 }}>
               {[
                 { label: 'Feature 0→1', accent: true },
-                { label: 'Product Design & Strategy' },
+                { label: 'PM · Designer · Engineer' },
                 { label: '3 Sprint Cycles' },
                 { label: 'Opus Intelligence' },
               ].map((tag) => (
@@ -505,7 +505,7 @@ export default function OpusCaseStudy() {
                 { label: 'Company', value: 'Opus Intelligence' },
                 { label: 'Feature', value: 'Inspo — Campaign Generator' },
                 { label: 'Timeline', value: '3 Sprint Cycles' },
-                { label: 'Team', value: 'PM · Engineering · Design' },
+                { label: 'Role', value: 'PM · Designer · Engineer' },
               ].map((item, i) => (
                 <div
                   key={item.label}

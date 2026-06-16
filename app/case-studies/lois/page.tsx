@@ -475,7 +475,7 @@ export default function LOISCaseStudy() {
             {/* Meta tags */}
             <div className="flex flex-wrap gap-2" style={{ marginBottom: 40 }}>
               {[
-                { label: 'Product Design + Frontend Engineering', accent: true },
+                { label: 'PM · Designer · Engineer', accent: true },
                 { label: '48 Hours' },
                 { label: 'Next.js · TypeScript · Tailwind' },
                 { label: 'Filevine / LOIS' },
@@ -558,7 +558,7 @@ export default function LOISCaseStudy() {
               {[
                 { label: 'Company', value: 'Filevine / LOIS' },
                 { label: 'Product', value: 'AI Legal Document Assistant' },
-                { label: 'Brief', value: '4-hour design critique' },
+                { label: 'Role', value: 'PM · Designer · Engineer' },
                 { label: 'Delivered', value: 'Full production redesign' },
               ].map((item, i, arr) => (
                 <div

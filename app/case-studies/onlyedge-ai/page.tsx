@@ -411,7 +411,7 @@ export default function OnlyEdgeCaseStudy() {
             <div className="flex flex-wrap gap-2" style={{ marginBottom: 40 }}>
               {[
                 { label: 'Product Design / 0→1', accent: true },
-                { label: 'VP of Product Development' },
+                { label: 'PM · Designer · Engineer' },
                 { label: 'Pre-seed' },
                 { label: 'Hiring Intelligence' },
               ].map((tag) => (
@@ -450,7 +450,7 @@ export default function OnlyEdgeCaseStudy() {
                 { label: 'Company', value: 'OnlyEdge AI' },
                 { label: 'Product', value: 'Hiring Intelligence Platform' },
                 { label: 'Stage', value: 'Pre-seed · 0→1' },
-                { label: 'Role', value: 'VP of Product Development' },
+                { label: 'Role', value: 'PM · Designer · Engineer' },
               ].map((item, i) => (
                 <div
                   key={item.label}
