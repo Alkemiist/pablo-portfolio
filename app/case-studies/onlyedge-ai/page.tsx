@@ -634,7 +634,7 @@ export default function OnlyEdgeCaseStudy() {
               </p>
               <div>
                 <img
-                  src="/OnlyEdge/Context-gathering.png"
+                  src="/onlyedge/Context-gathering.png"
                   alt="OnlyEdge AI project creation and intelligence collection flow — structured intake for role, mandate, timeline, and constraints"
                   style={{ width: '100%', height: 'auto', display: 'block', borderRadius: 14, border: `0.5px solid ${C.borderStrong}` }}
                 />
@@ -656,7 +656,7 @@ export default function OnlyEdgeCaseStudy() {
               </p>
               <div>
                 <img
-                  src="/OnlyEdge/Why-fit.png"
+                  src="/onlyedge/Why-fit.png"
                   alt="OnlyEdge AI candidate recommendation cards showing the why rationale — fit signals and matching logic prominent on each card"
                   style={{ width: '100%', height: 'auto', display: 'block', borderRadius: 14, border: `0.5px solid ${C.borderStrong}` }}
                 />
@@ -678,7 +678,7 @@ export default function OnlyEdgeCaseStudy() {
               </p>
               <div>
                 <img
-                  src="/OnlyEdge/candidate-judgment.png"
+                  src="/onlyedge/candidate-judgment.png"
                   alt="OnlyEdge AI touchpoint and thesis building interface — accumulated notes and observations per candidate forming an evaluation trail"
                   style={{ width: '100%', height: 'auto', display: 'block', borderRadius: 14, border: `0.5px solid ${C.borderStrong}` }}
                 />
@@ -700,7 +700,7 @@ export default function OnlyEdgeCaseStudy() {
               </p>
               <div>
                 <img
-                  src="/OnlyEdge/system-record.png"
+                  src="/onlyedge/system-record.png"
                   alt="OnlyEdge AI decision tracking view — chronological log of all actions taken across the project with timestamps and context"
                   style={{ width: '100%', height: 'auto', display: 'block', borderRadius: 14, border: `0.5px solid ${C.borderStrong}` }}
                 />
@@ -722,7 +722,7 @@ export default function OnlyEdgeCaseStudy() {
               </p>
               <div>
                 <img
-                  src="/OnlyEdge/outcome.png"
+                  src="/onlyedge/outcome.png"
                   alt="OnlyEdge AI project close and feedback screen — evaluation of whether recommendations held and data feeding back into future projects"
                   style={{ width: '100%', height: 'auto', display: 'block', borderRadius: 14, border: `0.5px solid ${C.borderStrong}` }}
                 />
