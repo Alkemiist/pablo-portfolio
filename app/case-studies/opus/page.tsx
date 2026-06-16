@@ -319,6 +319,29 @@ function ImagePlaceholder({
   );
 }
 
+// Asset card — used in the Experiment section to visually distinguish each of the 5 asset types
+function AssetBadge({ n, name, method }: { n: string; name: string; method: string }) {
+  return (
+    <div
+      style={{
+        display: 'inline-flex',
+        alignItems: 'center',
+        gap: 10,
+        background: 'rgba(124,111,247,0.06)',
+        border: '0.5px solid rgba(124,111,247,0.2)',
+        borderRadius: 8,
+        padding: '8px 14px',
+        marginBottom: 20,
+      }}
+    >
+      <span style={{ ...monoFont, fontSize: 10, color: C.purple }}>Asset {n}</span>
+      <span style={{ width: 1, height: 12, background: C.borderStrong }} />
+      <span style={{ fontSize: 13, fontWeight: 500, color: C.textPrimary }}>{name}</span>
+      <span style={{ ...monoFont, fontSize: 10, color: C.textTertiary }}>{method}</span>
+    </div>
+  );
+}
+
 function AnalysisRow({ n, status, body }: { n: string; status: string; body: string }) {
   return (
     <div
@@ -370,7 +393,7 @@ function PatternCard({ n, title, desc }: { n: string; title: string; desc: strin
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
-export default function OnlyEdgeCaseStudy() {
+export default function OpusCaseStudy() {
   return (
     <div
       className={`${playfair.variable} ${ibmMono.variable}`}
@@ -385,7 +408,7 @@ export default function OnlyEdgeCaseStudy() {
           <header style={{ paddingBottom: 80 }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 28 }}>
               <span style={{ ...monoFont, fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.12em', color: C.purple }}>
-                Case Study — Hiring Intelligence / 0→1
+                Case Study — AI Creative Marketing / Feature 0→1
               </span>
               <div style={{ width: 48, height: 0.5, background: C.purple, opacity: 0.4 }} />
             </div>
@@ -401,19 +424,19 @@ export default function OnlyEdgeCaseStudy() {
                 margin: '0 0 16px 0',
               }}
             >
-              OnlyEdge AI
+              Inspo — Opus Intelligence
             </h1>
 
             <p style={{ ...playfairFont, fontSize: 18, fontStyle: 'italic', color: C.textSecondary, marginBottom: 28, lineHeight: 1.5 }}>
-              From a search engine to a decision-making platform
+              From a 1-way street to a creative playground
             </p>
 
             <div className="flex flex-wrap gap-2" style={{ marginBottom: 40 }}>
               {[
-                { label: 'Product Design / 0→1', accent: true },
-                { label: 'VP of Product Development' },
-                { label: 'Pre-seed' },
-                { label: 'Hiring Intelligence' },
+                { label: 'Feature 0→1', accent: true },
+                { label: 'Product Design & Strategy' },
+                { label: '3 Sprint Cycles' },
+                { label: 'Opus Intelligence' },
               ].map((tag) => (
                 <span
                   key={tag.label}
@@ -433,8 +456,40 @@ export default function OnlyEdgeCaseStudy() {
             </div>
 
             <BodyText style={{ marginBottom: 40 }}>
-              I was the first product designer at OnlyEdge AI. No brief, no design system, no product direction. What I found was something that looked like a platform but worked like a search engine. This is what it took to fix that.
+              This one didn&apos;t start with a product review or a design brief. It started with reading user logs. The logs told me everything I needed to know — and what they said was: we had the assets, we had the data, and we were making our users pretend we didn&apos;t. This is what happened when we stopped doing that.
             </BodyText>
+
+            {/* Feature context callout */}
+            <div
+              style={{
+                marginBottom: 40,
+                background: C.bgCard,
+                ...borderSubtle,
+                borderRadius: 12,
+                padding: '16px 20px',
+                display: 'flex',
+                alignItems: 'flex-start',
+                gap: 14,
+              }}
+            >
+              <div
+                style={{
+                  width: 3,
+                  borderRadius: 2,
+                  background: C.warm,
+                  alignSelf: 'stretch',
+                  flexShrink: 0,
+                }}
+              />
+              <div>
+                <div style={{ ...monoFont, fontSize: 10, textTransform: 'uppercase', letterSpacing: '0.08em', color: C.warm, marginBottom: 6 }}>
+                  A note on scope
+                </div>
+                <p style={{ fontSize: 13, color: C.textSecondary, lineHeight: 1.65, margin: 0 }}>
+                  Inspo is a feature, not a standalone product. It lives inside Opus Intelligence, an AI-powered creative marketing platform. This case study documents how one observation — users fighting the agent to use context it already had — became the most-requested feature in the product and reshaped the platform&apos;s roadmap.
+                </p>
+              </div>
+            </div>
 
             <div
               style={{
@@ -447,10 +502,10 @@ export default function OnlyEdgeCaseStudy() {
               className="sm:grid-cols-4"
             >
               {[
-                { label: 'Company', value: 'OnlyEdge AI' },
-                { label: 'Product', value: 'Hiring Intelligence Platform' },
-                { label: 'Stage', value: 'Pre-seed · 0→1' },
-                { label: 'Role', value: 'VP of Product Development' },
+                { label: 'Company', value: 'Opus Intelligence' },
+                { label: 'Feature', value: 'Inspo — Campaign Generator' },
+                { label: 'Timeline', value: '3 Sprint Cycles' },
+                { label: 'Team', value: 'PM · Engineering · Design' },
               ].map((item, i) => (
                 <div
                   key={item.label}
@@ -478,7 +533,11 @@ export default function OnlyEdgeCaseStudy() {
             <GoalPill text="Understand reality as it is, not as you think it is" />
 
             <BodyText style={{ marginBottom: 28 }}>
-              I joined without a brief. The product existed but had never had a designer. I ran it end to end before asking any questions. What I found wasn&apos;t a design problem. It was a product identity problem wearing a design problem&apos;s clothes.
+              I didn&apos;t start with a user interview. I started with logs. Users were fighting the agent. They had brand assets, product pages, audience data — everything the system needed to generate good campaigns — and they were manually typing all of it into the chat, over and over, because the product wasn&apos;t using what it already had. They were doing the AI&apos;s job for it.
+            </BodyText>
+
+            <BodyText style={{ marginBottom: 28 }}>
+              That is not confusion. That is a behavior signal. Users weren&apos;t struggling to understand the tool — they were working around a gap the tool should have closed.
             </BodyText>
 
             <Divider />
@@ -486,27 +545,28 @@ export default function OnlyEdgeCaseStudy() {
             <div style={{ marginBottom: 40 }}>
               <ObservationList
                 items={[
-                  'The first screen was a fork — two flow options before the product knew who you were or what you were trying to do. A decision the product was too afraid to make for you.',
-                  'No home for active projects. You couldn\'t see what was in progress, what needed attention, or what you had started. Every session felt like the first session.',
-                  'The product surfaced candidates. It had no opinion about them. No "why this person for this role." Results without rationale.',
-                  'No memory between sessions. Returning users started from scratch. Nothing was tracked, no decisions were recorded, no context was preserved.',
-                  'Architecture existed. A product logic did not.',
+                  'Users re-entering brand voice, product descriptions, and audience details that already existed as system assets — every session, from scratch.',
+                  'Campaign generation happening one idea at a time inside a chat thread, with no visual output.',
+                  'No memory between sessions — every new campaign started with a blank prompt.',
+                  'The agent returned text; users wanted options, visuals, something to react to and compare — a workspace, not a conversation.',
+                  'The product assumed "talk to it enough" solved the problem. The logs showed it didn\'t.',
                 ]}
               />
             </div>
 
-            {/* Image slot 1 — entry fork */}
-            {/* TODO: uncomment and add screenshot when available
+            {/* Image slot 1 — user behavior / logs */}
             <div style={{ marginBottom: 40 }}>
-              <ImagePlaceholder
-                label="Image Slot 1 — Entry fork"
-                description="Full-width screenshot of the original OnlyEdge flow showing the two-option fork at entry — before the product knows who the user is or what they are trying to do. Should clearly show both path options and the lack of any persona context."
-                caption="The entry fork — a decision the product should have made for the user"
+              <img
+                src="/inspo/agent-chat.jpg"
+                alt="The original Opus agent chat interface — users manually typing brand and product details that already existed as system assets"
+                style={{ width: '100%', height: 'auto', display: 'block', borderRadius: 14, border: `0.5px solid ${C.borderStrong}` }}
               />
+              <p style={{ ...monoFont, fontSize: 12, color: C.textTertiary, fontStyle: 'italic', padding: '10px 16px 14px', textAlign: 'center', margin: 0 }}>
+                The logs — users manually re-entering what the system already knew
+              </p>
             </div>
-            */}
 
-            <FeynmanCheck text={`"Can I explain what's wrong to someone outside this domain?" — Yes: the product made you decide before it knew anything about you, and then forgot everything you decided. That is not a platform. That is a search engine with extra steps.`} />
+            <FeynmanCheck text={`"Can I explain what I observed to someone outside this domain?" — Yes: the users were doing manually what the product should have been doing automatically. The product knew things it wasn't using. That's not a UX problem. That's a product architecture problem.`} />
           </section>
 
           {/* ═══════════════════ 02 — QUESTION ═══════════════════ */}
@@ -516,7 +576,7 @@ export default function OnlyEdgeCaseStudy() {
             <GoalPill text="Define the real problem, not the symptom" />
 
             <BodyText style={{ marginBottom: 32 }}>
-              The easy read was: the navigation is confusing, the flows are disconnected. That&apos;s the wrong diagnosis.
+              The easy read was: users find the agent interface hard to use. That&apos;s the wrong diagnosis.
             </BodyText>
 
             <div style={{ marginBottom: 32 }}>
@@ -524,15 +584,15 @@ export default function OnlyEdgeCaseStudy() {
                 rows={[
                   {
                     label: 'Symptom',
-                    value: 'The IA feels fragmented. The flows feel arbitrary. The product is hard to trust.',
+                    value: 'Output quality is inconsistent. Users feel like they\'re fighting the tool. Adoption isn\'t sticky.',
                   },
                   {
                     label: 'Disease',
-                    value: 'The product was built as a search engine. Search returns results. What this product needed to be was a platform — one that collects intelligence, forms a thesis, delivers recommendations with conviction, and tracks decisions over time. Nobody resolved what kind of thing this was before building it.',
+                    value: 'The product was a 1-way street. Input → output, one idea at a time, no context carried between sessions, no visual feedback. We built an agent and assumed conversation was the right interface for every job. It wasn\'t. The real job was: collect the right intelligence from the user\'s existing assets once, then give them a playground to mix, match, and generate ideas at scale — without starting from scratch every time.',
                   },
                   {
                     label: 'Evidence',
-                    value: 'During a live demo, a potential customer said directly: "If you weren\'t guiding me through this, I wouldn\'t know what to do." That is not a navigation problem. That is a product identity problem. The product had no opinion. It had no memory. It had no stake in the outcome.',
+                    value: 'The logs showed exactly which assets users were re-entering. Brand tone. Product descriptions. Audience profiles. These were all assets the system had already collected and stored. The agent was ignoring them. That is not an interface problem. That is an architecture failure — and the users were solving it manually because we hadn\'t solved it for them.',
                   },
                 ]}
               />
@@ -541,11 +601,11 @@ export default function OnlyEdgeCaseStudy() {
             <div style={{ marginBottom: 40 }}>
               <HMWBlock
                 label="Core Problem Statement"
-                quote={`"How might we give private equity sponsors a hiring platform that thinks alongside them — one that collects intelligence, delivers recommendations with conviction, and builds a record of every decision made?"`}
+                quote={`"How might we give creative teams a playground where their existing assets generate a range of campaign ideas — so every session starts with context, not a blank page, and output gets better with every asset they build?"`}
               />
             </div>
 
-            <FeynmanCheck text={`"Am I solving the problem I want to solve, or the actual problem?" — The temptation is to improve the navigation. The actual problem is that the product is the wrong kind of thing. We are building a decision-support platform, not a search tool. Those are different products.`} />
+            <FeynmanCheck text={`"Am I solving the problem I want to solve, or the actual problem?" — The temptation was to improve the agent. The actual problem was that the agent was the wrong interface for this job. A playground with asset context was the answer. Those are fundamentally different products.`} />
           </section>
 
           {/* ═══════════════════ 03 — HYPOTHESIS ═══════════════════ */}
@@ -563,28 +623,23 @@ export default function OnlyEdgeCaseStudy() {
                 items={[
                   {
                     n: 'H1',
-                    body: 'If we route users into the right flow based on their persona — instead of making them choose at entry — they will reach meaningful work faster and the product will feel like it knows them.',
-                    principle: 'The product should make the decisions the user shouldn\'t have to make.',
+                    body: 'If we collect user assets before generation — brand, product, persona, goal, visual direction — the AI has enough context to produce campaign ideas that are usable out of the box, not just impressive on first glance.',
+                    principle: 'Output quality is determined before generation starts. Context is the unlock.',
                   },
                   {
                     n: 'H2',
-                    body: 'If we lead with intelligence collection before surfacing candidates, the recommendations will carry conviction — because they\'ll be grounded in what the product knows about the project.',
-                    principle: 'Output is only as strong as the input that preceded it.',
+                    body: 'If we generate 4 ideas simultaneously instead of 1, users will engage differently — comparing, combining, iterating — instead of accepting or rejecting a single output.',
+                    principle: 'Plurality creates judgment. One idea forces a yes/no. Four ideas create a workshop.',
                   },
                   {
                     n: 'H3',
-                    body: 'If each candidate card surfaces the "why" — not just the who — users will engage with recommendations differently. They\'ll evaluate with intent, not scroll through results.',
-                    principle: 'Nobody else does this. The why is the differentiator.',
+                    body: 'If the playground makes iteration fast and frictionless, users will keep generating. The compounding engagement of "one more run" makes the platform stickier than any single great output.',
+                    principle: 'The best creative tool is one users want to keep using. Stickiness is designed, not assumed.',
                   },
                   {
                     n: 'H4',
-                    body: 'If we build a touchpoint and thesis layer on top of recommendations, users have a place to think alongside the platform — not just react to it.',
-                    principle: 'High-stakes decisions need a trail. You can\'t build conviction without a record.',
-                  },
-                  {
-                    n: 'H5',
-                    body: 'If we track every action and decision and make it reviewable, the platform becomes a trusted record — not a transactional tool.',
-                    principle: 'People care more about the intelligence behind the decision than just getting results.',
+                    body: 'If assets are built once and reused across every campaign, users stop re-entering the same information — and the platform becomes a compound investment. The more they build, the better it gets.',
+                    principle: 'Every input should have permanent value. Nothing in a creative system should be throwaway.',
                   },
                 ]}
               />
@@ -595,13 +650,13 @@ export default function OnlyEdgeCaseStudy() {
                 rows={[
                   {
                     label: 'Tradeoff',
-                    value: 'H2 requires the user to do work before they see anything. The product asks for context before it delivers value. I accepted that tradeoff deliberately — because the alternative is surfacing candidates before the platform understands the project, which produces noise. In PE hiring, noise is expensive. The upfront investment is the right cost.',
+                    value: 'H1 requires upfront asset creation before users see any output. That\'s friction at the start. I accepted it deliberately — because the alternative is generating without context, which produces generic ideas that erode trust faster than a well-designed intake flow does. One session of context setup. Every session after that starts stronger.',
                   },
                 ]}
               />
             </div>
 
-            <FeynmanCheck text={`"Can these hypotheses be proven wrong?" — H3 is proven wrong if users scroll past the "why" on candidate cards without reading it. H5 is proven wrong if nobody returns to review past decisions. Both are measurable. Both were testable.`} />
+            <FeynmanCheck text={`"Can these hypotheses be proven wrong?" — H3 is proven wrong if users generate once and don't return. H4 is proven wrong if users re-enter the same information anyway, ignoring the asset system. Both are measurable. Both were tracked.`} />
           </section>
 
           {/* ═══════════════════ 04 — EXPERIMENT ═══════════════════ */}
@@ -611,128 +666,148 @@ export default function OnlyEdgeCaseStudy() {
             <GoalPill text="Build only what you need to validate or invalidate" />
 
             <BodyText style={{ marginBottom: 40 }}>
-              I built the full product from scratch. Not a prototype. The decision was deliberate — a platform this opinionated had to be proven at real fidelity to be worth believing in.
+              I built Inspo from scratch. Five asset types, each with a dedicated workflow — designed to collect exactly what the AI needed to generate ideas worth keeping.
             </BodyText>
 
             <div style={{ marginBottom: 56 }}>
               <BuildStats
                 stats={[
-                  { value: '0→1', label: 'Full product from scratch' },
-                  { value: '5', label: 'Core flows built' },
-                  { value: 'PE', label: 'Private equity grade' },
+                  { value: '0→1', label: 'Feature from scratch' },
+                  { value: '5', label: 'Asset types built' },
+                  { value: '3', label: 'Sprint cycles' },
                 ]}
               />
             </div>
 
-            {/* Intelligence collection */}
+            {/* Asset 01 — Brand */}
             <div style={{ marginBottom: 48 }}>
+              <AssetBadge n="01" name="Brand" method="URL scraper" />
               <h3 style={{ ...playfairFont, fontSize: 22, fontWeight: 700, color: C.textPrimary, margin: '0 0 12px 0' }}>
-                Layer 1 — Intelligence collection.
+                Brand — the platform reads it, you don&apos;t describe it.
               </h3>
               <p style={{ fontSize: 15, lineHeight: 1.8, color: C.textSecondary, marginBottom: 24 }}>
-                When starting a project, the product asks for everything it needs to know: the role, the mandate, the timeline, the constraints. This is not a form. It is a structured intake — the intelligence layer that anchors every recommendation that follows. The quality of what comes next is determined here.
+                Not a text field. A URL scraper. Point it at your brand&apos;s website and it pulls tone, language, positioning, and visual direction — structured and fed directly into the model. The user doesn&apos;t describe their brand. The platform reads it.
               </p>
-              <div>
-                <img
-                  src="/OnlyEdge/Context-gathering.png"
-                  alt="OnlyEdge AI project creation and intelligence collection flow — structured intake for role, mandate, timeline, and constraints"
-                  style={{ width: '100%', height: 'auto', display: 'block', borderRadius: 14, border: `0.5px solid ${C.borderStrong}` }}
-                />
-                <p style={{ ...monoFont, fontSize: 12, color: C.textTertiary, fontStyle: 'italic', padding: '10px 16px 14px', textAlign: 'center', margin: 0 }}>
-                  Project intake — the intelligence layer that makes every downstream recommendation specific
-                </p>
-              </div>
+              <img
+                src="/inspo/create-brand.jpg"
+                alt="Inspo brand asset creation — URL input and structured brand profile output with tone, language, and positioning extracted automatically"
+                style={{ width: '100%', height: 'auto', display: 'block', borderRadius: 14, border: `0.5px solid ${C.borderStrong}` }}
+              />
+              <p style={{ ...monoFont, fontSize: 12, color: C.textTertiary, fontStyle: 'italic', padding: '10px 16px 14px', textAlign: 'center', margin: 0 }}>
+                Brand asset — the product reads your brand so you don&apos;t have to describe it
+              </p>
             </div>
 
             <Divider />
 
-            {/* Candidate cards */}
+            {/* Asset 02 — Product */}
             <div style={{ marginBottom: 48 }}>
+              <AssetBadge n="02" name="Product" method="PDP scraper" />
               <h3 style={{ ...playfairFont, fontSize: 22, fontWeight: 700, color: C.textPrimary, margin: '0 0 12px 0' }}>
-                Layer 2 — Candidate recommendations with conviction.
+                Product — scraped from source, not typed from memory.
               </h3>
               <p style={{ fontSize: 15, lineHeight: 1.8, color: C.textSecondary, marginBottom: 24 }}>
-                Candidates surface with a &ldquo;why&rdquo; on every card. Not just who they are — why they fit this specific project, this specific mandate, this specific moment. No other hiring tool does this. The recommendation is the product. The rationale is the differentiator.
+                Same architecture. Point it at a product detail page and it scrapes everything: feature copy, positioning, product language, imagery context. Every campaign Inspo generates starts with a product the model actually understands — not a generic description a user typed into a field.
               </p>
-              <div>
-                <img
-                  src="/OnlyEdge/Why-fit.png"
-                  alt="OnlyEdge AI candidate recommendation cards showing the why rationale — fit signals and matching logic prominent on each card"
-                  style={{ width: '100%', height: 'auto', display: 'block', borderRadius: 14, border: `0.5px solid ${C.borderStrong}` }}
-                />
-                <p style={{ ...monoFont, fontSize: 12, color: C.textTertiary, fontStyle: 'italic', padding: '10px 16px 14px', textAlign: 'center', margin: 0 }}>
-                  Candidate cards — conviction-backed recommendations, not just results
-                </p>
-              </div>
+              <img
+                src="/inspo/create-product.jpg"
+                alt="Inspo product asset — PDP URL scraper extracting features, copy, and positioning directly from the product detail page"
+                style={{ width: '100%', height: 'auto', display: 'block', borderRadius: 14, border: `0.5px solid ${C.borderStrong}` }}
+              />
+              <p style={{ ...monoFont, fontSize: 12, color: C.textTertiary, fontStyle: 'italic', padding: '10px 16px 14px', textAlign: 'center', margin: 0 }}>
+                Product asset — scraped from source, not typed from memory
+              </p>
             </div>
 
             <Divider />
 
-            {/* Touchpoints */}
+            {/* Asset 03 — Persona */}
             <div style={{ marginBottom: 48 }}>
+              <AssetBadge n="03" name="Persona" method="Audience analyzer" />
               <h3 style={{ ...playfairFont, fontSize: 22, fontWeight: 700, color: C.textPrimary, margin: '0 0 12px 0' }}>
-                Touchpoints and thesis building.
+                Persona — built from real audience behavior, not assumptions.
               </h3>
               <p style={{ fontSize: 15, lineHeight: 1.8, color: C.textSecondary, marginBottom: 24 }}>
-                For each candidate, the user creates touchpoints — notes, interactions, observations, flags. Over time, a thesis builds naturally. The platform is not just surfacing names. It is giving the user a structured place to think through them.
+                An audience analyzer. Connect your social media platforms and the tool builds data-driven personas from real audience behavior — preferred brands, behavioral patterns, content consumption habits. Not guesswork. Not a template. Actual data from the people who already follow you.
               </p>
-              <div>
-                <img
-                  src="/OnlyEdge/candidate-judgment.png"
-                  alt="OnlyEdge AI touchpoint and thesis building interface — accumulated notes and observations per candidate forming an evaluation trail"
-                  style={{ width: '100%', height: 'auto', display: 'block', borderRadius: 14, border: `0.5px solid ${C.borderStrong}` }}
-                />
-                <p style={{ ...monoFont, fontSize: 12, color: C.textTertiary, fontStyle: 'italic', padding: '10px 16px 14px', textAlign: 'center', margin: 0 }}>
-                  Touchpoints — where the platform becomes a thinking partner, not just a tool
-                </p>
-              </div>
+              <img
+                src="/inspo/persona.jpg"
+                alt="Inspo persona asset — audience analyzer showing social media connection and data-driven persona output with behavioral patterns and brand affinities"
+                style={{ width: '100%', height: 'auto', display: 'block', borderRadius: 14, border: `0.5px solid ${C.borderStrong}` }}
+              />
+              <p style={{ ...monoFont, fontSize: 12, color: C.textTertiary, fontStyle: 'italic', padding: '10px 16px 14px', textAlign: 'center', margin: 0 }}>
+                Persona — built from real audience behavior, not assumptions
+              </p>
             </div>
 
             <Divider />
 
-            {/* Decision tracking */}
+            {/* Asset 04 — Goal */}
             <div style={{ marginBottom: 48 }}>
+              <AssetBadge n="04" name="Goal" method="Local intent asset" />
               <h3 style={{ ...playfairFont, fontSize: 22, fontWeight: 700, color: C.textPrimary, margin: '0 0 12px 0' }}>
-                Decision tracking.
+                Goal — a clear intent that keeps generation purposeful.
               </h3>
               <p style={{ fontSize: 15, lineHeight: 1.8, color: C.textSecondary, marginBottom: 24 }}>
-                Every action is tracked. Every decision is recorded with a timestamp. The user can always look back: what happened, when, and on what basis. This was the memory the product was missing from day one.
+                A local asset the user fills intentionally. Campaign intent, success criteria, what this is for. Simple, structured, and grounding — keeps every generation anchored to a real objective rather than a creative direction with no target.
               </p>
-              <div>
-                <img
-                  src="/OnlyEdge/system-record.png"
-                  alt="OnlyEdge AI decision tracking view — chronological log of all actions taken across the project with timestamps and context"
-                  style={{ width: '100%', height: 'auto', display: 'block', borderRadius: 14, border: `0.5px solid ${C.borderStrong}` }}
-                />
-                <p style={{ ...monoFont, fontSize: 12, color: C.textTertiary, fontStyle: 'italic', padding: '10px 16px 14px', textAlign: 'center', margin: 0 }}>
-                  Decision tracking — full context on every move, always reviewable
-                </p>
-              </div>
+              <img
+                src="/inspo/goal.jpg"
+                alt="Inspo goal asset — structured campaign intent input capturing objective, success criteria, and target action"
+                style={{ width: '100%', height: 'auto', display: 'block', borderRadius: 14, border: `0.5px solid ${C.borderStrong}` }}
+              />
+              <p style={{ ...monoFont, fontSize: 12, color: C.textTertiary, fontStyle: 'italic', padding: '10px 16px 14px', textAlign: 'center', margin: 0 }}>
+                Goal — a clear intent that keeps generation purposeful
+              </p>
             </div>
 
             <Divider />
 
-            {/* Feedback loop */}
+            {/* Asset 05 — Visual Direction */}
             <div style={{ marginBottom: 48 }}>
+              <AssetBadge n="05" name="Visual Direction" method="Freehand + presets" />
               <h3 style={{ ...playfairFont, fontSize: 22, fontWeight: 700, color: C.textPrimary, margin: '0 0 12px 0' }}>
-                Feedback loop and evaluation.
+                Visual Direction — aesthetic intent before generation starts.
               </h3>
               <p style={{ fontSize: 15, lineHeight: 1.8, color: C.textSecondary, marginBottom: 24 }}>
-                At the close of a project, the user evaluates: did the recommendation hold? Did the hire perform? This data feeds back into the platform and makes future recommendations sharper. The loop closes.
+                The user either freehands what they want aesthetically — describing feel, texture, color energy, visual references — or selects from Opus-created presets that encode a specific visual language. The model has aesthetic direction before it generates anything.
               </p>
-              <div>
-                <img
-                  src="/OnlyEdge/outcome.png"
-                  alt="OnlyEdge AI project close and feedback screen — evaluation of whether recommendations held and data feeding back into future projects"
-                  style={{ width: '100%', height: 'auto', display: 'block', borderRadius: 14, border: `0.5px solid ${C.borderStrong}` }}
-                />
-                <p style={{ ...monoFont, fontSize: 12, color: C.textTertiary, fontStyle: 'italic', padding: '10px 16px 14px', textAlign: 'center', margin: 0 }}>
-                  Feedback loop — decisions evaluated over time, not just made and forgotten
-                </p>
-              </div>
+              <img
+                src="/inspo/visual-style.jpg"
+                alt="Inspo visual direction asset — freehand aesthetic input and Opus preset selector grid for encoding visual language before generation"
+                style={{ width: '100%', height: 'auto', display: 'block', borderRadius: 14, border: `0.5px solid ${C.borderStrong}` }}
+              />
+              <p style={{ ...monoFont, fontSize: 12, color: C.textTertiary, fontStyle: 'italic', padding: '10px 16px 14px', textAlign: 'center', margin: 0 }}>
+                Visual direction — aesthetic intent, not just a blank canvas
+              </p>
             </div>
 
-            <FeynmanCheck text={`"Am I building what users need, or what I think is clever?" — The touchpoint and thesis layer wasn't in any initial spec. It emerged from the question: "what happens between the recommendation and the hire?" That gap is where trust is built or lost. I built into the gap.`} />
+            <Divider />
+
+            {/* The Inspo playground */}
+            <div style={{ marginBottom: 48 }}>
+              <h3 style={{ ...playfairFont, fontSize: 22, fontWeight: 700, color: C.textPrimary, margin: '0 0 12px 0' }}>
+                The Inspo playground — four ideas, full context, zero starting from scratch.
+              </h3>
+              <p style={{ fontSize: 15, lineHeight: 1.8, color: C.textSecondary, marginBottom: 24 }}>
+                Select your assets. Run the generator. Get 4 ideas simultaneously — each with campaign concept, copy direction, visual language, and rationale. Compare them. Mix them. Reject one, combine two, regenerate a third. The blank page problem is gone. The one-idea-at-a-time problem is gone. The re-entering-the-same-data problem is gone.
+              </p>
+              {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                style={{ width: '100%', height: 'auto', display: 'block', borderRadius: 14, border: `0.5px solid ${C.borderStrong}` }}
+              >
+                <source src="/inspo/inspo-video.mp4" type="video/mp4" />
+              </video>
+              <p style={{ ...monoFont, fontSize: 12, color: C.textTertiary, fontStyle: 'italic', padding: '10px 16px 14px', textAlign: 'center', margin: 0 }}>
+                Inspo — a playground, not a conversation. Four ideas, full context, zero starting from scratch.
+              </p>
+            </div>
+
+            <FeynmanCheck text={`"Am I building what users need, or what I think is clever?" — The URL scraper for brand and product was the highest-leverage single decision in the build. Users don't want to describe their brand. They want the platform to know it. The scraper eliminated the most friction-heavy input in the entire flow. Would I have cut it if it was technically too costly? Yes — but it wasn't.`} />
           </section>
 
           {/* ═══════════════════ 05 — ANALYZE ═══════════════════ */}
@@ -745,27 +820,22 @@ export default function OnlyEdgeCaseStudy() {
               <AnalysisRow
                 n="H1"
                 status="Validated"
-                body="Persona-driven routing eliminated the entry fork. Users moved from 'what do I do?' to 'here's where I am' in one step. The product started acting like it knew who it was talking to."
+                body="Asset-grounded generation produced campaign ideas users described as 'actually on brand' and 'specific to what we\'re doing.' Context was the differentiator. Generic ideas from context-free prompts didn\'t survive the comparison."
               />
               <AnalysisRow
                 n="H2"
                 status="Validated"
-                body="Intelligence collection anchored the output. Users described recommendations as 'specific' and 'actually relevant to what we're doing.' The upfront investment paid immediately."
+                body="Four simultaneous ideas changed the behavior entirely. Users stopped accepting or rejecting. They started workshopping — comparing outputs, identifying what worked in one idea and what worked in another, combining them into something new. One idea at a time never produced that behavior."
               />
               <AnalysisRow
                 n="H3"
                 status="Validated"
-                body="Candidate cards with 'why' changed engagement entirely. Users evaluated with intent instead of scrolling. They read the rationale, pushed back on it, argued with it — which is exactly what a high-conviction recommendation should do."
+                body="Users preferred Inspo over the agent for creative work. Consistently, clearly, and by a wide margin. One idea, no visuals, no comparison — the old model lost every time. The compounding engagement was real. Users kept generating."
               />
               <AnalysisRow
                 n="H4"
                 status="Validated"
-                body="Touchpoints and thesis building became the most-used feature after initial testing. Users wanted a place to think alongside the platform. The gap between recommendation and hire was where they were spending the most cognitive energy."
-              />
-              <AnalysisRow
-                n="H5"
-                status="Validated"
-                body="Decision tracking pointed directly back to the original hypothesis. Users cared about the intelligence behind the decision, not just the outcome."
+                body="Reusable assets changed the platform's value proposition. Every session started stronger because of what the previous session built. Users who built all five assets generated at a measurably higher quality than those who used partial context."
               />
             </div>
 
@@ -776,13 +846,13 @@ export default function OnlyEdgeCaseStudy() {
                 rows={[
                   {
                     label: 'Insight',
-                    value: 'The decision tracking created a behavior we didn\'t design for. Users started using historical decision records as reference material for new projects — "we tried this hire profile last cycle, it didn\'t work, here\'s why." The platform became institutional memory. That was not in any brief. It changed the roadmap. The data was already there; the users showed us what it was worth.',
+                    value: 'Inspo became the most requested feature of the entire platform. Not just for campaigns — users were treating it as the creative center of gravity. What started as a solution to the agent\'s limitations became the primary reason people returned. That changed the roadmap. We are now building more and more to support Inspo — new asset types, deeper integrations, expansion of what the playground can generate. The feature didn\'t just validate; it reorganized what the product is.',
                   },
                 ]}
               />
             </div>
 
-            <FeynmanCheck text={`"Am I interpreting evidence to fit my theory, or updating my theory based on evidence?" — The institutional memory behavior surprised us. We didn't design for it. We documented it, followed it, and it opened an entirely new product direction.`} />
+            <FeynmanCheck text={`"Am I interpreting evidence to fit my theory, or updating my theory based on evidence?" — The scale of the response to Inspo surprised us. We built a feature; users told us we built the product. We followed that signal. The roadmap reflects it now.`} />
           </section>
 
           {/* ═══════════════════ 06 — SYNTHESIZE ═══════════════════ */}
@@ -792,24 +862,24 @@ export default function OnlyEdgeCaseStudy() {
             <GoalPill text="Extract principles. Feed them back into the system." />
 
             <BodyText style={{ marginBottom: 32 }}>
-              Three reusable patterns emerged. Each one applies beyond OnlyEdge — they&apos;re transferable to any decision-support product where stakes are high and context determines quality.
+              Three reusable patterns emerged from this work. Each one now runs through the rest of the Opus product.
             </BodyText>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: 16, marginBottom: 40 }}>
               <PatternCard
                 n="01"
-                title="Persona-driven entry"
-                desc="Never make the user choose their context at the door. The product should determine that from what it knows and route accordingly. This applies to any multi-persona platform where the right starting point depends on who you are. The fork at entry is always a product abdication."
+                title="Context before output"
+                desc="Always collect the assets that make output meaningful before generation starts. One-time asset creation that persists across sessions is more valuable than any individual output it produces. This pattern transfers to any AI product where quality is determined by context richness. The intake layer is not overhead — it is the product."
               />
               <PatternCard
                 n="02"
-                title="Intelligence before output"
-                desc="Don't surface results before you've collected the inputs that make those results meaningful. The quality of the output is determined before the first recommendation appears. Build the intake layer with conviction — the output layer earns its trust there."
+                title="Plurality creates judgment"
+                desc="Never give one answer when you can give four. Multiple simultaneous outputs shift the user from accepting or rejecting to comparing and refining — which is a fundamentally different and more powerful creative mode. This is the difference between a vending machine and a workshop."
               />
               <PatternCard
                 n="03"
-                title="The intel → delivery → tracking loop"
-                desc="Gather context. Deliver with conviction. Track the outcome. This three-phase loop works for any decision-support product: hiring, investing, sourcing, risk evaluation. The platform that owns all three phases owns the relationship. The platform that only owns delivery is a search engine."
+                title="The tool that knows you gets used again"
+                desc="Stickiness comes from compounding value. Every asset created makes the next session stronger. Every session builds on the last. Design for the second session, not just the first — and the second session will bring back a third. This pattern now runs through every surface in Opus."
               />
             </div>
 
@@ -818,13 +888,13 @@ export default function OnlyEdgeCaseStudy() {
                 rows={[
                   {
                     label: 'Next',
-                    value: 'Build the cross-project intelligence layer — where insights from one project\'s decision record inform recommendations in the next. The data is already there. The pattern is established. The next version of this platform is one that gets smarter across every project you\'ve ever run, turning individual decisions into compound organizational knowledge.',
+                    value: 'Build cross-campaign learning — where patterns from successful campaigns (high engagement, brand fit, performance data) feed back into asset recommendations for future runs. The data is already there. The assets are already there. The next version of Inspo is one that tells you what worked and why — making the playground not just generative, but intelligent about its own history.',
                   },
                 ]}
               />
             </div>
 
-            <FeynmanCheck text={`"Can I explain what I learned to someone who knows nothing about this project?" — Yes: the product that tells you why is more valuable than the product that gives you results. Decision-support is not about output — it's about confidence in the output. Those are different problems requiring different architectures.`} />
+            <FeynmanCheck text={`"Can I explain what I learned to someone who knows nothing about this project?" — Yes: the best AI tool is one that already knows what it needs to know. Context is the product. Output is just the proof that the context was good. Build the context layer first and build it right — everything downstream gets better automatically.`} />
           </section>
 
           {/* ═══════════════════ CLOSING ═══════════════════ */}
@@ -839,7 +909,7 @@ export default function OnlyEdgeCaseStudy() {
                 margin: '0 auto 20px auto',
               }}
             >
-              &ldquo;A product that returns results is a search engine. A product that helps you think through them, track what happened, and learn from what you decided — that&rsquo;s a platform. That&rsquo;s what we built.&rdquo;
+              &ldquo;We built a tool that turned existing knowledge into new ideas. Not by making the AI smarter — by making the inputs it already had access to actually count.&rdquo;
             </p>
             <p
               style={{
@@ -850,7 +920,7 @@ export default function OnlyEdgeCaseStudy() {
                 lineHeight: 1.6,
               }}
             >
-              Product identity. IA from first principles. Decision intelligence with a memory. Not as separate features — as one coherent point of view about what this kind of product is supposed to do.
+              Asset design. Context architecture. Compound creative value. Not as separate features — as one coherent system that makes every session better than the last.
             </p>
             <Link
               href="/case-studies"
