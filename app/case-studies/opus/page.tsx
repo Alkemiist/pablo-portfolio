@@ -391,6 +391,86 @@ function PatternCard({ n, title, desc }: { n: string; title: string; desc: strin
   );
 }
 
+// Before/after — two matched landscape frames telling the transformation story.
+function BeforeAfter({
+  frames,
+}: {
+  frames: { src: string; tag: string; caption: string }[];
+}) {
+  return (
+    <div className="grid grid-cols-1 gap-4">
+      {frames.map((f) => (
+        <div key={f.src}>
+          <div
+            style={{
+              background: C.bgSurface,
+              ...borderStrong,
+              borderRadius: 14,
+              padding: 8,
+              aspectRatio: '1705 / 1018',
+              width: '100%',
+              overflow: 'hidden',
+            }}
+          >
+            <div style={{ position: 'relative', width: '100%', height: '100%', borderRadius: 10, overflow: 'hidden' }}>
+              <img
+                src={f.src}
+                alt={`${f.tag} — ${f.caption}`}
+                style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top center', display: 'block' }}
+              />
+              <span
+                style={{
+                  position: 'absolute',
+                  top: 8,
+                  left: 8,
+                  ...monoFont,
+                  fontSize: 10,
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.08em',
+                  color: f.tag === 'After' ? C.purple : C.textSecondary,
+                  background: 'rgba(15,15,35,0.82)',
+                  border: `0.5px solid ${f.tag === 'After' ? 'rgba(124,111,247,0.4)' : C.borderStrong}`,
+                  borderRadius: 20,
+                  padding: '3px 10px',
+                }}
+              >
+                {f.tag}
+              </span>
+            </div>
+          </div>
+          <p style={{ ...monoFont, fontSize: 12, color: C.textTertiary, fontStyle: 'italic', padding: '8px 12px 0', textAlign: 'center', margin: 0, lineHeight: 1.5 }}>
+            {f.caption}
+          </p>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+// Craft card — text-forward decision + trade-off. The Inspo page is already image-rich,
+// so these add the articulated-rationale layer without re-showing screens.
+function CraftCard({ n, name, rationale, tradeoff }: { n: string; name: string; rationale: string; tradeoff: string }) {
+  return (
+    <div style={{ background: C.bgCard, ...borderSubtle, borderRadius: 14, padding: 22 }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 10 }}>
+        <span style={{ ...monoFont, fontSize: 11, color: C.purple }}>Decision {n}</span>
+      </div>
+      <h4 style={{ ...playfairFont, fontSize: 18, fontWeight: 700, color: C.textPrimary, margin: '0 0 10px 0', lineHeight: 1.3 }}>
+        {name}
+      </h4>
+      <p style={{ fontSize: 14, color: C.textSecondary, lineHeight: 1.7, margin: '0 0 12px 0' }}>
+        {rationale}
+      </p>
+      <div style={{ display: 'flex', gap: 10, alignItems: 'flex-start', paddingTop: 12, borderTop: `0.5px solid ${C.borderSubtle}` }}>
+        <span style={{ ...monoFont, fontSize: 9, textTransform: 'uppercase', letterSpacing: '0.08em', color: C.warm, paddingTop: 2, flexShrink: 0 }}>
+          Trade-off
+        </span>
+        <p style={{ fontSize: 13, color: C.textTertiary, lineHeight: 1.6, margin: 0 }}>{tradeoff}</p>
+      </div>
+    </div>
+  );
+}
+
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
 export default function OpusCaseStudy() {
@@ -679,6 +759,24 @@ export default function OpusCaseStudy() {
               />
             </div>
 
+            {/* From one-way street to playground — before / after */}
+            <div style={{ marginBottom: 48 }}>
+              <h3 style={{ ...playfairFont, fontSize: 22, fontWeight: 700, color: C.textPrimary, margin: '0 0 12px 0' }}>
+                From a one-way street to a playground.
+              </h3>
+              <p style={{ fontSize: 15, lineHeight: 1.8, color: C.textSecondary, marginBottom: 24 }}>
+                The old model returned one idea at a time, as text, in a thread you had to feed from scratch. The playground returns four fully-realized concepts at once — visual, comparable, grounded in assets the system already holds. Same job, a completely different interface for it.
+              </p>
+              <BeforeAfter
+                frames={[
+                  { src: '/inspo/agent-chat.jpg', tag: 'Before', caption: 'The agent — one idea, as text, in a thread.' },
+                  { src: '/inspo/inspo-image.jpg', tag: 'After', caption: 'The playground — four visual concepts, side by side.' },
+                ]}
+              />
+            </div>
+
+            <Divider />
+
             {/* Asset 01 — Brand */}
             <div style={{ marginBottom: 48 }}>
               <AssetBadge n="01" name="Brand" method="URL scraper" />
@@ -780,6 +878,17 @@ export default function OpusCaseStudy() {
               <p style={{ ...monoFont, fontSize: 12, color: C.textTertiary, fontStyle: 'italic', padding: '10px 16px 14px', textAlign: 'center', margin: 0 }}>
                 Visual direction — aesthetic intent, not just a blank canvas
               </p>
+              <div style={{ marginTop: 8 }}>
+                <DiagnosisBlock
+                  accent="warm"
+                  rows={[
+                    {
+                      label: 'Design eye',
+                      value: 'The Shot Style Library is 30 cinematic presets — each a named point of view (one-point perspective, neon shallow focus, symmetrical pastel, magic-hour impressionism) with a representative frame. Curating an aesthetic vocabulary is itself a design act: it gives non-designers a way to express taste by reference, and it keeps generated output coherent instead of arbitrary. The presets are the difference between "describe a look" and "pick a language."',
+                    },
+                  ]}
+                />
+              </div>
             </div>
 
             <Divider />
@@ -805,6 +914,69 @@ export default function OpusCaseStudy() {
               <p style={{ ...monoFont, fontSize: 12, color: C.textTertiary, fontStyle: 'italic', padding: '10px 16px 14px', textAlign: 'center', margin: 0 }}>
                 Inspo — a playground, not a conversation. Four ideas, full context, zero starting from scratch.
               </p>
+            </div>
+
+            <Divider />
+
+            {/* The payoff — one idea, fully realized */}
+            <div style={{ marginBottom: 48 }}>
+              <h3 style={{ ...playfairFont, fontSize: 22, fontWeight: 700, color: C.textPrimary, margin: '0 0 12px 0' }}>
+                From four concepts to one full campaign.
+              </h3>
+              <p style={{ fontSize: 15, lineHeight: 1.8, color: C.textSecondary, marginBottom: 24 }}>
+                Comparing four ideas is only half the story. Commit to one and it opens into a complete campaign — concept, strategy, the mechanism behind it, activation points, formats, and copy. This is the proof that the outputs aren&apos;t thumbnails: any one of the four is a real, usable body of work.
+              </p>
+              {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                style={{ width: '100%', height: 'auto', display: 'block', borderRadius: 14, border: `0.5px solid ${C.borderStrong}` }}
+              >
+                <source src="/inspo/inspo-campaign-output.mp4" type="video/mp4" />
+              </video>
+              <p style={{ ...monoFont, fontSize: 12, color: C.textTertiary, fontStyle: 'italic', padding: '10px 16px 14px', textAlign: 'center', margin: 0 }}>
+                One generated idea, expanded into a full campaign — the depth behind a single card
+              </p>
+            </div>
+
+            <Divider />
+
+            {/* Design decisions worth explaining */}
+            <div style={{ marginBottom: 48 }}>
+              <h3 style={{ ...playfairFont, fontSize: 22, fontWeight: 700, color: C.textPrimary, margin: '0 0 12px 0' }}>
+                Design decisions worth explaining.
+              </h3>
+              <p style={{ fontSize: 15, lineHeight: 1.8, color: C.textSecondary, marginBottom: 28 }}>
+                The screens above show what shipped. These are the craft calls behind them — and the trade-off each one accepted.
+              </p>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+                <CraftCard
+                  n="01"
+                  name="Four at once, not one"
+                  rationale="One output forces a yes/no. Four force judgment — users compare, combine, and regenerate instead of accepting or rejecting. So the layout gives all four equal visual weight and lets you act on one without losing the others. The grid is the argument: this is a workshop, not a vending machine."
+                  tradeoff="Four full concepts is more to render and more to scan. I held it to four — enough for real comparison, few enough to stay legible in one view."
+                />
+                <CraftCard
+                  n="02"
+                  name="A scraper where everyone else puts a text field"
+                  rationale="The whole compounding-value model collapses if users won&rsquo;t build their assets — and nobody wants to hand-type their brand voice. So intake reads from source: point it at a URL and the platform extracts tone, product copy, and positioning. Setup stops feeling like a form and starts feeling like the product already knows you."
+                  tradeoff="Scraping is less predictable than a form and can miss. I designed it to pre-fill a reviewable, editable result rather than a black box the user has to trust blindly."
+                />
+                <CraftCard
+                  n="03"
+                  name="Presets as an aesthetic vocabulary"
+                  rationale="Taste is hard to type into a box. The Shot Style Library turns it into selection: 30 named cinematic languages, each with a reference frame. Non-designers express intent by pointing, and every generation inherits a coherent look instead of an arbitrary one — which is what keeps the output feeling art-directed."
+                  tradeoff="A curated set can feel constraining to a power user. Freehand input stays available alongside the presets, so the library guides without boxing anyone in."
+                />
+                <CraftCard
+                  n="04"
+                  name="Every input is a permanent, reusable asset"
+                  rationale="Assets are built once and persist across every campaign. That reframes setup from a cost into an investment: the more you build, the stronger every future session starts. The design had to make that permanence legible — assets are objects you own and reuse, not fields you refill."
+                  tradeoff="Persistence adds a management surface — assets to organize and keep current. I accepted that because a compounding library is worth more than a frictionless but forgetful blank slate."
+                />
+              </div>
             </div>
 
             <FeynmanCheck text={`"Am I building what users need, or what I think is clever?" — The URL scraper for brand and product was the highest-leverage single decision in the build. Users don't want to describe their brand. They want the platform to know it. The scraper eliminated the most friction-heavy input in the entire flow. Would I have cut it if it was technically too costly? Yes — but it wasn't.`} />
@@ -836,6 +1008,32 @@ export default function OpusCaseStudy() {
                 n="H4"
                 status="Validated"
                 body="Reusable assets changed the platform's value proposition. Every session started stronger because of what the previous session built. Users who built all five assets generated at a measurably higher quality than those who used partial context."
+              />
+            </div>
+
+            {/* What I kept */}
+            <div style={{ marginBottom: 40 }}>
+              <div style={{ ...monoFont, fontSize: 10, textTransform: 'uppercase', letterSpacing: '0.08em', color: C.textTertiary, marginBottom: 12 }}>
+                What I Chose Not To Change
+              </div>
+              <BodyText style={{ marginBottom: 20, fontSize: 15 }}>
+                Building Inspo was also a set of decisions about what to leave alone. Three things stayed — and that restraint mattered as much as the new surface.
+              </BodyText>
+              <DiagnosisBlock
+                rows={[
+                  {
+                    label: 'The agent',
+                    value: 'I didn\u2019t kill the conversational agent. It was the wrong interface for open-ended creative generation, but it\u2019s still right for other jobs. Inspo runs alongside it, not on its grave. Recognizing that a tool is wrong for one job without declaring it worthless is the difference between a redesign and a tantrum.',
+                  },
+                  {
+                    label: 'The asset data',
+                    value: 'Brand tone, product copy, audience profiles already existed in the system — users were just being forced to re-type them. I surfaced and reused that data rather than rebuilding a new store. The highest-leverage move was using what was already there.',
+                  },
+                  {
+                    label: 'The design language',
+                    value: 'Inspo is a feature inside Opus, so it inherits the platform\u2019s existing visual system rather than inventing a parallel one. A feature that looks bolted on erodes trust; one that feels native extends it.',
+                  },
+                ]}
               />
             </div>
 

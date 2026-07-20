@@ -427,6 +427,293 @@ function PatternCard({ n, title, desc }: { n: string; title: string; desc: strin
   );
 }
 
+// Media slot — placeholder for a video or cropped image that isn't in the repo yet.
+// Mirrors the ImagePlaceholder pattern (dashed frame) so the layout reads intentionally while empty.
+function MediaPlaceholder({
+  kind,
+  label,
+  description,
+  aspect = '340 / 600',
+}: {
+  kind: 'video' | 'image';
+  label: string;
+  description: string;
+  aspect?: string;
+}) {
+  return (
+    <div
+      style={{
+        background: C.bgSurface,
+        ...borderStrong,
+        borderRadius: 14,
+        padding: 8,
+        aspectRatio: aspect,
+        width: '100%',
+        display: 'flex',
+        flexDirection: 'column',
+      }}
+    >
+      <div
+        style={{
+          border: '1.5px dashed rgba(124,111,247,0.2)',
+          borderRadius: 12,
+          flex: 1,
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          gap: 10,
+          padding: '20px 16px',
+        }}
+      >
+        <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+          {kind === 'video' ? (
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke={C.purple} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+              <polygon points="5 3 19 12 5 21 5 3" fill={C.purple} stroke="none" />
+            </svg>
+          ) : (
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke={C.purple} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2" />
+              <circle cx="8.5" cy="8.5" r="1.5" />
+              <path d="M21 15l-5-5L5 21" />
+            </svg>
+          )}
+          <span style={{ ...monoFont, fontSize: 10, textTransform: 'uppercase', letterSpacing: '0.1em', color: C.purple }}>
+            {kind === 'video' ? 'Video slot' : 'Image slot'}
+          </span>
+        </div>
+        <div style={{ ...monoFont, fontSize: 10, textTransform: 'uppercase', letterSpacing: '0.08em', color: C.textSecondary, textAlign: 'center' }}>
+          {label}
+        </div>
+        <p style={{ fontSize: 12, color: C.textTertiary, textAlign: 'center', lineHeight: 1.5, margin: 0, maxWidth: 300 }}>
+          {description}
+        </p>
+      </div>
+    </div>
+  );
+}
+
+// Real media frame — mirrors the placeholder framing but renders an actual video/image.
+// Videos reuse the autoplay-loop-muted-inline pattern; both use objectFit cover.
+function MediaFrame({
+  kind,
+  src,
+  alt,
+  aspect = '340 / 600',
+}: {
+  kind: 'video' | 'image';
+  src: string;
+  alt: string;
+  aspect?: string;
+}) {
+  return (
+    <div
+      style={{
+        background: C.bgSurface,
+        ...borderStrong,
+        borderRadius: 14,
+        padding: 8,
+        aspectRatio: aspect,
+        width: '100%',
+      }}
+    >
+      <div style={{ position: 'relative', width: '100%', height: '100%', borderRadius: 10, overflow: 'hidden' }}>
+        {kind === 'video' ? (
+          // eslint-disable-next-line jsx-a11y/media-has-caption
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+          >
+            <source src={src} type="video/mp4" />
+          </video>
+        ) : (
+          <img src={src} alt={alt} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+        )}
+      </div>
+    </div>
+  );
+}
+
+// Design decision card — media on one side, rationale + trade-off on the other.
+// Used in the "Design decisions worth explaining" block to show craft, not just screens.
+// Renders a real MediaFrame when `src` is provided, otherwise a labeled placeholder.
+function DecisionCard({
+  n,
+  name,
+  kind,
+  src,
+  alt,
+  mediaLabel,
+  mediaDesc,
+  mediaAspect,
+  rationale,
+  tradeoff,
+}: {
+  n: string;
+  name: string;
+  kind: 'video' | 'image';
+  src?: string;
+  alt?: string;
+  mediaLabel?: string;
+  mediaDesc?: string;
+  mediaAspect?: string;
+  rationale: string;
+  tradeoff: string;
+}) {
+  return (
+    <div style={{ background: C.bgCard, ...borderSubtle, borderRadius: 16, padding: 18 }}>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 items-center">
+        {src ? (
+          <MediaFrame kind={kind} src={src} alt={alt ?? name} aspect={mediaAspect} />
+        ) : (
+          <MediaPlaceholder kind={kind} label={mediaLabel ?? name} description={mediaDesc ?? ''} aspect={mediaAspect} />
+        )}
+        <div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 10 }}>
+            <span style={{ ...monoFont, fontSize: 11, color: C.purple }}>Decision {n}</span>
+            <span style={{ ...monoFont, fontSize: 9, textTransform: 'uppercase', letterSpacing: '0.08em', color: C.textTertiary, border: `0.5px solid ${C.borderStrong}`, borderRadius: 20, padding: '3px 8px' }}>
+              {kind === 'video' ? 'Interaction' : 'Visual'}
+            </span>
+          </div>
+          <h4 style={{ ...playfairFont, fontSize: 19, fontWeight: 700, color: C.textPrimary, margin: '0 0 10px 0', lineHeight: 1.3 }}>
+            {name}
+          </h4>
+          <p style={{ fontSize: 14, color: C.textSecondary, lineHeight: 1.7, margin: '0 0 12px 0' }}>
+            {rationale}
+          </p>
+          <div style={{ display: 'flex', gap: 10, alignItems: 'flex-start', paddingTop: 12, borderTop: `0.5px solid ${C.borderSubtle}` }}>
+            <span style={{ ...monoFont, fontSize: 9, textTransform: 'uppercase', letterSpacing: '0.08em', color: C.warm, paddingTop: 2, flexShrink: 0 }}>
+              Trade-off
+            </span>
+            <p style={{ fontSize: 13, color: C.textTertiary, lineHeight: 1.6, margin: 0 }}>{tradeoff}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// Screen-zero before/after — two matched viewport frames clipped to the same
+// above-the-fold height so the comparison reads as "same budget, more yield."
+function ViewportCompare() {
+  const frames = [
+    { src: '/lois-original-composer.png', tag: 'Before', caption: 'One layer — a greeting that tells you nothing.' },
+    { src: '/lois-composer-redesign.png', tag: 'After', caption: 'Four layers — context, document awareness, affordances, action.' },
+  ];
+  return (
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+      {frames.map((f) => (
+        <div key={f.src}>
+          <div
+            style={{
+              background: C.bgSurface,
+              ...borderStrong,
+              borderRadius: 14,
+              padding: 8,
+              aspectRatio: '340 / 560',
+              width: '100%',
+              overflow: 'hidden',
+            }}
+          >
+            <div style={{ position: 'relative', width: '100%', height: '100%', borderRadius: 10, overflow: 'hidden' }}>
+              <img
+                src={f.src}
+                alt={`${f.tag} — LOIS Composer empty state, clipped to the above-the-fold viewport`}
+                style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top center', display: 'block' }}
+              />
+              <span
+                style={{
+                  position: 'absolute',
+                  top: 8,
+                  left: 8,
+                  ...monoFont,
+                  fontSize: 10,
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.08em',
+                  color: f.tag === 'After' ? C.purple : C.textSecondary,
+                  background: 'rgba(13,13,18,0.82)',
+                  border: `0.5px solid ${f.tag === 'After' ? 'rgba(124,111,247,0.4)' : C.borderStrong}`,
+                  borderRadius: 20,
+                  padding: '3px 10px',
+                }}
+              >
+                {f.tag}
+              </span>
+            </div>
+          </div>
+          <p style={{ ...monoFont, fontSize: 12, color: C.textTertiary, fontStyle: 'italic', padding: '8px 12px 0', textAlign: 'center', margin: 0, lineHeight: 1.5 }}>
+            {f.caption}
+          </p>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+// Vertical budget diagram for the 340px panel — shows how little content room is left
+// once persistent chrome is accounted for.
+function CanvasBudget() {
+  const segments = [
+    { label: 'Workspace bar', px: 52, fill: 'rgba(124,111,247,0.28)', border: 'rgba(124,111,247,0.5)' },
+    { label: 'Tab row', px: 40, fill: 'rgba(124,111,247,0.16)', border: 'rgba(124,111,247,0.32)' },
+    { label: 'Content area — the design budget', px: 460, fill: C.bgCard, border: C.borderStrong },
+  ];
+  const total = segments.reduce((sum, s) => sum + s.px, 0);
+  return (
+    <div className="grid grid-cols-1 sm:grid-cols-[180px_1fr] gap-5 items-stretch">
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          gap: 4,
+          height: 300,
+          border: `0.5px solid ${C.borderStrong}`,
+          borderRadius: 12,
+          padding: 6,
+          background: C.bgSurface,
+        }}
+      >
+        {segments.map((s) => (
+          <div
+            key={s.label}
+            style={{
+              flexGrow: s.px,
+              flexBasis: 0,
+              minHeight: 0,
+              background: s.fill,
+              border: `0.5px solid ${s.border}`,
+              borderRadius: 8,
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: 2,
+              padding: '4px 6px',
+              textAlign: 'center',
+            }}
+          >
+            <span style={{ ...monoFont, fontSize: 9, textTransform: 'uppercase', letterSpacing: '0.06em', color: C.textSecondary, lineHeight: 1.3 }}>
+              {s.label}
+            </span>
+            <span style={{ ...monoFont, fontSize: 10, color: C.textTertiary }}>~{s.px}px</span>
+          </div>
+        ))}
+      </div>
+      <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: 10 }}>
+        <p style={{ fontSize: 14, color: C.textSecondary, lineHeight: 1.7, margin: 0 }}>
+          340px wide. Roughly 550px tall before Word&rsquo;s chrome and the keyboard eat into it. The workspace bar and tab row are permanent — so the real canvas for content is closer to <span style={{ color: C.textPrimary }}>460px</span>. Every banner, chip, and card comes out of that budget.
+        </p>
+        <p style={{ ...monoFont, fontSize: 11, color: C.textTertiary, fontStyle: 'italic', margin: 0, lineHeight: 1.6 }}>
+          Approximate allocation — illustrative of the constraint, not pixel-exact.
+        </p>
+      </div>
+    </div>
+  );
+}
+
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
 export default function LOISCaseStudy() {
@@ -764,6 +1051,67 @@ export default function LOISCaseStudy() {
               </a>
             </div>
 
+            {/* The canvas — 340px constraint */}
+            <div style={{ marginBottom: 48 }}>
+              <h3 style={{ ...playfairFont, fontSize: 22, fontWeight: 700, color: C.textPrimary, margin: '0 0 12px 0' }}>
+                The canvas — designing for 340px.
+              </h3>
+              <p style={{ fontSize: 15, lineHeight: 1.8, color: C.textSecondary, marginBottom: 24 }}>
+                LOIS doesn&rsquo;t live on a screen. It lives in a 340px column docked to the side of a Word document — and the document, not the add-in, is where the user&rsquo;s attention actually is. That single fact shaped every spatial decision in the redesign.
+              </p>
+
+              <div style={{ marginBottom: 28 }}>
+                <CanvasBudget />
+              </div>
+
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+                <DiagnosisBlock
+                  rows={[
+                    {
+                      label: 'Not mobile',
+                      value: 'Mobile design assumes the screen is the primary surface. Here the primary surface is the document — the add-in is glanced at, acted on, then abandoned back to the document. I designed for interruption, not immersion. Every screen has to answer "what do I do next" in about three seconds, because that is all the attention it gets.',
+                    },
+                    {
+                      label: 'Density',
+                      value: 'A 44px touch target is 13% of the panel\u2019s width. With multiple controls per row — toolbar icons, playbook cards, finding rows — every layout was a negotiation between fitting enough and staying tappable.',
+                    },
+                    {
+                      label: 'Disclosure',
+                      value: 'The card \u2192 full-panel pattern is not a stylistic choice. There is no room for a list and a detail view on one 340px surface. Density forced the architecture — and the architecture happened to also solve trust.',
+                    },
+                  ]}
+                />
+              </div>
+            </div>
+
+            <Divider />
+
+            {/* Screen zero — before / after */}
+            <div style={{ marginBottom: 48 }}>
+              <h3 style={{ ...playfairFont, fontSize: 22, fontWeight: 700, color: C.textPrimary, margin: '0 0 12px 0' }}>
+                Screen zero — same viewport, different yield.
+              </h3>
+              <p style={{ fontSize: 15, lineHeight: 1.8, color: C.textSecondary, marginBottom: 24 }}>
+                Every user meets the Composer first. Here is what the same above-the-fold viewport communicates before and after — not more height, the same spatial budget carrying far more useful information.
+              </p>
+
+              <div style={{ marginBottom: 20 }}>
+                <ViewportCompare />
+              </div>
+
+              <div style={{ marginBottom: 20 }}>
+                <DiagnosisBlock
+                  accent="warm"
+                  rows={[
+                    {
+                      label: 'The cost',
+                      value: 'The workspace bar costs ~52px of vertical space permanently. What it buys: you can never operate in the wrong workspace without seeing it. In legal work, that trade is not close.',
+                    },
+                  ]}
+                />
+              </div>
+            </div>
+
             {/* Composer */}
             <div style={{ marginBottom: 48 }}>
               <h3 style={{ ...playfairFont, fontSize: 22, fontWeight: 700, color: C.textPrimary, margin: '0 0 12px 0' }}>
@@ -872,6 +1220,61 @@ export default function LOISCaseStudy() {
               </div>
             </div>
 
+            <Divider />
+
+            {/* Design decisions worth explaining */}
+            <div style={{ marginBottom: 48 }}>
+              <h3 style={{ ...playfairFont, fontSize: 22, fontWeight: 700, color: C.textPrimary, margin: '0 0 12px 0' }}>
+                Design decisions worth explaining.
+              </h3>
+              <p style={{ fontSize: 15, lineHeight: 1.8, color: C.textSecondary, marginBottom: 28 }}>
+                Screens prove something shipped. These four decisions show the craft behind them — two that live in time, two that live in space.
+              </p>
+
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+                <DecisionCard
+                  n="01"
+                  name="Card → full panel, as a push not a swap"
+                  kind="video"
+                  src="/lois-content/lois-card-to-panel.mp4"
+                  alt="Screen recording — tapping a finding card pushes a full detail panel in from the right, with a previous/next switcher in the header"
+                  mediaAspect="560 / 900"
+                  rationale="In a 340px surface, replacing the whole screen to show a finding would erase any sense of where you are. The panel pushes in from the right instead — you&rsquo;ve gone deeper, not somewhere else. A previous/next switcher lives in the panel header, so findings can be worked in sequence without ever reversing back to the list."
+                  tradeoff="A push adds motion the user waits through. I kept it fast (~250ms) so it reads as depth, not delay."
+                />
+                <DecisionCard
+                  n="02"
+                  name="History as an overlay, not a sidebar"
+                  kind="video"
+                  src="/lois-content/lois-history-overlay.mp4"
+                  alt="Screen recording — the clock icon opens session history as an overlay over the Composer, then dismisses to zero footprint"
+                  mediaAspect="560 / 564"
+                  rationale="The mental model is borrowed from Claude, ChatGPT, and Gemini — a history drawer. But those live in a full viewport. At 340px, a permanent sidebar would eat the entire product. History enters as an overlay instead: summoned by the clock icon, dismissed with a tap, zero permanent footprint on the Composer."
+                  tradeoff="History is one tap away rather than always visible. For a tool used in short bursts, a single clear icon beat a permanent panel."
+                />
+                <DecisionCard
+                  n="03"
+                  name="Severity badges as a triage language"
+                  kind="image"
+                  src="/lois-content/lois-severity-badges.png"
+                  alt="Close crop of the severity badge strip — HIGH, MED, LOW, PASSED — shown in priority order"
+                  mediaAspect="547 / 214"
+                  rationale="Findings are triaged, not filed — so the badges are ordered by urgency (HIGH → MED → LOW → PASSED), not alphabetically or chronologically. Color carries the first read, the pill shape keeps the label legible at small sizes, and PASSED sits last because it&rsquo;s the one state that needs no action."
+                  tradeoff="A four-color system risks noise. I capped it at four states and reused the same semantic colors everywhere else so the language stays learnable."
+                />
+                <DecisionCard
+                  n="04"
+                  name="A workspace bar that never disappears"
+                  kind="image"
+                  src="/lois-content/lois-workspace-bar.png"
+                  alt="Close crop of the persistent workspace bar anchored above the tab row"
+                  mediaAspect="565 / 291"
+                  rationale="In the original, the workspace selector vanished on the Review tab — you could run a full playbook with no idea which profile was active. In the redesign it&rsquo;s anchored above the tab row, present in every mode. The hierarchy reads top to bottom: who you are → what mode you&rsquo;re in → what you&rsquo;re doing."
+                  tradeoff="~52px of permanent vertical cost. In a legal tool, silent wrong-workspace runs are a worse failure than a tighter content area."
+                />
+              </div>
+            </div>
+
             <FeynmanCheck text={`"Am I building what users need, or what I think is clever?" — The document-aware banner was not in the original brief. I added it because the API call cost was low and the trust signal was high. Would I throw it away if users dismissed it consistently without reading? Yes.`} />
           </section>
 
@@ -901,6 +1304,32 @@ export default function LOISCaseStudy() {
                 n="H4"
                 status="Validated"
                 body="History overlay. Zero permanent footprint. The pattern borrowed from Claude, ChatGPT, and Gemini — but adapted to a 340px canvas rather than a full browser viewport. The mental model transfers; the implementation had to be rethought."
+              />
+            </div>
+
+            {/* What I chose not to change */}
+            <div style={{ marginBottom: 40 }}>
+              <div style={{ ...monoFont, fontSize: 10, textTransform: 'uppercase', letterSpacing: '0.08em', color: C.textTertiary, marginBottom: 12 }}>
+                What I Chose Not To Change
+              </div>
+              <BodyText style={{ marginBottom: 20, fontSize: 15 }}>
+                A redesign is also a set of decisions about what to leave alone. Three things in the original were right — I kept them, and improved what surrounded them.
+              </BodyText>
+              <DiagnosisBlock
+                rows={[
+                  {
+                    label: 'Tabs',
+                    value: 'Composer and Review as two primary modes was the correct top-level split. The problem was never the model — it was what happened to context when you switched between them. I fixed the switching, not the structure.',
+                  },
+                  {
+                    label: 'Playbook',
+                    value: 'The original correctly treated the playbook — not the individual clause check — as the atomic unit of work. Legal professionals run a playbook against a document. I kept that model and added a recommendation layer on top of it.',
+                  },
+                  {
+                    label: 'Chat input',
+                    value: 'Users already understood they were talking to an AI. The conversational paradigm was sound. What failed was the empty state around it — a greeting with no scaffolding. I kept the input model and rebuilt what surrounds it.',
+                  },
+                ]}
               />
             </div>
 
